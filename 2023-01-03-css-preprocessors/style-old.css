@@ -1,0 +1,76 @@
+:root {
+  --color-black: black;
+  --color-white: white;
+  --color-red: red;
+  --color-green: green;
+
+  --spacing-medium: 30px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.bg-dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.wrapper {
+  padding: var(--spacing-medium);
+}
+
+.wrapper.full-width {
+  width: 100%;
+}
+
+.wrapper.half-width {
+  width: 50%;
+}
+
+.wrapper.bg-dark {
+  background-color: rgb(37, 37, 37);
+}
+
+.wrapper h2 {
+  font-size: 40px;
+}
+
+.wrapper h2.color-red {
+  color: var(--color-red);
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+
+.wrapper h2.color-red:hover {
+  color: var(--color-green);
+}
+
+/* .wrapper p::before {
+  content: '- ';
+  color: var(--color-red);
+}
+
+.wrapper p.empty::before {
+  content: none;
+} */
+
+.wrapper p:not(.empty)::before {
+  content: '- ';
+  color: var(--color-red);
+}
+
+.wrapper p:first-of-type {
+  font-size: 1.5em;
+}
+
+.box {
+  border: 2px solid var(--color-green);
+  padding: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
+}
+
+.container {
+  width: 70%;
+  margin: var(--spacing-medium) auto;
+}

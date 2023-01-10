@@ -1,0 +1,87 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #EDF2F8;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.card:not(.bg-white) {
+  color: white;
+}
+
+.bg-primary {
+  background-color: #733FC8;
+  /* color: white; */
+}
+
+.bg-light {
+  background-color: #49556B;
+  /* color: white; */
+}
+
+.bg-dark {
+  background-color: #18202D;
+  /* color: white; */
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.main-cards {
+  display: flex;
+  flex-wrap: wrap;
+  /* row-gap: 30px;
+  column-gap: 30px; */
+  gap: 30px;
+  width: 75%;
+}
+
+.main-cards .card {
+  width: calc((100% - 30px) / 3);
+}
+
+.main-cards .card:nth-of-type(3n+1) {
+  width: calc((100% - 30px) / 3 * 2);
+}
+
+.secondary-cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 25%;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.person-area {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.person-area img {
+  border-radius: 50px;
+  border: 3px solid black;
+}
+
+.person-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.person-name {
+  font-weight: 700;
+}
+
+
+

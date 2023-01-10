@@ -1,0 +1,21 @@
+/* 
+
+selector {
+  property: value;
+}
+
+*/
+
+body {
+  background-color: rgb(228, 214, 197);
+}
+
+h1 {
+  color: rgb(124, 128, 0); 
+  font-size: 60px; 
+  background-color: bisque;
+}
+
+p {
+  color: blueviolet;
+}

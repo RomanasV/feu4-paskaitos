@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Bootstrap</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-xxl text-center text-white mb-5">
+    <div class="row">
+      <div class="bg-dark col mx-2">
+        Column
+      </div>
+      <div class="bg-danger col mx-2">
+        Column
+      </div>
+      <div class="bg-success col mx-2">
+        Column
+      </div>
+    </div>
+  </div>
+
+  <div class="container-xxl text-center text-white mb-5">
+    <div class="row">
+      <div class="bg-danger col-12 col-sm-6 col-md-8 col-lg-6">
+        1 of 2
+      </div>
+      <div class="bg-success col-12 col-sm-6 col-md-4 col-lg-6">
+        2 of 2
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="bg-dark col-12 col-md-4 col-xl-6">
+        1 of 3
+      </div>
+      <div class="bg-info col-12 col-sm-6 col-md-4 col-xl">
+        2 of 3
+      </div>
+      <div class="bg-primary col-12 col-sm-6 col-md-4 col-xl">
+        3 of 3
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-xxl text-white mb-5 text-center">
+    <div class="row">
+      <div class="bg-dark col-12 col-sm-3 col-lg-6">
+        Level 1: .col-sm-3
+      </div>
+      <div class="bg-danger col-12 col-sm-9 col-lg-6">
+        <div class="row">
+          <div class="bg-success col-12 col-md-6 col-lg-8">
+            Level 2: .col-8 .col-sm-6
+          </div>
+          <div class="bg-primary col-12 col-md-6 col-lg-4">
+            Level 2: .col-4 .col-sm-6
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-xl">
+    <h1 class="text-center text-white bg-dark m-0 p-0 p-lg-3 p-xl-5">Hello world</h1>
+    <h2 class="text-center text-white bg-success mb-0 ms-3 me-3">Hello world</h2>
+    <h3 class="text-center text-white bg-danger pt-5 pb-2 mt-5 mb-0 w-75 mx-auto">Hello world</h3>
+  </div>
+
+  <p class="bg-success text-white mb-0 p-2 p-sm-4 p-md-5 mt-sm-1 mt-md-3 mb-md-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae illum minus in nemo, a perferendis est consequatur, ducimus assumenda odio libero? Labore cupiditate consequatur exercitationem, beatae quaerat assumenda hic distinctio eos similique tempore ullam consectetur nisi est deserunt, nobis nostrum quos aut! Eveniet magni illo libero. Quidem sequi dolorum vitae?</p>
+
+
+
+  <p class="bg-danger text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quibusdam maiores libero in hic sunt quaerat. Consequuntur obcaecati expedita fuga earum omnis eius deserunt facilis cumque alias, rem similique quis!</p>
+
+  <div class="container-xl">
+    <!-- Example split danger button -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-outline-success">Menu</button>
+      <button type="button" class="btn btn-outline-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img src="cat-1.png" class="card-img-top">
+      <div class="card-body">
+        <button class="btn btn-info">Click</button>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+
+    <nav style="--bs-breadcrumb-divider: '+';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Library</li>
+      </ol>
+    </nav>
+
+    <button class="btn btn-primary">Click</button>
+    <button class="btn btn-dark">Click</button>
+    <a href="#" class="btn btn-secondary">Click</a>
+    <a href="#" class="btn btn-outline-danger">Click</a>
+    <button class="btn btn-outline-success btn-lg" disabled>Click</button>
+    <a href="#" class="btn btn-primary btn-sm disabled">Click</a>
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+  <script src="bootstrap.bundle.js"></script>
+</body>
+</html>

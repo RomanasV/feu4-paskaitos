@@ -1,0 +1,16 @@
+.container {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(227, 227, 227);
+  position: relative;
+}
+
+.child {
+  width: 150px;
+  height: 150px;
+  background-color: blueviolet;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

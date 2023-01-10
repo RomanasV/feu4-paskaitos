@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+}
+
+p {
+  line-height: 1.74;
+}
+
+a.button {
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #1200ff;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 13px 30px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+a.button:hover {
+  background-color: #574aff;
+}
+
+.container {
+  max-width: 1230px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+ul.main-menu {
+  padding-left: 0;
+}
+
+li.menu-item {
+  display: inline;
+}
+
+a.menu-link {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+}
+
+a.menu-link:hover {
+  opacity: 0.8;
+}
+
+li.menu-item:first-of-type a.menu-link {
+  padding-left: 0;
+}
+
+.hero-box {
+  background-color: black;
+  color: white;
+  padding-top: 170px;
+}
+
+.hero-box-title-wrapper {
+  max-width: 670px;
+  padding-bottom: 386px;
+}
+
+.page-title {
+  font-size: 100px;
+  margin-top: 0;
+  margin-bottom: 23px;
+}
+
+p.page-description {
+  font-size: 17px;
+  max-width: 370px;
+}
+
+.service-list {
+  padding-bottom: 20px;
+}
+
+.service-item {
+  margin-bottom: 74px;
+}
+
+.service-item p {
+  margin: 0;
+}
+
+.facts-header {
+  font-size: 70px;
+}
+
+.facts-description {
+  max-width: 470px;
+  margin-left: 200px;
+}
+
+.facts-description p {
+  margin: 0;
+}
+
+.facts-list-wrapper {
+  margin-left: 200px;
+  margin-top: 88px;
+}
+
+ul.facts-list {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+li.facts-item {
+  margin-bottom: 88px;
+  font-weight: 700;
+}
+
+.fact-value {
+  font-size: 100px;
+  margin-bottom: 15px;
+}
+
+.fact-value.small {
+  font-size: 72px;
+  margin-bottom: 21px;
+}

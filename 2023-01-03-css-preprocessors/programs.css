@@ -1,0 +1,203 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+}
+
+.container {
+  max-width: 1230px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media screen and (max-width: 599px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+a.button-title {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  padding: 30px 40px;
+  border-radius: 8px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.pink-color {
+  color: #ff00e9;
+}
+
+.black-color {
+  color: black;
+}
+
+.page-title-wrapper {
+  margin-bottom: 30px;
+}
+
+.bg-image {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 30px;
+  background-image: url("banner.jpg");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: 90% 70%;
+  background-color: white;
+}
+@media screen and (max-width: 749px) {
+  .bg-image {
+    flex-direction: column;
+    background-size: 70%;
+    background-position: 120% 100%;
+  }
+}
+@media screen and (max-width: 399px) {
+  .bg-image {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 150px;
+    background-size: 350px;
+    background-position: 40% 100%;
+  }
+}
+
+.programs-wrapper {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 2fr;
+}
+@media screen and (max-width: 999px) {
+  .programs-wrapper {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+@media screen and (max-width: 699px) {
+  .programs-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+.programs-wrapper .programs-filter-form {
+  background-color: white;
+  padding: 45px 40px 40px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
+}
+@media screen and (max-width: 599px) {
+  .programs-wrapper .programs-filter-form {
+    padding: 35px 20px 30px;
+  }
+}
+.programs-wrapper .programs-filter-form button {
+  width: 100%;
+  display: block;
+}
+.programs-wrapper .programs-filter-form .form-control:not(.checkbox) {
+  display: flex;
+  flex-direction: column;
+}
+.programs-wrapper .programs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+@media screen and (max-width: 999px) {
+  .programs-wrapper .programs-list {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 699px) {
+  .programs-wrapper .programs-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 599px) {
+  .programs-wrapper .programs-list {
+    grid-template-columns: 1fr;
+  }
+}
+.programs-wrapper .programs-list .program-item {
+  background-color: white;
+  position: relative;
+  display: flex;
+}
+.programs-wrapper .programs-list .program-item a {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+  padding: 40px 40px 25px;
+}
+@media screen and (max-width: 599px) {
+  .programs-wrapper .programs-list .program-item a {
+    padding: 20px;
+  }
+}
+.programs-wrapper .programs-list .program-item img.program-image {
+  height: 100px;
+  width: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.programs-wrapper .programs-list .program-item ul.program-features-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  row-gap: 8px;
+}
+.programs-wrapper .programs-list .program-item ul.program-features-list .program-feature-item {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.programs-wrapper .programs-list .program-item ul.program-features-list .program-feature-item .program-feature-item-icon {
+  width: 15px;
+  text-align: center;
+}
+.programs-wrapper .programs-list .program-item .program-extra-info {
+  background-color: #ff00e9;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 10px;
+  position: absolute;
+  top: 20px;
+  right: -15px;
+}
+@media screen and (max-width: 599px) {
+  .programs-wrapper .programs-list .program-item .program-extra-info {
+    right: -10px;
+  }
+}/*# sourceMappingURL=programs.css.map */

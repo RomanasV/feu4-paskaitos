@@ -1,0 +1,44 @@
+.podcasts {
+  margin-bottom: 60px;
+
+  .podcasts-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    .podcast {
+      background-color: white;
+
+      .podcast-controls {
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 2px solid black;
+
+        .podcast-image {
+          height: 70px;
+          width: 70px;
+          object-fit: cover;
+        }
+
+        .podcast-play {
+          height: 70px;
+          width: 70px;
+          background-color: white;
+          border: 0;
+        }
+      }
+
+      .podcast-info {
+        padding: 15px;
+
+        .podcast-title {
+          margin-top: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

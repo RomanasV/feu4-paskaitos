@@ -1,0 +1,456 @@
+:root {
+  --color-white: white;
+  --color-primary: #d14883;
+  --color-primary-active: #ac1e5b;
+  --color-secondary: #3929b2;
+  --color-secondary-active: #a4980b;
+  --color-danger: rgb(188, 0, 0);
+  --color-danger-active: rgb(121, 10, 10);
+  --spacing-30: 30px;
+  --font-family: 'Roboto', 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+h1 {
+  color: green;
+  background-color: lightblue;
+
+  /* border-style: dashed;
+  border-width: 5px;
+  border-color: black; */
+
+  /* plotis / stilius / spalva */
+  border: 5px dashed black;
+
+  /* PADDING - tarpelis elemento viduje */
+  /* padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px; */
+
+  /* top / right / bottom / left */
+  /* padding: 30px 30px 30px 30px; */
+
+  /* top - bottom / right - left */
+  /* padding: var(--spacing-30) var(--spacing-30); */
+
+  /* top - right - bottom - left */
+  padding: var(--spacing-30);
+
+  /* MARGIN - tarpelis už elemento ribų */
+  /* margin-top: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px; */
+
+  /* top / right / bottom / left */
+  /* margin: 30px 30px 30px 30px; */
+
+  margin: var(--spacing-30);
+}
+
+.post-list {
+  width: 50%;
+  min-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* PRADINIS KODAS */
+
+/* button {
+  cursor: pointer;
+
+  background-color: #d14883;
+  color: white;
+  
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #d14883;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+button:hover {
+  background-color: transparent;
+  color: #d14883;
+}
+
+button.secondary {
+  cursor: pointer;
+
+  background-color: #6dd148;
+  color: white;
+  
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #6dd148;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+button.secondary:hover {
+  background-color: transparent;
+  color: #6dd148;
+}
+
+button.outline {
+  cursor: pointer;
+
+  background-color: transparent;
+  color: #d14883;
+
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #d14883;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+button.outline:hover {
+  background-color: #d14883;
+  color: white;
+}
+
+a.button {
+  text-decoration: none;
+  display: inline-block;
+
+  background-color: #d14883;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #d14883;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+a.button:hover {
+  background-color: transparent;
+  color: #d14883;
+}
+
+a.button-secondary {
+  text-decoration: none;
+  display: inline-block;
+
+  background-color: #6dd148;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #6dd148;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+a.button-secondary:hover {
+  background-color: transparent;
+  color: #6dd148;
+}
+
+
+a.button-outline {
+  text-decoration: none;
+  display: inline-block;
+
+  background-color: transparent;
+  color: #d14883;
+
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #d14883;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+a.button-outline:hover {
+  background-color: #d14883;
+  color: white;
+} */
+
+
+
+
+/* REFACTOR - 1 */
+
+/* button, a.button {
+  background-color: #d14883;
+  color: white;
+  
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #d14883;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+a.button {
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover, a.button:hover {
+  background-color: transparent;
+  color: #d14883;
+}
+
+button.secondary, a.button-secondary {
+  background-color: #2934b2;
+  color: white;
+  
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #2934b2;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+button.secondary {
+  cursor: pointer;
+}
+
+a.button-secondary {
+  text-decoration: none;
+  display: inline-block;
+}
+
+button.secondary:hover, a.button-secondary:hover {
+  background-color: transparent;
+  color: #2934b2;
+}
+
+button.outline, a.button-outline {
+  background-color: transparent;
+  color: #d14883;
+
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #d14883;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+button.outline {
+  cursor: pointer;
+}
+
+a.button-outline {
+  text-decoration: none;
+  display: inline-block;
+}
+
+button.outline:hover, a.button-outline:hover {
+  background-color: #d14883;
+  color: white;
+} */
+
+
+/* REFACTOR - 2 */
+
+/* .button {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 1s;
+}
+
+.button-primary {
+  border-color: var(--color-primary);
+}
+
+.button-secondary {
+  border-color: var(--color-secondary);
+}
+
+.button-danger {
+  border-color: var(--color-danger);
+}
+
+.button-primary.button-fill,
+.button-primary.button-outline:hover {
+  background-color: var(--color-primary);
+}
+
+.button-primary.button-outline,
+.button-primary.button-fill:hover {
+  color: var(--color-primary);
+}
+
+.button-secondary.button-fill,
+.button-secondary.button-outline:hover {
+  background-color: var(--color-secondary);
+}
+
+.button-secondary.button-outline,
+.button-secondary.button-fill:hover {
+  color: var(--color-secondary);
+}
+
+.button-danger.button-fill,
+.button-danger.button-outline:hover {
+  background-color: var(--color-danger);
+}
+
+.button-danger.button-outline,
+.button-danger.button-fill:hover {
+  color: var(--color-danger);
+}
+
+.button-outline,
+.button-fill:hover {
+  background-color: transparent;
+}
+
+.button-fill,
+.button-outline:hover {
+  color: var(--color-white);
+} */
+
+
+/* REFACTOR - 3 */
+
+.button-primary {
+  --local-color: var(--color-primary);
+  --local-color-active: var(--color-primary-active);
+}
+
+.button-secondary {
+  --local-color: var(--color-secondary);
+  --local-color-active: var(--color-secondary-active);
+}
+
+.button-danger {
+  --local-color: var(--color-danger);
+  --local-color-active: var(--color-danger-active);
+}
+
+.button-success {
+  --local-color: rgb(11, 161, 11);
+  --local-color-active: rgb(8, 102, 8);
+}
+
+.button {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+
+  transition-property: background-color, color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+
+  border-color: var(--local-color);
+}
+
+.button-small {
+  font-size: 12px;
+}
+
+.button-large {
+  font-size: 24px;
+}
+
+.button-fill,
+.button-outline:hover {
+  background-color: var(--local-color);
+  color: var(--color-white);
+}
+
+.button-outline,
+.button-fill:hover  {
+  color: var(--local-color);
+  background-color: transparent;
+}
+
+.button:active {
+  border-color: var(--local-color-active);
+}
+
+.button-outline:active {
+  background-color: var(--local-color-active);
+}
+
+.button-fill:active {
+  color: var(--local-color-active);
+}
+
+.post-item {
+  padding: 15px;
+  /* transition: box-shadow 0.3s; */
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
+}
+
+.post-item:hover {
+  box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.post-item .post-title {
+  background-color: lightblue;
+  padding-right: 15px;
+  transition-property: color, padding-left, padding-right;
+  transition-duration: 1s;
+}
+
+.post-item:hover .post-title {
+  color: blue;
+  padding-left: 15px;
+  padding-right: 0;
+}
+
+/* .post-description:before {
+  content: 'labas';
+  padding-right: 10px;
+}
+
+.post-description:after {
+  content: ' <...>';
+} */

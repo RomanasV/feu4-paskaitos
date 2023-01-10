@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mano pirmasis puslapis</title>
+  <style>
+    body {
+      margin-bottom: 500px;
+    }
+
+    /* h1 {
+      color: rgb(0, 60, 128); 
+      font-size: 60px; 
+      background-color: bisque;
+    } */
+
+    h3 {
+      color: red;
+      background-color: burlywood;
+    }
+
+    h4 {
+      color: purple;
+      font-size: 30px;
+    }
+
+    #special-heading {
+      color: red;
+    }
+
+    .color-green {
+      color: green;
+    }
+
+    div h2 {
+      text-decoration: underline;
+    }
+
+  </style>
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 
+    Block tipo HTML elementai:
+    1. Prasideda naujoje eilutėje.
+    2. Užima pilną tėvinio elemento plotį.
+    -->
+
+  <!-- Headings - pavadinimai -->
+  <h1>Heading 1</h1>
+  <h2 style="color: blue; text-transform: uppercase;">Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+
+  <div id="headers">
+    <h1 style="color: green; font-size: 60px; background-color: bisque;">Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5 id="special-heading">Heading 5</h5>
+    <h6>Heading 6</h6>
+  </div>
+
+  <!-- Paragrafas -->
+  <p><span>L</span>orem ipsum <b><em style="background-color: aqua;">dolor sit amet</em></b> consectetur <em>adipisicing</em> elit. Cum dolorem velit ratione iste ipsam quae incidunt, amet eius error, neque sit deserunt <mark>dignissimos nemo</mark> earum impedit fuga sequi id cupiditate?</p>
+  <p>Lorem <strong>ipsum dolor sit amet</strong> consectetur, <span>adipisicing elit. Enim labore minus quae tempore</span> neque nihil inventore debitis odit <i><mark><strong><u>corrupti</u></strong></mark></i> impedit at eum, provident laudantium, <u>perferendis est odio</u> aliquam? <i>Eos, ipsam.</i></p>
+
+  <!-- 
+    1. Visi ol ir ul elementų vaikiniai elementai privalo būti li elementai.
+    2. li elementai yra naudojami TIK kaip ul arba ol elementų vaikiniai elementai.
+    -->
+
+  <!-- Ordered List - numeruotas sąrašas -->
+  <ol>
+    <li class="color-green">Pirmas</li>
+    <li>Antras</li>
+    <li>Trečias</li>
+  </ol>
+
+  <!-- Unordered list - nenumeruotas sąrašas -->
+  <ul>
+    <li class="color-green">Vienas</li>
+    <li>Du</li>
+    <li>Trys</li>
+  </ul>
+
+  <!-- INLINE tipo HTML elementai -->
+  <button>Click Me</button>
+  <a href="https://google.com" target="_blank">Nuoroda į išorinį puslapį</a>
+  <a href="contacts.html">Kontaktų puslapis</a>
+  <a href="#headers" class="color-green">Nuoroda tame pačiame <b>puslapyje</b></a>
+  <a href="mailto:info@abs.com">Susisiekti el paštu</a>
+  <a href="tel:+37045644646">Susisiekti telefonu</a>
+
+  <img src="https://www.rd.com/wp-content/uploads/2018/02/30_Adorable-Puppy-Pictures-that-Will-Make-You-Melt_124167640_YamabikaY.jpg" width="300" alt="White Puppy">
+
+  <img src="images/cat.jpg" alt="White Cat" height="300">
+
+  <input type="text" placeholder="Enter your name" maxlength="10">
+  <br>
+  <textarea cols="10" rows="3"></textarea>
+  <input type="button" value="Click">
+  <input type="checkbox" checked>
+  <input type="color">
+  <input type="date">
+  <input type="number" placeholder="Enter your age" value="10" min="5" max="50" step="1">
+</body>
+</html>

@@ -1,0 +1,38 @@
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.custom-container {
+  background-color: #f0f0f0;
+  /* height: 600px; */
+  width: 600px;
+  margin-bottom: 30px;
+}
+
+.height-200 {
+  height: 200px;
+}
+
+.height-400 {
+  height: 400px;
+}

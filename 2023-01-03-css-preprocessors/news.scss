@@ -1,0 +1,45 @@
+@import 'style/variables';
+@import 'style/responsive';
+@import 'style/base';
+@import 'style/events';
+@import 'style/news';
+@import 'style/podcasts';
+
+.content-wrapper {
+  display: flex;
+  column-gap: 30px;
+
+  @include sm {
+    flex-wrap: wrap;
+  }
+
+  .main-content {
+    width: 70%;
+
+    @include md {
+      width: 60%;
+    }
+
+    @include sm {
+      width: 100%;
+    }
+
+    .video {
+      .video-wrapper {
+        height: 500px;
+      }
+    }
+  }
+
+  .sidebar-content {
+    width: 30%;
+
+    @include sm {
+      width: 100%;
+    }
+
+    @include md {
+      width: 40%;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.container {
+  width: 70%;
+  margin: 30px auto;
+}
+
+.box {
+  border: 2px solid green;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  padding: 30px;
+}
+.wrapper.full-width {
+  width: 100%;
+}
+.wrapper.half-width {
+  width: 50%;
+}
+.wrapper.bg-dark {
+  background-color: rgb(37, 37, 37);
+}
+.wrapper h2 {
+  font-size: 40px;
+}
+.wrapper h2.color-red {
+  color: red;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+.wrapper h2.color-red:hover {
+  color: green;
+}
+.wrapper p:not(.empty)::before {
+  content: "- ";
+  color: red;
+}
+.wrapper p:first-of-type {
+  font-size: 1.5em;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.bg-dark {
+  background-color: rgb(221, 8, 8);
+  color: white;
+}/*# sourceMappingURL=style.css.map */

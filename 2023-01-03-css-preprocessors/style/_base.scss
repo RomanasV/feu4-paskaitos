@@ -1,0 +1,55 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+}
+
+.container {
+  max-width: 1230px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include xs {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+a.button-title {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  padding: 30px 40px;
+  border-radius: 8px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.pink-color {
+  color: #ff00e9;
+}
+
+.black-color {
+  color: black;
+}
+
+.page-title-wrapper {
+  margin-bottom: 30px;
+}

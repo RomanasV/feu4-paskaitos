@@ -1,0 +1,94 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.content-wrapper {
+  display: flex;
+  column-gap: 30px;
+}
+
+.shops-wrapper {
+  width: 50%;
+}
+
+.shops-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.shop {
+  background-color: white;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: calc((100% - 15px) / 2);
+}
+
+ul.shop-address-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.map-wrapper {
+  width: 50%;
+}
+
+iframe {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 999px) {
+  .shops-wrapper {
+    width: 60%;
+  }
+
+  .map-wrapper {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .shops-wrapper {
+    width: 50%;
+  }
+
+  .map-wrapper {
+    width: 50%;
+  }
+
+  .shop {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .content-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .shops-wrapper {
+    width: 100%;
+  }
+
+  .map-wrapper {
+    width: 100%;
+    order: -10;
+  }
+
+  .shop {
+    width: calc((100% - 15px) / 2);
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .shop {
+    width: 100%;
+  }
+}

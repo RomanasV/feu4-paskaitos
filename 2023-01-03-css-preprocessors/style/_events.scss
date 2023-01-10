@@ -1,0 +1,50 @@
+.events {
+  .events-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    margin-bottom: 30px;
+
+    .event {
+      background-color: black;
+      color: white;
+
+      a {
+        text-decoration: none;
+        color: white;
+
+        .event-info {
+          padding: 50px 20px 20px;
+          position: relative;
+
+          .date {
+            text-align: center;
+            width: 70px;
+            border-radius: 7px;
+            overflow: hidden;
+            position: absolute;
+            top: -40px;
+
+            .day {
+              background-color: white;
+              color: black;
+              font-size: 28px;
+              padding: 9px 5px;
+            }
+
+            .month {
+              background-color: #ff00e9;
+              text-transform: uppercase;
+              padding: 5px;
+            }
+          }
+        }
+
+        .event-title {
+          margin-top: 10px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
