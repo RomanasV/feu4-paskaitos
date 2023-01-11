@@ -1,3 +1,5 @@
+console.groupCollapsed('Variables, math operators');
+
 // Kintamojo sukūrimas:
 // 1. Iniciavimo žodelis (var, let, const)
 // 2. Kintamojo pavadinimas
@@ -6,10 +8,10 @@
 
 var vardas = "John"; // String (tekstas) tipo duomenys
 let pavarde = 'Doe'; // String (tekstas) tipo duomenys
-let miestas = `Kaunas`; // String (tekstas) tipo duomenys
-const asmensKodas = 378946541231; // Number (skaičius) tipo duomenys
+let miestas = `Vilnius`; // String (tekstas) tipo duomenys
+const asmensKodas = 45646465464; // Number (skaičius) tipo duomenys
 let yraStudentas = false; // Boolean (true/false) tipo duomenys
-let amzius = 25; // Number (skaičius) tipo duomenys
+let amzius = 28; // Number (skaičius) tipo duomenys
 
 console.log(vardas);
 console.log(pavarde);
@@ -31,6 +33,143 @@ console.log("Hello, " + vardas + " " + pavarde + ".");
 
 // John Doe (amžius 25 m.), asmens kodas: 37878787878, gyvenamasis miestas: Kaunas.
 
-console.log('John Doe (amžius 25 m.), asmens kodas: 37878787878, gyvenamasis miestas: Kaunas.');
+console.log(vardas + ' ' + pavarde + ' (amžius ' + amzius + ' m.), asmens kodas: ' + asmensKodas + ', gyvenamasis miestas: ' + miestas + '.');
 
-console.log("John Doe (amžius 25 m.), asmens kodas: 37878787878, gyvenamasis miestas: Kaunas.");
+amzius = 29;
+
+console.log(vardas + " " + pavarde + " (amžius " + amzius + " m.), asmens kodas: " + asmensKodas + ", gyvenamasis miestas: " + miestas + ".");
+
+// John said: "Good morning".
+console.log('John said: "Good morning"');
+console.log(`John said: "Good morning".`);
+
+// That's my car.
+console.log("That's my car.");
+console.log(`That's my car.`);
+
+// John said: "That's my car".
+console.log(`John said: "That's my car".`);
+console.log('John said: "That' + "'s my car" + '".');
+
+// John `said`: "That's my car".
+console.log('John `said`: "' + "That's" + ' my car.');
+
+console.log("John said: \"Good morning\".");
+console.log('That\'s my car.');
+console.log("John said: \"That's my car\".");
+console.log('John said: "That\'s my car".');
+console.log('John `said`: "That\'s my car".');
+console.log("John `said`: \"That's my car\".");
+console.log(`John \`said\`: "That's my car".`);
+
+// John `said`: "That's \my\ car".
+console.log('John `said`: "That\'s \\my\\ car".');
+
+// John \`said\`: "That's my car".
+console.log(`John \\\`said\\\`: "That's my car".`);
+
+
+// Matematiniai operatoriai
+let num1 = 22;
+let num2 = 10;
+let num3 = '10';
+
+console.log(num1 + num2);
+console.log(num1 - num2);
+console.log(num1 * num2);
+console.log(num1 / num2);
+console.log(num1 % num2);
+
+console.log(num1 + num2 * num2);
+console.log((num1 + num2) * num2);
+
+console.log(num1 + num3);
+console.log(num1 - num3);
+console.log(num1 * num3);
+console.log(num1 / num3);
+console.log(num1 % num3);
+
+console.log(num1 + num3 * num3);
+console.log((num1 + num3) * num3);
+
+console.log(num1 + num2 + num3);
+console.log(num1 + num2)
+console.log(32 + num3)
+
+console.log(num3 + num2 + num1)
+console.log(num3 + num2);
+console.log('1010' + num1);
+
+// SĄLYGOS
+
+// Dviguba lygybė (loosely Equal ==): tikrina tik reikšmes. Ir nekreipia dėmesio į duomenų tipą. 
+
+console.log(10 == 10); // true
+console.log('vienas' == 'vienas'); // true
+console.log('10' == '10'); // true
+console.log(10 == '10'); // true
+
+// Triguba lygybė (strictly equal ===): pirmiausiai tikrina duomenų tipą ir tik jeigu duomenų tipas sutampa, tada tikrina jų reikšmes.
+
+console.log(10 === 10); // true
+console.log('vienas' === 'vienas'); // true
+console.log('10' === '10'); // true
+console.log(10 === '10'); // false
+
+console.log(10 > 10); // false
+console.log(10 >= 10); // true
+console.log(10 < 10); // false
+console.log(10 <= 10); // true
+
+console.log(10 == 10); // true
+console.log(10 != 10); // false
+
+console.log(10 === 10); // true
+console.log(10 !== 10); // false
+
+console.log(10 != '10'); // false
+console.log(10 !== '10'); // true
+
+console.log(true);
+console.log(!true);
+console.log(!!true);
+
+console.groupEnd();
+
+// IF, ELSE IF, ELSE
+// let light = 'GrEeN';
+
+// console.log(light);
+
+// // OR (||) operator - AR operatorius
+
+// if (light === 'green' || light === 'GREEN' || light === 'Green') {
+//   console.log('Galima eiti!');
+// } else if (light === 'yellow') {
+//   console.log('Pasiruošk');
+// } else if (light === 'red') {
+//   console.log('STOP');
+// } else {
+//   console.log('Sugedo');
+// }
+
+
+
+let originalLight = 'RED';
+// let light = 'RED'.toLowerCase();
+let light = originalLight.toLowerCase();
+
+console.log(light);
+
+if (light === 'green') {
+  console.log('Galima eiti!');
+} else if (light === 'yellow') {
+  console.log('Pasiruošk');
+} else if (light === 'red') {
+  console.log('STOP');
+} else {
+  console.log('Sugedo');
+}
+
+
+let age = 15;
