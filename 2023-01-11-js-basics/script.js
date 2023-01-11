@@ -172,4 +172,28 @@ if (light === 'green') {
 }
 
 
-let age = 15;
+let age = 25;
+
+// if (age >= 18) {
+//   console.log('Pirkti galima');
+// } else {
+//   console.log('Pirkti negalima');
+// }
+
+// if (age > 17) {
+//   console.log('Pirkti galima');
+// } else {
+//   console.log('Pirkti negalima');
+// }
+
+// if (age < 18) {
+//   console.log('Pirkti negalima');
+// } else {
+//   console.log('Pirkti galima');
+// }
+
+if (age <= 17) {
+  console.log('Pirkti negalima');
+} else {
+  console.log('Pirkti galima');
+}
