@@ -233,5 +233,11 @@ let age = 25;
 if (age >= 120) {
   console.log('Amžius per didelis');
 } else if (age >= 18) {
+  console.log('Pirkti galima');
+} else if (age >= 16) {
+  console.log('Pirkti galima su tėvų sutikimu');
+} else if (age >= 0) {
   console.log('Pirkti negalima');
+} else {
+  console.log('Amžius per mažas');
 }
