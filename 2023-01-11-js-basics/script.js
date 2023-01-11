@@ -192,8 +192,36 @@ let age = 25;
 //   console.log('Pirkti galima');
 // }
 
-if (age <= 17) {
-  console.log('Pirkti negalima');
-} else {
+// if (age <= 17) {
+//   console.log('Pirkti negalima');
+// } else {
+//   console.log('Pirkti galima');
+// }
+
+
+// if (age >= 18) {
+//   console.log('Pirkti galima');
+// } else if (age >= 16) {
+//   console.log('Pirkti galima su tėvų sutikimu');
+// } else {
+//   console.log('Pirkti negalima');
+// }
+
+// if (age >= 18) {
+//   console.log('Pirkti galima');
+// } else if (age < 16) {
+//   console.log('Pirkti negalima');
+// } else {
+//   console.log('Pirkti galima su tėvų sutikimu');
+// }
+
+
+// AND (&&) operatorius - IR operatorius
+
+if (age >= 18) {
   console.log('Pirkti galima');
+} else if (age >= 16 && age < 18) {
+  console.log('Pirkti galima su tėvų sutikimu');
+} else {
+  console.log('Pirkti negalima');
 }
