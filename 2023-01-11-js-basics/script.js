@@ -272,3 +272,5 @@ if (passwordLength < 16) {
 // } else {
 //   console.log('Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.');
 // }
+
+// TEST
