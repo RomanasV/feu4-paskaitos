@@ -241,3 +241,34 @@ if (age >= 120) {
 } else {
   console.log('Amžius per mažas');
 }
+
+// 1. Jeigu slaptažodis yra trumpesnis už 16 simbolių, tai parašyti jog „Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo."
+// 2. Jeigu slaptažodis yra ilgesnis už 15 simbolių, tai:
+// 2.1. Patikrinti ar jis yra ilgesnis už 20 simbolių. Jeigu ilgesnis, tai parašyti: „Slaptažodis tinkamas".
+// 2.2. Jeigu jis nėra ilgesnis už 20 simbolių, tai parašyti jog: „Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo."
+
+let originalPassword = 'aasdasdsda';
+let passwordLength = originalPassword.replaceAll(' ', '').length;
+
+console.log(passwordLength);
+
+if (passwordLength < 16) {
+  console.log('Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.');
+} else {
+
+  if (passwordLength > 20) {
+    console.log('Slaptažodis tinkamas');
+  } else {
+    console.log('Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.');
+  }
+
+}
+
+
+// if (passwordLength > 20) {
+//   console.log('Slaptažodis tinkamas');
+// } else if (passwordLength > 15) {
+//   console.log('Slaptažodis yra tinkamas. Tačiau rekomenduojama jog jis būtų bent 21 simbolio ilgumo.');
+// } else {
+//   console.log('Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.');
+// }
