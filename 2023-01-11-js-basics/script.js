@@ -254,7 +254,9 @@ console.log(passwordLength);
 
 console.log(originalPassword.includes('#'));
 
-if (passwordLength < 16) {
+if (originalPassword.includes('#')) {
+  console.log('Slaptažodis privalo turėti # simbolį.');
+} else if (passwordLength < 16) {
   console.log('Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.');
 } else {
 
@@ -275,3 +277,69 @@ if (passwordLength < 16) {
 //   console.log('Slaptažodis yra per trumpas. Jis privalo būti bent 16 simbolių ilgumo.');
 // }
 
+
+
+// Pagal amžiu surašyti į kurią klasė eina mokinys:
+// 1. Iki 6 metų į mokyklą neina.
+// 2. 7-10 metų eina į pradinę klasę.
+// 3. 11-14 metų eina į pagrindinę.
+// 4. 15-18 metų eina į gimnaziją.
+// 5. 19+ mokyklą baigė.
+
+// let personAge = -5;
+
+// if (personAge >= 0 && personAge < 7) {
+//   console.log('Į mokyklą neina');
+// } else if (personAge >= 7 && personAge < 11) {
+//   console.log('Pradinukas');
+// } else if (personAge >= 11 && personAge < 15) {
+//   console.log('Pagrindinė');
+// } else if (personAge >= 15 && personAge < 19) {
+//   console.log('Gimnazija');
+// } else {
+//   console.log('Mokyklą baigė');
+// }
+
+// 6.1. Jeigu amžius yra mažiau nei 0, tai parašyti jog įvestas amžius yra per mažas.
+// 6.2. Jeigu amžius yra daugau nei 120, tai parašyti jog įvestas amžius yra per didelis.
+
+// 7.1. Jeigu amžius yra 6 metai, tai parašyti: "Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas."
+// 7.2. Jeigu amžius yra 10 metai, tai parašyti: "Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas."
+// 7.3. Jeigu amžius yra 14 metai, tai parašyti: "Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas."
+// 7.3. Jeigu amžius yra 18 metai, tai parašyti: "Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs."
+
+// 8. Jeigu įvestas ne amžius (t.y. ne skaičius), tai parašyti: "Netinkamai nurodytas amžius, amžius privalo būti skaičius."
+// 9. Panaudoti prompt funkciją amžiui įvesti.
+
+let personAge = prompt('Įvesti amžių');
+console.log(personAge);
+console.log(typeof personAge);
+console.log(isNaN(personAge));
+
+if (isNaN(personAge)) {
+  console.log('Netinkamai nurodytas amžius, amžius privalo būti skaičius.');
+} else if (personAge < 0) {
+  console.log('Įvestas skaičius yra per mažas');
+} else if (personAge < 6) {
+  console.log('Į mokyklą neina');
+} else if (personAge < 7) {
+  console.log('Į mokyklą tikriausiai neina, tačiau gali būti ir pirmokas.');
+} else if (personAge < 10) {
+  console.log('Pradinukas');
+} else if (personAge < 11) {
+  console.log('Tikriausiai mokosi pradinėje, tačiau gali būti ir penktokas.');
+} else if (personAge < 14) {
+  console.log('Pagrindinė');
+} else if (personAge < 15) {
+  console.log('Tikriausiai mokosi pagrindinėje, tačiau gali būti ir devintokas.');
+} else if (personAge < 18) {
+  console.log('Gimnazija');
+} else if (personAge < 19) {
+  console.log('Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.');
+} else if (personAge < 120) {
+  console.log('Mokyklą baigė');
+} else if (personAge >= 120) {
+  console.log('Įvestas per didelis skaičius');
+} else {
+  console.log('Error...');
+}
