@@ -356,10 +356,49 @@ let correctAnswer11 = 579;
 // Kaip vadinasi arčiausiai Žemės esanti Žvaigždė? sun
 let correctAnswer12 = 'sun';
 
-let playerAnswer11 = 222;
-let playerAnswer12 = 'earth';
+let playerAnswer11 = 579;
+let playerAnswer12 = 'sun';
 
-// 1. Patekai i kita lygi: abu atsakymai teisingi.
-// 2. Patekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.
-// 3. Patekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.
-// 4. Nepatekai i kita lygi: abu atsakymai buvo neteisingi.
+if (correctAnswer11 === playerAnswer11 && correctAnswer12 === playerAnswer12) {
+  console.log('Patekai i kita lygi: abu atsakymai teisingi.');
+} else if (correctAnswer11 === playerAnswer11) {
+  console.log('Patekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.');
+} else if (correctAnswer12 === playerAnswer12) {
+  console.log('Patekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.');
+} else {
+  console.log('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.');
+}
+
+// ANTRAS LYGIS:
+// 1. Norint patekti į kitą lygį, reikia atsakyti į abu klausimus iš dviejų:
+// 2. Jeigu atsakytas tik vienas klausimas, tai papildomai reikia parašyti kuris atsakymas buvo neteisingas.
+
+let correctAnswer21 = 1;
+let correctAnswer22 = 1;
+
+let playerAnswer21 = 1;
+let playerAnswer22 = 1;
+
+// if (correctAnswer21 === playerAnswer21 && correctAnswer22 === playerAnswer22) {
+//   console.log('Patekai i kita lygi: abu atsakymai teisingi.');
+// } else if (correctAnswer21 === playerAnswer21) {
+//   console.log('Į kitą lygį nepatekai, tačiau pirmas atsakymas buvo teisingas.');
+// } else if (correctAnswer22 === playerAnswer22) {
+//   console.log('Į kitą lygį nepatekai, tačiau antras atsakymas buvo teisingas.');
+// } else {
+//   console.log('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.');
+// }
+
+if (correctAnswer21 !== playerAnswer21 || correctAnswer22 !== playerAnswer22) {
+  
+  if (correctAnswer21 === playerAnswer21) {
+    console.log('Į kitą lygį nepatekai, tačiau pirmas atsakymas buvo teisingas.');
+  } else if (correctAnswer22 === playerAnswer22) {
+    console.log('Į kitą lygį nepatekai, tačiau antras atsakymas buvo teisingas.');
+  } else {
+    console.log('Nepatekai i kita lygi: abu atsakymai buvo neteisingi.');
+  }
+
+} else {
+  console.log('Patekai i kita lygi: abu atsakymai teisingi.');
+}
