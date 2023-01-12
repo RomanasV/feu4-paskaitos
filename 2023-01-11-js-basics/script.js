@@ -311,7 +311,8 @@ if (originalPassword.includes('#')) {
 // 8. Jeigu įvestas ne amžius (t.y. ne skaičius), tai parašyti: "Netinkamai nurodytas amžius, amžius privalo būti skaičius."
 // 9. Panaudoti prompt funkciją amžiui įvesti.
 
-let personAge = prompt('Įvesti amžių');
+// let personAge = prompt('Įvesti amžių');
+let personAge = '5';
 console.log(personAge);
 console.log(typeof personAge);
 console.log(isNaN(personAge));
@@ -343,3 +344,22 @@ if (isNaN(personAge)) {
 } else {
   console.log('Error...');
 }
+
+
+// UŽDUOTIS: sukurti galvosūkį su keletu klausimu
+// PIRMAS LYGIS: 
+// 1. Norint patekti į kitą lygį, reikia atsakyti bent į vieną klausimą iš dviejų:
+// 2. Jeigu atsakytas tik vienas klausimas, tai papildomai reikia parašyti kuris klausimas buvo neteisingas.
+
+// Kiek bus 123 + 456 = 579
+let correctAnswer11 = 579;
+// Kaip vadinasi arčiausiai Žemės esanti Žvaigždė? sun
+let correctAnswer12 = 'sun';
+
+let playerAnswer11 = 222;
+let playerAnswer12 = 'earth';
+
+// 1. Patekai i kita lygi: abu atsakymai teisingi.
+// 2. Patekai i kita lygi: pirmas atsakymas buvo neteisingas, o antras buvo teisingas.
+// 3. Patekai i kita lygi: antras atsakymas buvo neteisingas, o pirmas buvo teisingas.
+// 4. Nepatekai i kita lygi: abu atsakymai buvo neteisingi.
