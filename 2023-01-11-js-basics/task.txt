@@ -34,3 +34,8 @@ PIRMAS LYGIS:
 ANTRAS LYGIS:
 1. Norint patekti į kitą lygį, reikia atsakyti į abu klausimus iš dviejų:
 2. Jeigu atsakytas tik vienas klausimas, tai papildomai reikia parašyti kuris atsakymas buvo neteisingas.
+
+TREČIAS LYGIS: 
+1. Trys klausimai ir į kitą lygį pereinama, jeigu atsakomi bent du klausimai.
+2. Jeigu atsakomi du klausimai, turi būti parodoma, kuris klausimas buvo neatsakytas.
+3. Jeigu atsakomi mažiau nei du klausimai, tai turi parodyti, kuris klausimas buvo atsakytas.

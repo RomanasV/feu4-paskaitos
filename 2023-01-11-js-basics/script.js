@@ -402,3 +402,8 @@ if (correctAnswer21 !== playerAnswer21 || correctAnswer22 !== playerAnswer22) {
 } else {
   console.log('Patekai i kita lygi: abu atsakymai teisingi.');
 }
+
+// TREČIAS LYGIS: 
+// 1. Trys klausimai ir į kitą lygį pereinama, jeigu atsakomi bent du klausimai.
+// 2. Jeigu atsakomi du klausimai, turi būti parodoma, kuris klausimas buvo neatsakytas.
+// 3. Jeigu atsakomi mažiau nei du klausimai, tai turi parodyti, kuris klausimas buvo atsakytas.
