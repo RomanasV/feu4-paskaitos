@@ -469,6 +469,77 @@ if (answer31 && answer32 && answer33) {
 console.log(output);
 
 
+let num = 5;
+console.log(num);
+
+num = 6;
+console.log(num);
+
+console.log(num + 1);
+console.log(num);
+
+// Sudėtis
+// Skaičiai
+num = num + 1;
+console.log(num);
+
+num += 1;
+console.log(num);
+
+num++;
+console.log(num);
+
+num = num + 2;
+console.log(num);
+
+num += 2;
+console.log(num);
+
+num += 5;
+console.log(num);
+
+// Atimtis
+console.log(num - 5);
+console.log(num);
+
+num = num - 5;
+console.log(num);
+
+num -= 2;
+console.log(num);
+
+num -= 1;
+console.log(num);
+
+num--;
+console.log(num);
+
+// Daugyba
+num = num * 2;
+console.log(num);
+
+num *= 2;
+console.log(num);
+
+// Dalyba
+num = num / 2;
+console.log(num);
+
+num /= 2;
+console.log(num);
+
+// Tekstas (string)
+let str = 'Labas';
+console.log(str);
+
+str = str + ' vakaras';
+console.log(str);
+
+str += '.';
+console.log(str);
+
+
+
 // Pasisveikinimas
 // 1. Jeigu vartotojas prisijungęs (true/false), tai prie pasisveikinimo reikia prirašyti jo vardą, pvz. „Good Morning, Tom.".
 // 2. Jeigu vartotojas nėra prisijungęs, tai išvesti tik tekstą „Good Morning...".
@@ -478,7 +549,142 @@ console.log(output);
 // 3.3. 19-4 val. „Good Evening"
 // 4. Jeigu vartotojas yra ir prisijungęs, ir šiandien yra jo gimtadienis, tai prie pasisveikinimo dar turi būti parašytas ir pasveikinimas, pvz.: „Good Morning, Tom and have a great birthday!"
 
+// let isLoggedIn = false;
+// let personName = 'John';
+// let time = 20;
+// let isBirthday = false;
+
+// let greetingOutput = '';
+
+// if (time >= 5 && time <= 12) {
+
+//   if (isLoggedIn && isBirthday) {
+//     greetingOutput = 'Good Morning, ' + personName + ' and have a great birthday!';
+//   } else if (isLoggedIn) {
+//     greetingOutput = 'Good Morning, ' + personName;
+//   } else {
+//     greetingOutput = 'Good Morning';
+//   }
+
+// } else if (time >= 13 && time <= 18) {
+
+//   if (isLoggedIn && isBirthday) {
+//     greetingOutput = 'Good Afternoon, ' + personName + ' and have a great birthday!';
+//   } else if (isLoggedIn) {
+//     greetingOutput = 'Good Afternoon, ' + personName;
+//   } else {
+//     greetingOutput = 'Good Afternoon';
+//   }
+
+// } else if ((time >= 19 && time <= 23) || (time >= 0 && time <= 4)) {
+
+//   if (isLoggedIn && isBirthday) {
+//     greetingOutput = 'Good Evening, ' + personName + ' and have a great birthday!';
+//   } else if (isLoggedIn) {
+//     greetingOutput = 'Good Evening, ' + personName;
+//   } else {
+//     greetingOutput = 'Good Evening';
+//   }
+
+// } else {
+  
+//   if (isLoggedIn && isBirthday) {
+//     greetingOutput = 'Hello, ' + personName + ' and have a great birthday!';
+//   } else if (isLoggedIn) {
+//     greetingOutput = 'Hello, ' + personName;
+//   } else {
+//     greetingOutput = 'Hello';
+//   }
+
+// }
+
+// console.log(greetingOutput);
+
+// let isLoggedIn = true;
+// let personName = 'John';
+// let time = 20;
+// let isBirthday = true;
+
+// let greetingOutput = '';
+
+// if (time >= 5 && time <= 12) {
+//   greetingOutput = 'Good Morning';
+// } else if (time >= 13 && time <= 18) {
+//   greetingOutput = 'Good Afternoon';
+// } else if ((time >= 19 && time <= 23) || (time >= 0 && time <= 4)) {
+//   greetingOutput = 'Good Evening';
+// } else {
+//   greetingOutput = 'Hello';
+// }
+
+// if (isLoggedIn) {
+//   // greetingOutput = greetingOutput + ', ' + personName;
+//   greetingOutput += ', ' + personName;
+// }
+
+// if (isBirthday) {
+//   greetingOutput += ' and have a great birthday!';
+// }
+
+// console.log(greetingOutput);
+
+
+// let isLoggedIn = true;
+// let personName = 'John';
+// let time = 20;
+// let isBirthday = true;
+
+// let timeText = '';
+// let nameText = '';
+// let birthdayText = '';
+
+// let greetingOutput = '';
+
+// if (time >= 5 && time <= 12) {
+//   timeText = 'Good Morning';
+// } else if (time >= 13 && time <= 18) {
+//   timeText = 'Good Afternoon';
+// } else if ((time >= 19 && time <= 23) || (time >= 0 && time <= 4)) {
+//   timeText = 'Good Evening';
+// } else {
+//   timeText = 'Hello';
+// }
+
+// if (isLoggedIn && personName) {
+//   nameText = ', ' + personName;
+// }
+
+// if (isBirthday) {
+//   birthdayText = ' and have a great birthday!!!';
+// }
+
+// greetingOutput = timeText + nameText + birthdayText;
+
+// console.log(greetingOutput);
+
+
+
 let isLoggedIn = true;
 let personName = 'John';
-let time = 15;
-let isBirthday = false;
+let time = 20;
+let isBirthday = true;
+
+let timeText = '';
+let nameText = (isLoggedIn && personName) ? ', ' + personName : '';
+let birthdayText = isBirthday ? ' and have a great birthday!!!' : '';
+
+let greetingOutput = '';
+
+if (time >= 5 && time <= 12) {
+  timeText = 'Good Morning';
+} else if (time >= 13 && time <= 18) {
+  timeText = 'Good Afternoon';
+} else if ((time >= 19 && time <= 23) || (time >= 0 && time <= 4)) {
+  timeText = 'Good Evening';
+} else {
+  timeText = 'Hello';
+}
+
+greetingOutput = timeText + nameText + birthdayText;
+
+console.log(greetingOutput);
