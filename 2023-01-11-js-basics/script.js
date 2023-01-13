@@ -39,6 +39,8 @@ amzius = 29;
 
 console.log(vardas + " " + pavarde + " (amžius " + amzius + " m.), asmens kodas: " + asmensKodas + ", gyvenamasis miestas: " + miestas + ".");
 
+console.log(`${vardas} ${pavarde} (amžius ${amzius} m.), asmens kodas: ${asmensKodas}, gyvenamasis miestas: ${miestas}.`);
+
 // John said: "Good morning".
 console.log('John said: "Good morning"');
 console.log(`John said: "Good morning".`);
@@ -689,9 +691,68 @@ greetingOutput = timeText + nameText + birthdayText;
 
 console.log(greetingOutput);
 
+// Sukurti aprašymą apie asmenį pagal pateiktus kintamuosius ir punktus:
+// 1. Jeigu asmuo yra vyras, tai naudoti žodžius he/his, jeigu moteris, tai naudoti žodžius she/her.
+// 2. Jeigu nenurodyta asmens pavardė arba vardas, tai tekste turėtų būti naudojami tik nurodyti duomenys. Jeigu nenurodytas nei vardas, nei pavardė, tada tekste reikėtų naudoti žodį person.
+// 3. Jeigu asmuo yra pilnametis, tai tekste turi būti įvardintas jo darbas (personJob kintamasis).
+// 3.1. Jeigu personJob kintamasis neturi reikšmės, tai tekste reikėtų įvardinti jog asmuo yra bedarbis.
+// 3.2. Jeigu asmuo yra nepilnametis, tai tekste panaudoti personJob kintamąjį nurodant kuo asmuo norėtų būti užaugęs.
+// 3.3. Jeigu asmuo yra nepilnametis ir kintamasis personJob neturi reikšmės, tai tekste įvardinti jog asmuo dar neturi planų kuo bus užaugęs.
 
-let personName = 'John';
-let personSurname = 'Doe';
-let personAge = 20;
-let personJob = 'Designer';
-let personGender = 'male';
+// Pavyzdiniai tekstai:
+// „John Doe is 20 years old. He is a Designer."
+// „John Doe is 10 years old. He is still in school and his dream is to become a Designer."
+
+let pName = 'John';
+let pSurname = 'Doe';
+let pAge = 20;
+let pJob = 'Developer';
+let pGender = 'male';
+
+let genderText1;
+let genderText2;
+
+if (pGender === 'male') {
+  genderText1 = 'he';
+  genderText2 = 'his';
+} else if (pGender === 'female') {
+  genderText1 = 'she';
+  genderText2 = 'her';
+} else {
+  genderText1 = 'person';
+  genderText2 = 'person\'s';
+}
+
+let adressText = '';
+
+if (pName && pSurname) {
+  adressText = `${pName} ${pSurname}`;
+} else if (pName) {
+  adressText = pName;
+} else if (pSurname) {
+  adressText = pSurname;
+} else {
+  adressText = 'person';
+}
+
+
+let personOutput = `${adressText} is ${pAge} years old.`;
+
+if (pAge < 18) {
+  personOutput += ` ${genderText1} is still in school and`;
+
+  if (pJob) {
+    personOutput += ` ${genderText2} dream is to become a ${pJob}.`;
+  } else {
+    personOutput += ` ${genderText1} does not have a dream.`;
+  }
+
+} else {
+  if (pJob) {
+    personOutput += ` ${genderText2} job is a ${pJob}.`;
+  } else {
+    personOutput += ` ${genderText1} is unemployed.`;
+  }
+}
+
+console.log(personOutput);
