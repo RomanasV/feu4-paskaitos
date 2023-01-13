@@ -688,3 +688,10 @@ if (time >= 5 && time <= 12) {
 greetingOutput = timeText + nameText + birthdayText;
 
 console.log(greetingOutput);
+
+
+let personName = 'John';
+let personSurname = 'Doe';
+let personAge = 20;
+let personJob = 'Designer';
+let personGender = 'male';
