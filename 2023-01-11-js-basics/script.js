@@ -407,3 +407,78 @@ if (correctAnswer21 !== playerAnswer21 || correctAnswer22 !== playerAnswer22) {
 // 1. Trys klausimai ir į kitą lygį pereinama, jeigu atsakomi bent du klausimai.
 // 2. Jeigu atsakomi du klausimai, turi būti parodoma, kuris klausimas buvo neatsakytas.
 // 3. Jeigu atsakomi mažiau nei du klausimai, tai turi parodyti, kuris klausimas buvo atsakytas.
+
+// let correctAnswer31 = 1;
+// let correctAnswer32 = 1;
+// let correctAnswer33 = 1;
+
+// let playerAnswer31 = 1;
+// let playerAnswer32 = 1;
+// let playerAnswer33 = 1;
+
+// if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   console.log('Visi teisingi: patekai');
+// } else if (correctAnswer31 !== playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   console.log('Patekai: pirmas neteisingas');
+// } else if (correctAnswer31 === playerAnswer31 && correctAnswer32 !== playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   console.log('Patekai: antras neteisingas');
+// } else if (correctAnswer31 === playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 !== playerAnswer33) {
+//   console.log('Patekai: trecias neteisingas');
+// } else if (correctAnswer31 === playerAnswer31 && correctAnswer32 !== playerAnswer32 && correctAnswer33 !== playerAnswer33) {
+//   console.log('Nepatekai: pirmas teisingas');
+// } else if (correctAnswer31 !== playerAnswer31 && correctAnswer32 === playerAnswer32 && correctAnswer33 !== playerAnswer33) {
+//   console.log('Nepatekai: antras teisingas');
+// } else if (correctAnswer31 !== playerAnswer31 && correctAnswer32 !== playerAnswer32 && correctAnswer33 === playerAnswer33) {
+//   console.log('Nepatekai: trecias teisingas');
+// } else {
+//   console.log('Nepatekai: visi neteisingi :(');
+// }
+
+let correctAnswer31 = 1;
+let correctAnswer32 = 1;
+let correctAnswer33 = 1;
+
+let playerAnswer31 = 1;
+let playerAnswer32 = 2;
+let playerAnswer33 = 2;
+
+let answer31 = correctAnswer31 === playerAnswer31;
+let answer32 = correctAnswer32 === playerAnswer32;
+let answer33 = correctAnswer33 === playerAnswer33;
+
+let output = '';
+
+if (answer31 && answer32 && answer33) {
+  output = 'Visi teisingi: patekai';
+} else if (answer32 && answer33) {
+  output = 'Patekai: pirmas neteisingas';
+} else if (answer31 && answer33) {
+  output = 'Patekai: antras neteisingas';
+} else if (answer31 && answer32) {
+  output = 'Patekai: trecias neteisingas';
+} else if (answer31) {
+  output = 'Nepatekai: pirmas teisingas';
+} else if (answer32) {
+  output = 'Nepatekai: antras teisingas';
+} else if (answer33) {
+  output = 'Nepatekai: trecias teisingas';
+} else {
+  output = 'Nepatekai: visi neteisingi :(';
+}
+
+console.log(output);
+
+
+// Pasisveikinimas
+// 1. Jeigu vartotojas prisijungęs (true/false), tai prie pasisveikinimo reikia prirašyti jo vardą, pvz. „Good Morning, Tom.".
+// 2. Jeigu vartotojas nėra prisijungęs, tai išvesti tik tekstą „Good Morning...".
+// 3. Priklausomai nuo paros laiko, pasisveikinimas turėtų būti skirtingas:
+// 3.1. 5-12 val. „Good Morning"
+// 3.2. 13-18 val. „Good Afternoon"
+// 3.3. 19-4 val. „Good Evening"
+// 4. Jeigu vartotojas yra ir prisijungęs, ir šiandien yra jo gimtadienis, tai prie pasisveikinimo dar turi būti parašytas ir pasveikinimas, pvz.: „Good Morning, Tom and have a great birthday!"
+
+let isLoggedIn = true;
+let personName = 'John';
+let time = 15;
+let isBirthday = false;
