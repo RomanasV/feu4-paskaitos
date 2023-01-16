@@ -77,3 +77,43 @@ perimeter(10, 55, 'km');
 perimeter(10, 46, 'cm');
 perimeter(10);
 perimeter();
+
+// Užduotis 1:
+// 1. Sukurti funkciją, kuri skaičiuotų stačiakampio plotą.
+// 2. Funkcija turi priimti du argumentus (ilgį ir plotį).
+// 3. Funkcija turi grąžinti tekstą: „Stačiakampio plotas yra 10 kv. vnt."
+// 4. Į konsolę išvesti šios funkcijos rezultatą.
+
+function rectArea(rectWidth = 0, rectHeight = 0) {
+  let answer = rectWidth * rectHeight;
+  let output = `Stačiakampio plotas yra ${answer} kv. vnt.`;
+
+  console.log(output);
+}
+
+// rectArea(15);
+// rectArea(50, 159);
+
+// Užduotis 2:
+// Atlikti tą patį kaip ir pirmoje užduotyje, tačiau apskaičiuoti stačiojo trikampio plotą.
+
+function triangleArea(triangleWidth = 0, triangleHeight = 0) {
+  let answer = triangleWidth * triangleHeight / 2;
+  let output = `Stačiojo trikampio plotas yra ${answer} kv. vnt.`;
+
+  console.log(output);
+}
+
+// triangleArea(50, 20);
+// triangleArea(15);
+
+// Užduotis 3:
+// Sukurti naują funkciją, kuri apjungtų šias dvi užduotis ir išvestų abu rezultatus.
+
+function allAreas(width = 0, height = 0) {
+  rectArea(width, height);
+  triangleArea(width, height);
+}
+
+allAreas(100, 100);
+// allAreas(45);
