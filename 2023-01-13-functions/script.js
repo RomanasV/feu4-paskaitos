@@ -116,4 +116,3 @@ function allAreas(width = 0, height = 0) {
 }
 
 allAreas(100, 100);
-// allAreas(45);

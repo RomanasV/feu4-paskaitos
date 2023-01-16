@@ -9,3 +9,12 @@ Atlikti tą patį kaip ir pirmoje užduotyje, tačiau apskaičiuoti stačiojo tr
 
 Užduotis 3:
 Sukurti naują funkciją, kuri apjungtų šias dvi užduotis ir išvestų abu rezultatus.
+
+Sukurti:
+1. Funkciją, kuri paverčia žmogaus metus į šuns metus:
+1.1. Funkcija priima vieną parametrą: žmogaus amžius.
+1.2. Funkcija grąžina atsakymą tokiu formatu: 5 žmogaus metai yra 35 šuns metai.
+
+2. Funkciją, kuri skaičiuoja per kiek laiko reikia perskaityti knygą, kad pasiekti užsibrėžtą knygų per metaus skaičių:
+2.1. Funkcija priima vieną parametrą: norimų per metus perskaityti knygų skaičių.
+2.1. Funkcija grąžina atsakymą tokiu formatu: norint perskaityti 10 knygų per metus, vienai knygai perskaityti turėsi 36 dienas.
