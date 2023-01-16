@@ -730,6 +730,7 @@ function gameLevel2(pAnswer1, pAnswer2) {
   
   } else {
     console.log('Patekai i kita lygi: abu atsakymai teisingi.');
+    gameLevel3();
   }
 }
 
@@ -772,9 +773,9 @@ function gameLevel3(pAnswer1, pAnswer2, pAnswer3) {
   let correctAnswer32 = 1;
   let correctAnswer33 = 1;
 
-  let playerAnswer31 = pAnswer1;
-  let playerAnswer32 = pAnswer2;
-  let playerAnswer33 = pAnswer3;
+  let playerAnswer31 = prompt('Trečias lygis (1 klausimas)');
+  let playerAnswer32 = prompt('Trečias lygis (2 klausimas)');
+  let playerAnswer33 = prompt('Trečias lygis (3 klausimas)');
 
   let answer31 = correctAnswer31 === playerAnswer31;
   let answer32 = correctAnswer32 === playerAnswer32;
