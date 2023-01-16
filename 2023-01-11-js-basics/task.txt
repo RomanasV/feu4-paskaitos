@@ -39,3 +39,26 @@ TREČIAS LYGIS:
 1. Trys klausimai ir į kitą lygį pereinama, jeigu atsakomi bent du klausimai.
 2. Jeigu atsakomi du klausimai, turi būti parodoma, kuris klausimas buvo neatsakytas.
 3. Jeigu atsakomi mažiau nei du klausimai, tai turi parodyti, kuris klausimas buvo atsakytas.
+
+Pasisveikinimas
+1. Jeigu vartotojas prisijungęs (true/false), tai prie pasisveikinimo reikia prirašyti jo vardą, pvz. „Good Morning, Tom.".
+2. Jeigu vartotojas nėra prisijungęs, tai išvesti tik tekstą „Good Morning...".
+3. Priklausomai nuo paros laiko, pasisveikinimas turėtų būti skirtingas:
+3.1. 5-12 val. „Good Morning"
+3.2. 13-18 val. „Good Afternoon"
+3.3. 19-4 val. „Good Evening"
+4. Jeigu vartotojas yra ir prisijungęs, ir šiandien yra jo gimtadienis, tai prie pasisveikinimo dar turi būti parašytas ir pasveikinimas, pvz.: „Good Morning, Tom and have a great birthday!"
+
+
+APRAŠYMAS:
+Sukurti aprašymą apie asmenį pagal pateiktus kintamuosius ir punktus:
+1. Jeigu asmuo yra vyras, tai naudoti žodžius he/his, jeigu moteris, tai naudoti žodžius she/her.
+2. Jeigu nenurodyta asmens pavardė arba vardas, tai tekste turėtų būti naudojami tik nurodyti duomenys. Jeigu nenurodytas nei vardas, nei pavardė, tada tekste reikėtų naudoti žodį person.
+3. Jeigu asmuo yra pilnametis, tai tekste turi būti įvardintas jo darbas (personJob kintamasis).
+3.1. Jeigu personJob kintamasis neturi reikšmės, tai tekste reikėtų įvardinti jog asmuo yra bedarbis.
+3.2. Jeigu asmuo yra nepilnametis, tai tekste panaudoti personJob kintamąjį nurodant kuo asmuo norėtų būti užaugęs.
+3.3. Jeigu asmuo yra nepilnametis ir kintamasis personJob neturi reikšmės, tai tekste įvardinti jog asmuo dar neturi planų kuo bus užaugęs.
+
+Pavyzdiniai tekstai:
+„John Doe is 20 years old. He is a Designer."
+„John Doe is 10 years old. He is still in school and his dream is to become a Designer."
