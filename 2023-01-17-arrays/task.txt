@@ -1,0 +1,7 @@
+Sukurti funkcijas, kurios paleidžia ciklą su skaičiais nuo 1 iki 100. Šie ciklai:
+1. Padaugina skaičių iš 2.
+2. Padaugina skaičių iš 5.
+3. Prideda prie skaičiaus 5.
+4. Atima iš skaičiaus 2.
+5. Pakelia skaičių kvadratu.
+6. Pakelia skaičių kūbu.

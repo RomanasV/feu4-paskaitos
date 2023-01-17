@@ -49,3 +49,12 @@ for (kintamasis; sąlyga; kintamojo pakeitimas) {
 // for (let i = 0; i < numsArray.length; i++) {
 //   console.log(i + '. ' + numsArray[i]);
 // }
+
+
+function task1() {
+  for (let i = 1; i <= 100; i++) {
+    console.log(i);
+  }
+}
+
+// task1();
