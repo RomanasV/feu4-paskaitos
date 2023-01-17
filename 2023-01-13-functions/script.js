@@ -32,14 +32,17 @@ console.log('Perimetras: ' + (10 + 120) * 2 + ' cm.');
 // 4. Riestiniai skliaustai {} - funkcijos apibrėžimas.
 
 function hello() {
-  console.log('Hello, John');
+  return 'Hello, Steve';
 }
 
 // Funkcijos iškvietimas
 // 1. Funkcijos pavadinimą
 // 2. Paprasti skliaustai ()
 
-hello();
+console.log(hello());
+document.querySelector('h1').textContent = hello();
+let helloText = hello();
+console.log(helloText + '!!!');
 
 // Funkcijos su argumentais (funkcija, kuri turi besikeičiančias dalis)
 function helloWithName(personName, personSurname = '') {
@@ -51,32 +54,33 @@ function helloWithName(personName, personSurname = '') {
   //   console.log(`Hello, ${personName}`);
   // }
 
-  console.log(`Hello, ${personName} ${personSurname}`);
+  // console.log(`Hello, ${personName} ${personSurname}`);
+
+  return `Hello, ${personName} ${personSurname}`;
 }
 
-helloWithName('John', 'Doe');
-helloWithName('Steve');
-helloWithName('Peter');
-helloWithName('Mike');
-
+console.log(helloWithName('John', 'Doe'));
+console.log(helloWithName('Steve'));
+console.log(helloWithName('Peter'));
+console.log(helloWithName('Mike'));
 
 function perimeter(width = 0, length = 0, units = 'cm') {
   if (width && length) {
     let answer = (width + length) * 2;
     let output = `Perimetras: ${answer} ${units}.`;
-    console.log(output);
+    return output;
   } else {
-    console.log('Įvesti neteisingi duomenys');
+    return 'Įvesti neteisingi duomenys';
   }
 }
 
-perimeter(10, 20);
-perimeter(10, 20, 'm');
-perimeter(100, 20, 'dm');
-perimeter(10, 55, 'km');
-perimeter(10, 46, 'cm');
-perimeter(10);
-perimeter();
+console.log(perimeter(10, 20));
+console.log(perimeter(10, 20, 'm'));
+console.log(perimeter(100, 20, 'dm'));
+console.log(perimeter(10, 55, 'km'));
+console.log(perimeter(10, 46, 'cm'));
+console.log(perimeter(10));
+console.log(perimeter());
 
 // Užduotis 1:
 // 1. Sukurti funkciją, kuri skaičiuotų stačiakampio plotą.
@@ -111,6 +115,7 @@ function triangleArea(triangleWidth = 0, triangleHeight = 0) {
 // Sukurti naują funkciją, kuri apjungtų šias dvi užduotis ir išvestų abu rezultatus.
 
 function allAreas(width = 0, height = 0) {
+  console.log('CIA')
   rectArea(width, height);
   triangleArea(width, height);
 }
