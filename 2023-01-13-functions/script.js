@@ -92,11 +92,11 @@ function rectArea(rectWidth = 0, rectHeight = 0) {
   let answer = rectWidth * rectHeight;
   let output = `Stačiakampio plotas yra ${answer} kv. vnt.`;
 
-  console.log(output);
+  return output;
 }
 
-// rectArea(15);
-// rectArea(50, 159);
+console.log(rectArea(15));
+console.log(rectArea(50, 159));
 
 // Užduotis 2:
 // Atlikti tą patį kaip ir pirmoje užduotyje, tačiau apskaičiuoti stačiojo trikampio plotą.
@@ -105,22 +105,25 @@ function triangleArea(triangleWidth = 0, triangleHeight = 0) {
   let answer = triangleWidth * triangleHeight / 2;
   let output = `Stačiojo trikampio plotas yra ${answer} kv. vnt.`;
 
-  console.log(output);
+  return output;
 }
 
-// triangleArea(50, 20);
-// triangleArea(15);
+console.log(triangleArea(50, 20));
+console.log(triangleArea(15));
 
 // Užduotis 3:
 // Sukurti naują funkciją, kuri apjungtų šias dvi užduotis ir išvestų abu rezultatus.
 
 function allAreas(width = 0, height = 0) {
-  console.log('CIA')
-  rectArea(width, height);
-  triangleArea(width, height);
+  let rectText = rectArea(width, height);
+  let triangleText = triangleArea(width, height);
+
+  return rectText + ' ' + triangleText;
 }
 
-allAreas(100, 100);
+console.log('------');
+console.log(allAreas(100, 100));
+console.log(allAreas(10, 55));
 
 // 1. Funkciją, kuri paverčia žmogaus metus į šuns metus:
 // 1.1. Funkcija priima vieną parametrą: žmogaus amžius.
