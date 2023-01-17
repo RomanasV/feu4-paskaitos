@@ -116,3 +116,199 @@ function allAreas(width = 0, height = 0) {
 }
 
 allAreas(100, 100);
+
+// 1. Funkciją, kuri paverčia žmogaus metus į šuns metus:
+// 1.1. Funkcija priima vieną parametrą: žmogaus amžius.
+// 1.2. Funkcija grąžina atsakymą tokiu formatu: 5 žmogaus metai yra 35 šuns metai.
+
+function humanToDogYears(humanAge) {
+  let dogsAge = humanAge * 7;
+  let output = `${humanAge} žmogaus metai yra ${dogsAge} šuns metai.`
+
+  console.log(output);
+}
+
+humanToDogYears(5);
+
+// 2. Funkciją, kuri skaičiuoja per kiek laiko reikia perskaityti knygą, kad pasiekti užsibrėžtą knygų per metaus skaičių:
+// 2.1. Funkcija priima vieną parametrą: norimų per metus perskaityti knygų skaičių.
+// 2.1. Funkcija grąžina atsakymą tokiu formatu: norint perskaityti 10 knygų per metus, vienai knygai perskaityti turėsi 36 dienas.
+
+function bookDays(booksPerYear) {
+  let daysPerBook = Math.round(365 / booksPerYear)
+  let output = `Norint perskaityti ${booksPerYear} knygų per metus, vienai knygai perskaityti turėsi ${daysPerBook} dienas.`;
+  
+  console.log(output);
+}
+
+bookDays(5);
+
+// 3. Funkciją, kuri konvertuoja dienas į savaites:
+// 3.1. Funkcija priima vieną argumentą: dienų skaičių.
+// 3.2. Funkcija grąžina atsakymą tokiu formatu: 35 dienos yra 5 savaitės.
+
+function daysToWeeks(days) {
+  let weeks = (days / 7).toFixed(1);
+  let output = `${days} dienos yra ${weeks} savaitės.`;
+  
+  console.log(output);
+}
+
+daysToWeeks(100);
+
+// 4. Funkciją, kuri konvertuoja dienas į metus:
+// 4.1. Funkcija priima vieną argumentą: dienų skaičių.
+// 4.1. Funkcija grąžina atsakymą tokiu formatu (atsakymą apvalinant): 365 dienos yra 1 metai.
+
+function daysToYears(days) {
+  let years = (days / 365).toFixed(2);
+  let output = `${days} dienos yra ${years} metai.`;
+  
+  console.log(output);
+}
+
+daysToYears(501);
+
+// 5. Funkciją, kuri konvertuoja metus į valandas:
+// 5.1. Funkcija priima vieną argumentą: metų skaičių.
+// 5.2. Funkcija grąžina atsakymą tokiu formatu: 5 metai turi 43800 valandas.
+
+function yearsToHours(years) {
+  let hours = years * 365 * 24;
+  let output = `${years} metai turi ${hours} valandas.`;
+
+  console.log(output);
+}
+
+yearsToHours(5);
+
+// 6. Funkciją, kuri konvertuoja mėnesius į valandas:
+// 6.1. Funkcija priima vieną argumentą: mėnesių skaičių.
+// 6.2. Funkcija grąžina atsakymą tokiu formatu: 3 mėnesiai turi 2190 valandas.
+
+function monthsToHours(months) {
+  let hours = months * 30 * 24;
+  let output = `${months} mėnesiai turi ${hours} valandas.`;
+
+  console.log(output);
+}
+
+monthsToHours(3);
+
+// 7. Funkciją, kuri konvertuoja mėnesius į minutes:
+// 7.1. Funkcija priima vieną argumentą: mėnesių skaičių.
+// 7.2. Funkcija grąžina atsakymą tokiu formatu: 2 mėnesiai turi 87600 minutes.
+
+function monthsToMinutes(months) {
+  let minutes = months * 30 * 24 * 60;
+  let output = `${months} mėnesiai turi ${minutes} minutes.`;
+
+  console.log(output);
+}
+
+monthsToMinutes(2);
+
+// 8. Funkciją, kuri konvertuoja dienas į pasirinktą formatą (minutes, valandas, savaites, mėnesius arba metus):
+// 8.1. Funkcija priima du argumentus: 
+//   8.1.1. Dienų skaičių.
+//   8.1.2. Formatą. Galimos formato reikšmės yra:
+//     8.1.2.1. minutes
+//     8.1.2.2. hours
+//     8.1.2.3. weeks
+//     8.1.2.4. months
+//     8.1.2.5. years
+// 8.2. Funkcija konvertuoja dienas į pasirinktą formatą ir grąžina atsakymą tokiu formatu: 5 days - 7200 minutes.
+
+function convertDays(days, format) {
+  let answer;
+
+  if (format === 'minutes') {
+    answer = days * 24 * 60;
+  } else if (format === 'hours') {
+    answer = days * 24;
+  } else if (format === 'weeks') {
+    answer = (days / 7).toFixed(1);
+  } else if (format === 'months') {
+    answer = (days / 30).toFixed(2);
+  } else if (format === 'years') {
+    answer= (days / 365).toFixed(2);
+  } else {
+    console.log('Wrong data...');
+  }
+
+  console.log(`${days} days - ${answer} ${format}.`);
+}
+
+convertDays(45, 'years');
+
+// 9. Funkciją, kuri patikrina ar skaičius dalinasi iš kito skaičiaus:
+// 9.1. Funkcija priima du argumentus: 
+//   9.1.1. Skaičių, kuris bus dalinamas (dalinys).
+//   9.1.2. Skaičių, iš kurio bus dalinama (daliklis).
+// 9.2. Funkcija grąžina atsakymą tokiu formatu:
+//   9.2.1. Jeigu dalinasi: 10 dalinasi iš 5.
+//   9.2.2. Skaičius 11 nesidalina iš 5. Liekana yra 1.
+
+function numberChecker(num1, num2) {
+  let answer = num1 % num2;
+
+  if (answer === 0) {
+    console.log(`${num1} dalinasi iš ${num2}.`);
+  } else {
+    console.log(`Skaičius ${num1} nesidalina iš ${num2}. Liekana yra ${answer}.`)
+  }
+}
+
+numberChecker(1547, 1234)
+
+
+// 10. Funkciją, kuri patikrina ar įvestas tekstas turi porini raidžių skaičių ar neporinį.
+function textChecker(word) {
+  let wordLength = word.length;
+
+  if (wordLength % 2 === 0) {
+    console.log('Porinis');
+  } else {
+    console.log('Ne porinis');
+  }
+}
+
+textChecker('laba');
+
+// 11. Funkciją, kuri paima nurodytą simbolį iš žodžio ar sakinio. 
+// 11.1. Funkcija priima du argumentus: tekstą ir kelintą simbolį reikia grąžinti.
+// 11.2. Funkcija grąžina atsakymą tokiu formatu: Teksto "Labas" 3 raidė yra "b".
+
+// 11.3. Jeigu nurodytas skaičius yra didesnis nei tekstas turi simbolių, tai reikia grąžinti error'ą tokiu formatu: Tekstas "Labas" turi 5 simbolius, o jūs nurodėte grąžinti 8.
+
+// 11.4. Patobulinti funkciją, kad būtų galima įrašyti neigiamą skaičių, jeigu norima gauti teksto simbolį skaičiuojant nuo jo galo, o ne nuo priekio.
+
+function getLetter(str, num) {
+  let strLength = str.length;
+  let output = '';
+
+  if (num < 0) {
+    let convertedNum = num * -1;
+    if (convertedNum > strLength) {
+        output = `Tekstas "${str}" turi ${strLength} simbolius, o jūs nurodėte grąžinti ${convertedNum} nuo galo`;
+    } else {
+      let answer = str[strLength + num];
+      output = `Teksto "${str}" ${convertedNum} raidė nuo galo yra "${answer}"`;
+    }
+
+  } else if (num > 0) { 
+    if (num > strLength) {
+      output = `Tekstas "${str}" turi ${strLength} simbolius, o jūs nurodėte grąžinti ${num}`;
+    } else {
+      let index = num - 1;
+      let letter = str[index];
+      output = `Teksto "${str}" ${num} raidė yra "${letter}"`;
+    }
+  } else {
+    output = 'Error...';
+  }
+  
+  console.log(output);
+}
+
+getLetter('Labas', 0);

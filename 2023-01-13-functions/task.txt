@@ -18,3 +18,52 @@ Sukurti:
 2. Funkciją, kuri skaičiuoja per kiek laiko reikia perskaityti knygą, kad pasiekti užsibrėžtą knygų per metaus skaičių:
 2.1. Funkcija priima vieną parametrą: norimų per metus perskaityti knygų skaičių.
 2.1. Funkcija grąžina atsakymą tokiu formatu: norint perskaityti 10 knygų per metus, vienai knygai perskaityti turėsi 36 dienas.
+
+3. Funkciją, kuri konvertuoja dienas į savaites:
+3.1. Funkcija priima vieną argumentą: dienų skaičių.
+3.2. Funkcija grąžina atsakymą tokiu formatu: 35 dienos yra 5 savaitės.
+
+4. Funkciją, kuri konvertuoja dienas į metus:
+4.1. Funkcija priima vieną argumentą: dienų skaičių.
+4.1. Funkcija grąžina atsakymą tokiu formatu (atsakymą apvalinant): 365 dienos yra 1 metai.
+
+5. Funkciją, kuri konvertuoja metus į valandas:
+5.1. Funkcija priima vieną argumentą: metų skaičių.
+5.2. Funkcija grąžina atsakymą tokiu formatu: 5 metai turi 43800 valandas.
+
+6. Funkciją, kuri konvertuoja mėnesius į valandas:
+6.1. Funkcija priima vieną argumentą: mėnesių skaičių.
+6.2. Funkcija grąžina atsakymą tokiu formatu: 3 mėnesiai turi 2190 valandas.
+
+7. Funkciją, kuri konvertuoja mėnesius į minutes:
+7.1. Funkcija priima vieną argumentą: mėnesių skaičių.
+7.2. Funkcija grąžina atsakymą tokiu formatu: 2 mėnesiai turi 87600 minutes.
+
+8. Funkciją, kuri konvertuoja dienas į pasirinktą formatą (minutes, valandas, savaites, mėnesius arba metus):
+8.1. Funkcija priima du argumentus: 
+  8.1.1. Dienų skaičių.
+  8.1.2. Formatą. Galimos formato reikšmės yra:
+    8.1.2.1. minutes
+    8.1.2.2. hours
+    8.1.2.3. weeks
+    8.1.2.4. months
+    8.1.2.5. years
+8.2. Funkcija konvertuoja dienas į pasirinktą formatą ir grąžina atsakymą tokiu formatu: 5 days - 7200 minutes.
+
+9. Funkciją, kuri patikrina ar skaičius dalinasi iš kito skaičiaus:
+9.1. Funkcija priima du argumentus: 
+  9.1.1. Skaičių, kuris bus dalinamas (dalinys).
+  9.1.2. Skaičių, iš kurio bus dalinama (daliklis).
+9.2. Funkcija grąžina atsakymą tokiu formatu:
+  9.2.1. Jeigu dalinasi: 10 dalinasi iš 5.
+  9.2.2. Skaičius 11 nesidalina iš 5. Liekana yra 1.
+
+10. Funkciją, kuri patikrina ar įvestas tekstas turi porini raidžių skaičių ar neporinį.
+
+11. Funkciją, kuri paima nurodytą simbolį iš žodžio ar sakinio. 
+11.1. Funkcija priima du argumentus: tekstą ir kelintą simbolį reikia grąžinti.
+11.2. Funkcija grąžina atsakymą tokiu formatu: Teksto "Labas" 3 raidė yra "b".
+
+11.3. Jeigu nurodytas skaičius yra didesnis nei tekstas turi simbolių, tai reikia grąžinti error'ą tokiu formatu: Tekstas "Labas" turi 5 simbolius, o jūs nurodėte grąžinti 8.
+
+11.4. Patobulinti funkciją, kad būtų galima įrašyti neigiamą skaičių, jeigu norima gauti teksto simbolį skaičiuojant nuo jo galo, o ne nuo priekio.
