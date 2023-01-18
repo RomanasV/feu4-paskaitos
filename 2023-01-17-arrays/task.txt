@@ -58,3 +58,35 @@ Buzz
 6. Skaičiai, kurie dalinasi iš 9, turi būti pakeisti į žodį „Fuzz".
 
 7. Skaičiai, kurie dalinasi iš 11, turi būti pakeisti į žodį „Bizz".
+
+
+
+Užduotis (masyvai):
+1. Sukurti 3 masyvus, kuriuose būtų bent 10 narių.
+2. Sukurti funkciją, kuri išveda visus masyve esančius narius į konsolę.
+
+
+
+UZDUOTIS dirbant su pirkinių sąrašu (bent 7 pirkiniai):
+Kiekvienam iš punktų sukurti po atskirą kintamąjį ir jame išsaugoti reikšmę. Šią reikšmę atvaizduoti konsolėje.
+1. Išimti pirmus du pirkinius.
+2. Išimti tris paskutinius pirkinius.
+3. Išimti ketvirtą ir penktą pirkinį.
+4. Išimti antrą ir trečią pirkinį.
+5. Išimti visus, išskyrus pirmą pirkinį.
+
+
+Sukurti 10-ties filmų masyvą ir iš jo:
+(nemodifikuoti originalaus masyvo)
+1. Išimti pirmus 5 filmus.
+2. Išimti 4 paskutinius filmus.
+3. Išimti nuo trečio iki septinto filmo.
+4. Išimti antrą ir trečią filmą.
+5. Išimti visus, išskyrus pirmą filmą.
+6. Išimti 5 filmus skaičiuojant nuo trečio.
+7. Išimti tris filmus nuo galo, tačiau palikti paskutinį.
+
+(galima modifikuoti originalų masyvą)
+8. Vietoje penkto filmo įrašyti du naujus filmus.
+9. Pašalinti pirmą filmą.
+10. Įrašyti naują filmą į masyvo pradžią.
