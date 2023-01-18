@@ -258,4 +258,139 @@ function fizzBuzz3(start, end) {
   } 
 }
 
-fizzBuzz3(150, 500);
+// fizzBuzz3(150, 500);
+
+
+// Užduotis (masyvai):
+// 1. Sukurti 3 masyvus, kuriuose būtų bent 10 narių.
+// 2. Sukurti funkciją, kuri išveda visus masyve esančius narius į konsolę.
+
+let movies = ["matrix", "terminator", "gladiator", "darkskies", "avatar", "alien", "fourofakind", "avengers", "blade", "wakanda"];
+let countries = ["latvia", "estonia", "america", "england", "ireland", "canada", "australia", "france", "germany", "italy"];
+let names = ["monica", "john", "peter", "robert", "matthew", "daniel", "donald", "steven", "paul", "andrew"];
+
+function arrayLoop(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+}
+
+// arrayLoop(movies);
+// arrayLoop(countries);
+// arrayLoop(names);
+
+
+
+let nums = [1, 4, 5, 10];
+console.log(nums);
+console.log(nums[0]);
+console.log(nums[1]);
+
+nums[1] = 'labas';
+console.log(nums);
+console.log(nums[1]);
+
+// nums[4] = 20;
+nums[nums.length] = 20;
+console.log(nums);
+
+// pop, push, shift ir unshift metodai modifikuoja (mutuoja) originalų masyvą
+
+let cities = ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiaulia', 'Panevėžys'];
+console.log(cities);
+
+// Pašalina paskutinį masyvo narį - pop() metodas
+// console.log(cities.pop());
+let lastCity = cities.pop();
+console.log(lastCity);
+console.log(cities);
+
+// Pašalina pirmą masyvo narį - shift() metodas
+let firstCity = cities.shift();
+console.log(firstCity);
+
+cities.shift();
+
+console.log(cities);
+
+// Pridedamas naujas narys į masyvo pabaigą - push() metoras
+let newArrayCount = cities.push('Jonava');
+console.log(newArrayCount);
+console.log(cities);
+
+cities.push('Jurbarkas', 'Palanga');
+console.log(cities);
+
+// Pridedamas narys į masyvo pradžią - ushift() metodas
+let newArrayCount2 = cities.unshift('Vilnius');
+console.log(newArrayCount2);
+
+cities.unshift('Kaunas', 'Vievis');
+
+console.log(cities);
+
+
+let countriesArr = ['Lithuania', 'Latvia', 'Poland', 'France', 'Germany', 'Italy'];
+// Indeksas              0           1        2          3         4         5
+// Slice (+)       0           1         2         3         4          5
+// Slice (-)      -6          -5        -4        -3        -2         -1
+
+// SLICE - nemutuoja (nemodifikuoja) originalaus masyvo
+console.log(countriesArr);
+
+let slicedCountries1 = countriesArr.slice(2);
+console.log(slicedCountries1);
+
+let slicedCountries2 = countriesArr.slice(2, 4);
+console.log(slicedCountries2);
+
+let slicedCountries3 = countriesArr.slice(0, 3);
+console.log(slicedCountries3);
+
+let slicedCountries4 = countriesArr.slice(-4);
+console.log(slicedCountries4);
+
+let slicedCountries5 = countriesArr.slice(-4, -2);
+console.log(slicedCountries5);
+
+let slicedCountries6 = countriesArr.slice(-4, 2);
+console.log(slicedCountries6);
+
+let slicedCountries7 = countriesArr.slice(-4, 1);
+console.log(slicedCountries7);
+
+let slicedCountries8 = countriesArr.slice(-4, 4);
+console.log(slicedCountries8);
+
+let slicedCountries9 = countriesArr.slice(-2, -4);
+console.log(slicedCountries9);
+
+let slicedCountries10 = countriesArr.slice(1, -4);
+console.log(slicedCountries10);
+
+let slicedCountries11 = countriesArr.slice(0);
+console.log(slicedCountries11);
+
+// SPLICE - modifikuoja originalų masyvą (keičia originalaus masyvo reikšmę)
+let numbers = [1, 2, 3, 4, 5, 6, 7];
+console.log(numbers);
+
+// let splicedNumbers = numbers.splice(0, 2);
+// let splicedNumbers = numbers.splice(2, 4);
+// let splicedNumbers = numbers.splice(2);
+// let splicedNumbers = numbers.splice(1, 1);
+// let splicedNumbers = numbers.splice(5, 1);
+// let splicedNumbers = numbers.splice(-4, 1);
+// let splicedNumbers = numbers.splice(-1);
+// let splicedNumbers = numbers.splice(-3, -1);
+// let splicedNumbers = numbers.splice(3, -1);
+// let splicedNumbers = numbers.splice(2, 0);
+// let splicedNumbers = numbers.splice(2, 1, 10);
+// let splicedNumbers = numbers.splice(2, 1, 10, 15, 20);
+// let splicedNumbers = numbers.splice(2, 0, 10);
+// let splicedNumbers = numbers.splice(2, 0, 10, 15, 20);
+let splicedNumbers = numbers.splice(2, 0, 'Du su puse');
+
+console.log(splicedNumbers);
+
+console.log(numbers);
