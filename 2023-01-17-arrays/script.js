@@ -394,3 +394,93 @@ let splicedNumbers = numbers.splice(2, 0, 'Du su puse');
 console.log(splicedNumbers);
 
 console.log(numbers);
+
+
+// UZDUOTIS dirbant su pirkinių sąrašu (bent 7 pirkiniai):
+let goods = ['Duona', 'Apelsinai', 'Sūris', 'Sviestas', 'Jogurtas', 'Mėsa', 'Sultys'];
+console.log(goods);
+
+// Kiekvienam iš punktų sukurti po atskirą kintamąjį ir jame išsaugoti reikšmę. Šią reikšmę atvaizduoti konsolėje.
+// 1. Išimti pirmus du pirkinius.
+let sliceTask1 = goods.slice(0, 2);
+console.log(sliceTask1);
+
+// 2. Išimti tris paskutinius pirkinius.
+let sliceTask2 = goods.slice(-3);
+console.log(sliceTask2);
+
+// 3. Išimti ketvirtą ir penktą pirkinį.
+let sliceTask3 = goods.slice(3, 5);
+console.log(sliceTask3);
+
+// 4. Išimti antrą ir trečią pirkinį.
+let sliceTask4 = goods.slice(1, 3);
+console.log(sliceTask4);
+
+// 5. Išimti visus, išskyrus pirmą pirkinį.
+let sliceTask5 = goods.slice(1);
+console.log(sliceTask5);
+
+
+// Sukurti 10-ties filmų masyvą ir iš jo:
+let moviesArr = ['Godfather', 'Shawshank redemption', 'Batman', 'Superman', 'Spiderman', 'Green Mile', 'Forest Gump', 'Men in black', 'Rush hour', 'Hangover'];
+console.log(moviesArr);
+// (nemodifikuoti originalaus masyvo)
+// 1. Išimti pirmus 5 filmus.
+let moviesTask1 = moviesArr.slice(0, 5);
+console.log(moviesTask1);
+
+// 2. Išimti 4 paskutinius filmus.
+let moviesTask2 = moviesArr.slice(-4);
+console.log(moviesTask2);
+
+// 3. Išimti nuo trečio iki septinto filmo.
+let moviesTask3 = moviesArr.slice(2, 7);
+console.log(moviesTask3);
+
+// 4. Išimti antrą ir trečią filmą.
+let moviesTask4 = moviesArr.slice(1, 3);
+console.log(moviesTask4);
+
+// 5. Išimti visus, išskyrus pirmą filmą.
+let moviesTask5 = moviesArr.slice(1);
+console.log(moviesTask5);
+
+// 6. Išimti 5 filmus skaičiuojant nuo trečio.
+let moviesTask6 = moviesArr.slice(2, 7);
+console.log(moviesTask6);
+
+// 7. Išimti tris filmus nuo galo, tačiau palikti paskutinį.
+let moviesTask7 = moviesArr.slice(-4, -1);
+console.log(moviesTask7);
+
+// (galima modifikuoti originalų masyvą)
+// 8. Vietoje penkto filmo įrašyti du naujus filmus.
+let moviesTask8 = moviesArr.splice(4, 1, 'Naujas filmas', 'Dar vienas naujas filmas');
+console.log(moviesTask8);
+
+// 9. Pašalinti pirmą filmą.
+// let moviesTask9 = moviesArr.shift();
+let moviesTask9 = moviesArr.splice(0, 1);
+console.log(moviesTask9);
+
+// 10. Įrašyti naują filmą į masyvo pradžią.
+// let moviesTask10 = moviesArr.splice(0, 0, 'Trecias naujas filmas');
+let moviesTask10 = moviesArr.unshift('Trecias naujas filmas');
+console.log(moviesTask10);
+
+console.log(moviesArr);
+
+// 11.1. Išimti pirmus tris filmus, skaičiuojant nuo antro filmo.
+let moviesTask111 = moviesArr.slice(1, 4);
+console.log(moviesTask111);
+
+// 11.2. Išimti paskutinius tris filmus, skaičiuojant nuo priešpaskutinio filmo.
+let moviesTask112 = moviesArr.slice(-4, -1);
+console.log(moviesTask112);
+
+// 11.3. Šiuos išimtus filmus išsaugoti naujame masyve ir padaryti, jog jo nariai būtų apsukti.
+// let moviesTask113 = moviesTask111.concat(moviesTask112).reverse();
+// let moviesTask113 = [moviesTask111, moviesTask112].flat().reverse();
+let moviesTask113 = [...moviesTask111, ...moviesTask112].reverse();
+console.log(moviesTask113);

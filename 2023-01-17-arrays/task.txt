@@ -90,3 +90,7 @@ Sukurti 10-ties filmų masyvą ir iš jo:
 8. Vietoje penkto filmo įrašyti du naujus filmus.
 9. Pašalinti pirmą filmą.
 10. Įrašyti naują filmą į masyvo pradžią.
+
+11.1. Išimti pirmus tris filmus, skaičiuojant nuo antro filmo.
+11.2. Išimti paskutinius tris filmus, skaičiuojant nuo priešpaskutinio filmo.
+11.3. Šiuos išimtus filmus išsaugoti naujame masyve ir padaryti, jog jo nariai būtų apsukti.
