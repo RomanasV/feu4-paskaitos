@@ -1,3 +1,5 @@
+console.groupCollapsed();
+
 // Masyvas / array
 let numsArray = [5, 4, 6, 456, 789, 4641, 4, 3154, 456.789, 45, 555];
 // Indeksai      0  1  2   3    4     5   6    7      8
@@ -279,6 +281,12 @@ function arrayLoop(arr) {
 // arrayLoop(countries);
 // arrayLoop(names);
 
+function mapLoop(arr) {
+  console.log(arr);
+}
+
+mapLoop(movies)
+
 
 
 let nums = [1, 4, 5, 10];
@@ -484,3 +492,60 @@ console.log(moviesTask112);
 // let moviesTask113 = [moviesTask111, moviesTask112].flat().reverse();
 let moviesTask113 = [...moviesTask111, ...moviesTask112].reverse();
 console.log(moviesTask113);
+
+arrayLoop(moviesTask113);
+
+console.groupEnd();
+
+let citiesArr = ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys', 'Marijampolė', 'Alytus'];
+
+console.log(citiesArr);
+
+// for (let i = 0; i < citiesArr.length; i++) {
+//   // console.log(citiesArr);
+//   console.log(i);
+//   console.log('For ciklas: ' + citiesArr[i]);
+// }
+
+// MAP if foreach masyvo metodas - paleidzia funkcija kiekvienam masyvo nariui
+// map ir forEach metodai nemodifikuoja (nemutuoja) originalaus masyvo
+
+// citiesArr.map((city) => {
+//   console.log(city);
+// });
+
+// citiesArr.forEach((city) => {
+//   console.log(city);
+// });
+
+// citiesArr.map(function(city) {
+//   console.log(city);
+// });
+
+// citiesArr.forEach(function(city) {
+//   console.log(city);
+// });
+
+// citiesArr.map(function(city, index, array) {
+//   // console.log(array);
+//   console.log(index);
+//   console.log('Map ciklas: ' + city);
+// });
+
+// citiesArr.forEach(function(city, index, array) {
+//   // console.log(array);
+//   console.log(index);
+//   console.log('forEach ciklas: ' + city);
+// });
+
+// MAP RETURN
+let citiesMap = citiesArr.map(function(city, index){
+  return (index + 1) + '. ' + city;
+}).reverse();
+console.log(citiesMap);
+
+// forEach negali grąžinti (return) reikšmės ir negalima chain'inti
+// let forEachMap = citiesArr.forEach(function(city, index){
+//   return (index + 1) + '. ' + city;
+// }).reverse();
+// console.log(forEachMap);
