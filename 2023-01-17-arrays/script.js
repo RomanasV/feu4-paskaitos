@@ -282,7 +282,15 @@ function arrayLoop(arr) {
 // arrayLoop(names);
 
 function mapLoop(arr) {
-  console.log(arr);
+  arr.map(function(element){
+    console.log(element);
+  });
+}
+
+function forEachLoop(arr) {
+  arr.forEach(function(element){
+    console.log(element);
+  });
 }
 
 mapLoop(movies)
@@ -549,3 +557,13 @@ console.log(citiesMap);
 //   return (index + 1) + '. ' + city;
 // }).reverse();
 // console.log(forEachMap);
+
+// FILTER
+let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(numArray);
+
+let filterArray = numArray.filter(function(num){
+  return num > 5;
+});
+
+console.log(filterArray);
