@@ -220,7 +220,7 @@ let task36 = arr.filter(item => item % 11 === 0);
 console.log(task36);
 
 // 3.7. Gauti tik skaičius, kurie dalinasi iš 33.
-let task37 = arr.filter(item => item % 31 === 0);
+let task37 = arr.filter(item => item % 33 === 0);
 console.log(task37);
 
 // 3.8. Gauti tik skaičius, kurie dalinasi iš 2 ir iš 3.
@@ -232,7 +232,7 @@ let task39 = arr.filter(item => item % 3 === 0 && item % 7 === 0);
 console.log(task39);
 
 // 3.10. Gauti tik skaičius, kurie dalinasi iš 5 ir iš 9.
-let task310 = arr.filter(item => item % 5 === 0 && item % 5 === 0);
+let task310 = arr.filter(item => item % 5 === 0 && item % 9 === 0);
 console.log(task310);
 
 // 3.11. Gauti tik skaičius, kurie dalinasi iš 5 ir iš 11.

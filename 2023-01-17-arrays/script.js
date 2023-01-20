@@ -567,3 +567,43 @@ let filterArray = numArray.filter(function(num){
 });
 
 console.log(filterArray);
+
+// HTML elemento selectinimas
+let h1Element = document.querySelector('h1');
+console.dir(h1Element);
+console.dir(h1Element.textContent);
+
+let greeting = 'Hello';
+
+// h1Element.textContent = 'Labas <mark>vakaras</mark>';
+h1Element.innerHTML = 'Labas <mark>vakaras</mark>';
+
+let divElement1 = document.querySelector('div#container-1');
+divElement1.innerHTML = '<h1>' + greeting + '</h1>';
+
+divElement1.innerHTML += '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum, itaque quaerat, consequatur maxime officia assumenda quam a excepturi ab veniam enim? Earum mollitia cum pariatur sequi distinctio, at quibusdam.</p>';
+
+let isLoggedIn = false;
+
+if (isLoggedIn) {
+  divElement1.innerHTML += '<button>Click</button>';
+}
+
+
+let divElement2 = document.querySelector('div#container-2');
+divElement2.innerHTML = `<div>
+                           <h1>${greeting}</h1>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum, itaque quaerat, consequatur maxime officia assumenda quam a excepturi ab veniam enim? Earum mollitia cum pariatur sequi distinctio, at quibusdam.</p>
+                         </div>
+                         <button>Click</button>`;
+                  
+let ulElement1 = document.querySelector('#test-1');
+// ulElement1.innerHTML += '<li>Vienas</li>';
+// ulElement1.innerHTML += '<li>Du</li>';
+// ulElement1.innerHTML += '<li>Trys</li>';
+
+console.log(numArray);
+
+numArray.map((num) => {
+  ulElement1.innerHTML += `<li>${num}</li>`;
+})
