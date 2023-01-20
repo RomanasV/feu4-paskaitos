@@ -167,3 +167,13 @@ Atlikus šias užduotis eilės tvarka masyvas turėtų atrodyti taip:
 4.13. Tik tekstą (string tipo duomenis), tačiau kiekviena žodžio pirmą ir trečią raidę pakeičiant brūkšniu (underscore), pvz.: "_t_rt";
 4.14. Tik tekstą (string tipo duomenis), tačiau žodį parašant atvirkščiai, pvz.: vietoje "start" parašyti "trats";
 4.15. Tik tekstą (string tipo duomenis) ir prie kiekvieno teksto parašyti tarp kokių narių masyve jis yra, pvz.: "Word obuolys is between -5564 and -51 in the array".
+
+5. Atlikti ta patį, kaip ir ketvirtoje užduotyje, tačiau atsakymus išvesti ne į konsolę, o į ul elementus.
+5.1. Kiekvienai užduočiai HTML faile sukurti naują ul elementą ir jam priskirti unikalų id, pvz.:
+  <ul id="task-41"></ul>
+  <ul id="task-42"></ul>
+  <ul id="task-43"></ul>
+  Ir t.t.
+5.2. JavaScript'e paselektinti šiuos elementus.
+5.3. Kiekvienas ketvirtos užduoties ciklo atsakymas turėtų būti įdėtas į li elementą.
+5.4. Kiekvienas li elementas turėtų būti įdėtas į atitinkamą ul elementą.
