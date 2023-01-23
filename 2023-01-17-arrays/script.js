@@ -680,13 +680,56 @@ let allMovies = [
   ['Godfather', 2000], 
   ['Shawshank redemption', 2001], 
   ['Batman', 2002], 
-  ['Superman', 2003]
-  ['Spiderman', 2004] 
-  ['Green Mile', 2005] 
-  ['Forest Gump', 2006] 
-  ['Men in black', 2007] 
-  ['Rush hour', 2008]
-  ['Hangover', 2009]
+  ['Superman', 2003],
+  ['Spiderman', 2004],
+  ['Green Mile'], 
+  ['Forest Gump', 2006], 
+  ['Men in black', 2007], 
+  ['Rush hour', 2008],
+  ['Hangover', 2009],
 ];
 
 // let movieYears = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009];
+
+function task131(movies) {
+  console.log(movies);
+  let ulElement = document.querySelector('#task-131');
+
+  // movies.map((movie, index) => {
+  //   let movieNumber = index + 1;
+  //   let movieName = movie[0];
+  //   // let movieYear = movie[1] ? ` (${movie[1]})` : '';
+
+  //   let movieYear;
+
+  //   if (movie[1]) {
+  //     movieYear = ` (${movie[1]})`;
+  //   } else {
+  //     movieYear = '';
+  //   }
+
+  //   let output = `<li>${movieNumber}. ${movieName}${movieYear}</li>`;
+
+  //   ulElement.innerHTML += output;
+  // })
+
+  for (let i = 0; i < movies.length; i++) {
+    let movieNumber = i + 1;
+    let movieName = movies[i][0];
+    let movieYear = movies[i][1] ? ` (${movies[i][1]})` : '';
+
+    let output = `<li>${movieNumber}. ${movieName}${movieYear}</li>`;
+    ulElement.innerHTML += output;
+  }
+}
+
+task131(allMovies);
+
+// 14. Sukurti dar 2 naujus masyvus, kuriuose būtų po keletą filmų ir:
+// 14.1. Išvesti visuose 3 masyvuose esančius filmus į ekraną kaip vieną sąrašą.
+
+let moviesAll = [
+  ['Filmas 1', 'Filmas 2'],
+  ['Filmas 4', 'Filmas 5'],
+  ['Filmas 6', 'Filmas 7'],
+]
