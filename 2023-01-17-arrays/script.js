@@ -604,16 +604,89 @@ let ulElement1 = document.querySelector('#test-1');
 
 console.log(numArray);
 
-numArray.map((num) => {
-  ulElement1.innerHTML += `<li>${num}</li>`;
-})
+// numArray.map((num) => {
+//   ulElement1.innerHTML += `<li>${num}</li>`;
+// })
 
 
 // 12. Filmų sąrašą išvesti į ekraną (ul - li elementuose). Prie filmo pavadinimo pridėti filmo eilės numerį.
 
-// 13. Modifikuoti duomenis taip kad filmai turėtų ne tik pavadinimus, tačiau ir išleidimo datą.
-// 13.1. Prie filmų sąrašo (ul - li elementuose) pridėti išleidimo datą.
-
 let moviesArr2 = ['Godfather', 'Shawshank redemption', 'Batman', 'Superman', 'Spiderman', 'Green Mile', 'Forest Gump', 'Men in black', 'Rush hour', 'Hangover'];
 
-console.log(moviesTask113);
+function task12(arr) {
+  let ulElement = document.querySelector('#task-12');
+
+  // for (let i = 0; i < arr.length; i++) {
+  //   let num = i + 1;
+  //   let name = arr[i];
+
+  //   let item = `<li>${num}. ${name}</li>`;
+
+  //   ulElement.innerHTML += item;
+  // }
+
+  arr.map((item, index) => {
+    let num = index + 1;
+    let output = `<li>${num}. ${item}</li>`;
+
+    ulElement.innerHTML += output;
+  });
+}
+
+// task12(moviesArr2);
+
+// 13. Modifikuoti duomenis taip kad filmai turėtų ne tik pavadinimus, tačiau ir išleidimo datą.
+let movieNames = ['Godfather', 'Shawshank redemption', 'Batman', 'Superman', 'Spiderman', 'Green Mile', 'Forest Gump', 'Men in black', 'Rush hour', 'Hangover'];
+let movieYears = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009];
+
+// 13.1. Prie filmų sąrašo (ul - li elementuose) pridėti išleidimo datą.
+function task13(names, years) {
+  console.log(names);
+  console.log(years);
+
+  let ulElement = document.querySelector('#task-13');
+
+  // if (names.length === years.length) {
+  //   for (let i = 0; i < names.length; i++) {
+  //     // let yearText = years[i] ? ` (${years[i]})` : '';
+  //     let yearText = '';
+  
+  //     if (years[i]) {
+  //       yearText = ` (${years[i]})`;
+  //     }
+  
+  //     let output = `<li>${i + 1}. ${names[i]}${yearText}</li>`;
+  //     ulElement.innerHTML += output;
+  //   }
+  // }
+
+
+  if (names.length === years.length) {
+    names.map((name, index) => {
+      let movieYear = years[index];
+      let movieNumber = index + 1;
+
+      let output = `<li>${movieNumber}. ${name} (${movieYear})</li>`;
+      ulElement.innerHTML += output;
+    });
+  } else {
+    console.error('Masyvų ilgiai privalo būti vienodi');
+  }
+}
+
+// task13(movieNames, movieYears);
+
+let allMovies = [
+  ['Godfather', 2000], 
+  ['Shawshank redemption', 2001], 
+  ['Batman', 2002], 
+  ['Superman', 2003]
+  ['Spiderman', 2004] 
+  ['Green Mile', 2005] 
+  ['Forest Gump', 2006] 
+  ['Men in black', 2007] 
+  ['Rush hour', 2008]
+  ['Hangover', 2009]
+];
+
+// let movieYears = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009];
