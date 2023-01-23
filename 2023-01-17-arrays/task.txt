@@ -94,3 +94,11 @@ Sukurti 10-ties filmų masyvą ir iš jo:
 11.1. Išimti pirmus tris filmus, skaičiuojant nuo antro filmo.
 11.2. Išimti paskutinius tris filmus, skaičiuojant nuo priešpaskutinio filmo.
 11.3. Šiuos išimtus filmus išsaugoti naujame masyve ir padaryti, jog jo nariai būtų apsukti.
+
+12. Filmų sąrašą išvesti į ekraną (ul - li elementuose). Prie filmo pavadinimo pridėti filmo eilės numerį.
+
+13. Modifikuoti duomenis taip kad filmai turėtų ne tik pavadinimus, tačiau ir išleidimo datą.
+13.1. Prie filmų sąrašo (ul - li elementuose) pridėti išleidimo datą.
+
+14. Sukurti dar 2 naujus masyvus, kuriuose būtų po keletą filmų ir:
+14.1. Išvesti visuose 3 masyvuose esančius filmus į ekraną kaip vieną sąrašą.

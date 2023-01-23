@@ -728,8 +728,69 @@ task131(allMovies);
 // 14. Sukurti dar 2 naujus masyvus, kuriuose būtų po keletą filmų ir:
 // 14.1. Išvesti visuose 3 masyvuose esančius filmus į ekraną kaip vieną sąrašą.
 
-let moviesAll = [
-  ['Filmas 1', 'Filmas 2'],
-  ['Filmas 4', 'Filmas 5'],
-  ['Filmas 6', 'Filmas 7'],
-]
+let movies1 = ['Godfather', 'Shawshank redemption', 'Batman'];
+let movies2 = ['Superman', 'Spiderman', 'Green Mile'];
+let movies3 = ['Forest Gump', 'Men in black', 'Rush hour', 'Hangover'];
+
+// let moviesAll = [];
+// moviesAll.push(movies1, movies2, movies3)
+let moviesAll = [movies1, movies2, movies3];
+
+// console.log(moviesAll)
+// console.log(moviesAll[0])
+// console.log(moviesAll[0][0])
+// console.log(moviesAll[0][1])
+// console.log(moviesAll[0][2])
+// console.log(moviesAll[1])
+// console.log(moviesAll[1][0])
+// console.log(moviesAll[1][1])
+// console.log(moviesAll[1][2])
+// console.log(moviesAll[2])
+// console.log(moviesAll[2][0])
+// console.log(moviesAll[2][1])
+// console.log(moviesAll[2][2])
+// console.log(moviesAll[2][3])
+
+function listAllMovies(movies) {
+  let ulElement = document.querySelector('#task-14');
+  let movieNumber = 1;
+
+  // for (let i = 0; i < movies.length; i++) {
+  //   for (let j = 0; j < movies[i].length; j++) {
+  //     console.log(movies[i][j]);
+
+  //     ulElement.innerHTML += `<li>${movieNumber}. ${movies[i][j]}</li>`;
+  //     movieNumber++;
+  //   }
+  // }
+
+  for (let i = 0; i < movies.length; i++) {
+    let moviesList = movies[i];
+
+    for (let j = 0; j < moviesList.length; j++) {
+      let movie = moviesList[j];
+
+      let output = `<li>${movieNumber}. ${movie}</li>`;
+      ulElement.innerHTML += output;
+      movieNumber++;
+    }
+
+    // for (let j = 0; j < movies[i].length; j++) {
+    //   console.log(movies[i][j]);
+
+    //   ulElement.innerHTML += `<li>${movieNumber}. ${movies[i][j]}</li>`;
+    //   movieNumber++;
+    // }
+  }
+
+  // movies.map(moviesList => {
+  //   moviesList.map(movie => {
+  //     let output = `<li>${movieNumber}. ${movie}</li>`;
+  //     ulElement.innerHTML += output;
+
+  //     movieNumber++;
+  //   })
+  // });
+}
+
+listAllMovies(moviesAll);
