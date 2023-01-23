@@ -177,3 +177,7 @@ Atlikus šias užduotis eilės tvarka masyvas turėtų atrodyti taip:
 5.2. JavaScript'e paselektinti šiuos elementus.
 5.3. Kiekvienas ketvirtos užduoties ciklo atsakymas turėtų būti įdėtas į li elementą.
 5.4. Kiekvienas li elementas turėtų būti įdėtas į atitinkamą ul elementą.
+
+6. Visoms prieš tai atliktoms užduotims sukurti funkcijas. Jeigu tą pačia funkciją galima panaudoti keletui užduočių - taip ir padaryti.
+6.1. Funkcija privalo priimti bent vieną parametrą, t.y. masyvą, su kuriuo dirbama.
+6.2. Jeigu įmanoma ir logiška, pridėti ir daugiau parametrų.
