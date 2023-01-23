@@ -607,3 +607,13 @@ console.log(numArray);
 numArray.map((num) => {
   ulElement1.innerHTML += `<li>${num}</li>`;
 })
+
+
+// 12. Filmų sąrašą išvesti į ekraną (ul - li elementuose). Prie filmo pavadinimo pridėti filmo eilės numerį.
+
+// 13. Modifikuoti duomenis taip kad filmai turėtų ne tik pavadinimus, tačiau ir išleidimo datą.
+// 13.1. Prie filmų sąrašo (ul - li elementuose) pridėti išleidimo datą.
+
+let moviesArr2 = ['Godfather', 'Shawshank redemption', 'Batman', 'Superman', 'Spiderman', 'Green Mile', 'Forest Gump', 'Men in black', 'Rush hour', 'Hangover'];
+
+console.log(moviesTask113);
