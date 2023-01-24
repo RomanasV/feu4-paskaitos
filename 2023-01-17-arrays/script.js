@@ -793,4 +793,44 @@ function listAllMovies(movies) {
   // });
 }
 
-listAllMovies(moviesAll);
+// listAllMovies(moviesAll);
+
+
+function listAllMoviesClean(movies, selector) {
+  let ulElement = document.querySelector(selector);
+  let movieNumber = 1;
+
+  for (let i = 0; i < movies.length; i++) {
+    let moviesList = movies[i];
+
+    for (let j = 0; j < moviesList.length; j++) {
+      let movie = moviesList[j];
+
+      let output = `<li>${movieNumber}. ${movie}</li>`;
+      ulElement.innerHTML += output;
+      movieNumber++;
+    }
+  }
+}
+
+listAllMoviesClean(moviesAll, '#task-14');
+listAllMoviesClean(moviesAll, '#task-test');
+
+// REDUCE metodas
+let numbersForReduce = [1, 2, 4, 5, 7, 8, 10];
+
+// let numbersAfterReduce = numbersForReduce.reduce((sum, current, index) => {
+//   console.log('Index: ' + index);
+//   console.log('Current: ' + current);
+//   console.log('Sum: ' + sum);
+//   console.log('---------');
+//   return sum + current;
+// }, 0);
+
+// let numbersAfterReduce = numbersForReduce.reduce((sum, current) => {
+//   return sum + current;
+// });
+
+let numbersAfterReduce = numbersForReduce.reduce((sum, current) => sum + current);
+
+console.log(numbersAfterReduce);
