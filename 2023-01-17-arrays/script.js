@@ -834,3 +834,24 @@ let numbersForReduce = [1, 2, 4, 5, 7, 8, 10];
 let numbersAfterReduce = numbersForReduce.reduce((sum, current) => sum + current);
 
 console.log(numbersAfterReduce);
+
+// REDUCE:
+// 1. Sukurti masyvą su bent 7 pasaulio valstybėmis.
+// 2. Sukurti naują kintamąjį, kurio jo reikšmė bus visos pasaulio valstybės iš pirmojo masyvo sudėtos į vieną string'ą (naudoti reduce metodą).
+// 3. Šio kintamojo reikšmę išvesti į konsolę.
+
+let flags = ['Madagascar', 'Switzerland', 'Canada', 'Brazil', 'Peru', 'France', 'Germany'];
+
+let countriesStr = flags.reduce((str, current, index, arr) => {
+  if (index === 1) {
+    return 'List of countries: ' + str + ', ' + current;
+  }
+
+  if (index === arr.length - 1) {
+    return str + ', ' + current + '.';
+  }
+
+  return str + ', ' + current;
+});
+
+console.log(countriesStr);
