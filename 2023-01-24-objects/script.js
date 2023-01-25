@@ -82,7 +82,27 @@ let studentObj = {
   age: 25,
   group: 'FEU4',
   city: 'Vilnius',
+  getFullName: function() {
+    return `${this.name} ${this['middle name']} ${this.surname}`;
+  },
+  setStudentInactive() {
+    this.isActive = false;
+  },
+  setStudentActive() {
+    this.isActive = true;
+  },
+  addHobby(newHobby) {
+    this.hobbies.push(newHobby);
+  }
 };
+
+console.log(studentObj.getFullName());
+studentObj.setStudentInactive();
+console.log(studentObj.isActive);
+studentObj.setStudentActive();
+console.log(studentObj.isActive);
+
+
 
 // Objekto properties pasiekimas
 console.log(studentObj);
@@ -165,4 +185,23 @@ console.log(studentObj.address.country);
 console.log(studentObj.address.apartment);
 
 
-let company1 = new Object();
+
+console.log(studentObj.hobbies);
+studentObj.addHobby('Siuvinejimas');
+console.log(studentObj.hobbies);
+
+studentObj.removeHobby = function(hobbyToRemove) {
+  // let updatedHobbies = this.hobbies.filter((hobby) => {
+  //   return hobby !== hobbyToRemove;
+  // })
+
+  // let updatedHobbies = this.hobbies.filter(hobby => hobby !== hobbyToRemove);
+  // this.hobbies = updatedHobbies;
+
+  this.hobbies = this.hobbies.filter(hobby => hobby !== hobbyToRemove);
+}
+
+studentObj.removeHobby('Siuvinejimas');
+studentObj.removeHobby('sports');
+studentObj.addHobby('traveling');
+console.log(studentObj.hobbies)
