@@ -121,3 +121,48 @@ console.log(studentObj['birth city']);
 // Objekto properties ištrynimas
 delete studentObj['birth city'];
 console.log(studentObj['birth city']);
+
+studentObj.hobbies = ['sports', 'reading'];
+console.log(studentObj.hobbies);
+console.log(studentObj.hobbies[0]);
+console.log(studentObj.hobbies[1]);
+console.log(studentObj.hobbies.length);
+
+studentObj.hobbies.map((hobby) => {
+  console.log(hobby);
+})
+
+// Pirmas bŪdas - kurti adreso objektą tiesiogiai studento objekte
+// studentObj.address = {
+//   city: 'Vilnius',
+//   street: 'Vilniaus st.',
+//   country: 'Lithuania',
+//   apartment: 15,
+// }
+
+// Antras būdas - kurti naują kintamąjį
+// let studentAddress = {
+//   city: 'Vilnius',
+//   street: 'Vilniaus st.',
+//   country: 'Lithuania',
+//   apartment: 15,
+// }
+
+// studentObj.address = studentAddress;
+
+// Trečias būdas
+studentObj.address = {};
+// studentObj.address = new Object();
+studentObj.address.city = 'Vilnius';
+studentObj.address.street = 'Vilniaus st.';
+studentObj.address.country = 'Lithuania';
+studentObj.address.apartment = 15;
+
+console.log(studentObj);
+console.log(studentObj.address.city);
+console.log(studentObj.address.street);
+console.log(studentObj.address.country);
+console.log(studentObj.address.apartment);
+
+
+let company1 = new Object();
