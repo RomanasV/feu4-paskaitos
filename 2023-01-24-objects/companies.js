@@ -136,7 +136,7 @@ let company2 = {
   companyCode: 789779797,
   employees: 20,
   ceo: 'Doe John',
-  nvo: false,
+  nvo: true,
   workingLocations: ['Germany'],
   activityAreas: ['Tourism', 'B2C Sales'],
   contacts: {
@@ -150,6 +150,51 @@ let company2 = {
     }
   },
   subsidiaries: [company1],
+  renderHTMLELement(selector) {
+    let wrapperElement = document.querySelector(selector);
+
+    // let nvoStatusText = this.nvo ? 'Company has NVO status' : 'Company doesn\'t have NVO status';
+
+    // let nvoStatusText = '';
+    // if (this.nvo) {
+    //   nvoStatusText = 'Company has NVO status';
+    // } else {
+    //   nvoStatusText = 'Company doesn\'t have NVO status';
+    // } 
+
+    let nvoStatusText = 'Company doesn\'t have NVO status';
+    if (this.nvo) {
+      nvoStatusText = 'Company has NVO status';
+    } 
+
+    wrapperElement.innerHTML = `<h1 class="company-name">${this['company name']} <span class="company-code">(code: ${this.companyCode})</span></h1>
+    
+    <div class="company-contacts">
+      <h2>Company contacts:</h2>
+      <ul>
+        <li>Address: ${this.getAddress()}</li>
+        <li>Phone: <a href="tel:${this.contacts.phone}">${this.contacts.phone}</a></li>
+        <li>Email: <a href="mailto:${this.contacts.email}">${this.contacts.email}</a></li>
+      </ul>
+    </div>
+    
+    <div class="company-info">
+      <h2>Company info:</h2>
+      <ul>
+        <li>Open Year: ${this.opened}</li>  
+        <li>CEO: ${this.ceo}</li>  
+        <li>Number of employees: ${this.employees}</li>
+        <li>${this.nvo ? 'Company has NVO status' : 'Company doesn\'t have NVO status'}</li>
+        <li>${nvoStatusText}</li>
+      </ul>
+    </div>
+
+    <div class="about-company">
+      <h2>Company activity areas:</h2>
+      <ul></ul>
+    </div>
+    `;
+  },
   getAddress: function() {
     return `${this.contacts.address.street} ${this.contacts.address.apartment}, ${this.contacts.address.city}, ${this.contacts.address.country}`;
   },
@@ -187,27 +232,30 @@ let company2 = {
   }
 }
 
+
 console.log(company2)
 console.log(company2.getAddress());
-console.log(company2.nvo);
-company2.setNVO();
-console.log(company2.nvo);
-company2.setNonNVO();
-console.log(company2.nvo);
-company2.switchNVO();
-console.log(company2.nvo);
-company2.switchNVO();
-console.log(company2.nvo);
-console.log(company2.getWorkingLocations());
+// console.log(company2.nvo);
+// company2.setNVO();
+// console.log(company2.nvo);
+// company2.setNonNVO();
+// console.log(company2.nvo);
+// company2.switchNVO();
+// console.log(company2.nvo);
+// company2.switchNVO();
+// console.log(company2.nvo);
+// console.log(company2.getWorkingLocations());
+// console.log(company2.getActivityAreas());
+// console.log(company2.addWorkingLocation('France'));
+// console.log(company2.getWorkingLocations());
+// console.log(company2.getActivityAreas());
+// company2.addActivityArea('Marketing');
+// console.log(company2.getActivityAreas());
+// console.log(company2.getWorkingLocations());
+// company2.removeWorkingLocation('Germany');
+// console.log(company2.getWorkingLocations());
 console.log(company2.getActivityAreas());
-console.log(company2.addWorkingLocation('France'));
-console.log(company2.getWorkingLocations());
-console.log(company2.getActivityAreas());
-company2.addActivityArea('Marketing');
-console.log(company2.getActivityAreas());
-console.log(company2.getWorkingLocations());
-company2.removeWorkingLocation('Germany');
-console.log(company2.getWorkingLocations());
-console.log(company2.getActivityAreas());
-console.log(company2.removeActivityArea('Tourism'));
-console.log(company2.getActivityAreas());
+// console.log(company2.removeActivityArea('Tourism'));
+// console.log(company2.getActivityAreas());
+
+company2.renderHTMLELement('#company-1');
