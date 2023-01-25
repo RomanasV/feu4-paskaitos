@@ -1,0 +1,20 @@
+UŽDUOTIS:
+1. Naudojant Object() metodą sukurti kintamąjį įmonei apibūdinti.
+2. Prie objekto pridėti:
+2.1. Property „company name" ir priskirti įmonės pavadinimo reikšmę.
+2.2. Property „opened" ir priskirti įmonės įkūrimo metų reikšmę.
+2.3. Property „companyCode" ir priskirti įmonės kodo reikšmę.
+2.4. Property „employees" ir priskirti įmonėje dirbančių darbuotojų kiekio reikšmę.
+2.5. Property „ceo" ir priskirti įmonės vadovo reikšmę.
+2.6. Property „nvo" ir priskirti boolean reikšmę (ar įmonė turi NVO statusą).
+2.7. Property „workingLocation" ir priskirti įmonės veiklos šalių value (turi būti bent 2 veiklos šalys).
+2.8. Property „activityAreas" ir priskirti įmonės veiklos sričių reikšmę (turi būti bent dvi veiklos sritys).
+2.9. Property „contacts", kuris turės:
+      2.9.1. „phone"
+      2.9.2. „email"
+      2.9.3. „address", kuris turės:
+          2.9.3.1. „country"
+          2.9.3.2. „city"
+          2.9.3.3. „street"
+          2.9.3.4. „apartment"
+2.10. Property „subsidiary", kurio reikšmė bus naujas objektas.
