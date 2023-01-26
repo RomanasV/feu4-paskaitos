@@ -131,9 +131,19 @@ function renderCities(cities) {
       touristAttractionsListItems += '<li>' + singleAttraction + '</li>';
     });
 
-    citiesWrapper.innerHTML += `<div class="city-item">
-                                  <h2 class="city-title">${city.name}</h2>
-                                  <p>${city.name} city is located in ${city.location.continent}, ${city.location.country} and has population of ${city.population} people.</p>
+    let capitalTitle = '';
+    let capitalClass = '';
+    let capitalText = '';
+
+    if (city.isCapital) {
+      capitalTitle = ' (capital)';
+      capitalClass = ' capital';
+      capitalText = ` ${city.name} is the capital of ${city.location.country}.`;
+    }
+
+    citiesWrapper.innerHTML += `<div class="city-item${capitalClass}">
+                                  <h2 class="city-title">${city.name}${capitalTitle}</h2>
+                                  <p>${city.name} city is located in ${city.location.continent}, ${city.location.country} and has population of ${city.population} people.${capitalText}</p>
 
                                   <h3>Main Tourist attractions of ${city.name} are:</h3>
 
@@ -143,3 +153,9 @@ function renderCities(cities) {
 }
 
 renderCities(citiesData);
+
+
+// 3.1. Jeigu miestas yra sostinė, tai:
+//  3.1.1. Prie miesto pavadinimo pridėti žodį capital, pvz.: Vilnius (capital)
+//  3.1.2. Prie miesto aprašymo pridėti tekstą, kuris nusako jog tai šalies sostinė, pvz.: „Vilnius is the capital of Lithuania."
+//  3.1.3. Jeigu miestas yra sostinė, tai prie apgaubiančio elemento pridėti klasę „capital".
