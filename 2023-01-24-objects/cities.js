@@ -7,7 +7,7 @@
 //  1.4. touristAttractions - lankytinos vietos (array)
 //  1.5. isCapital - reikšmė nurodanti ar miestas yra sostinė (boolean)
 
-let cities = [
+let citiesData = [
   {
     name: 'London',
     population: 11120000,
@@ -100,25 +100,46 @@ let cities = [
   },
 ];
 
-console.log(cities);
-cities.forEach((city) => {
-  // 1.6. Visus miestų masyvų narius išvesti į konsolę.
-  console.log(city);
-  // 1.6.1. Visų miestų pavadinimis išvesti į konsolę.
-  console.log(city.name);
-  // 1.6.2. Visų miestų populiaciją išvesti į konsolę.
-  console.log(city.population);
-  // 1.6.3. Visų miestų žemyną išvesti į konsolę.
-  console.log(city.location.continent);
-  // 1.6.4. Visų miestų šalį išvesti į konsolę.
-  console.log(city.location.country);
-  // 1.6.5. Į konsolę išvesti ar miestas yra sostinė, ar ne.
-  console.log(city.isCapital);
-  // 1.6.6. Į konsolę išvesti visas miesto lankytinas vietas.
-  console.log(city.touristAttractions);
-  city.touristAttractions.forEach((singleAttraction) => {
-    console.log(singleAttraction);
+
+
+
+function renderCities(cities) {
+  // 2. HTML faile sukurti tuščią div elementą, kuriame bus atvaizduoti visi miestai.
+  //  2.1. Panaudojant ciklą, atvaizduoti visus miestus ekrane pagal nurodytą stilių.
+
+  let citiesWrapper = document.querySelector('#cities-wrapper');
+
+  cities.forEach((city) => {
+    // 1.6. Visus miestų masyvų narius išvesti į konsolę.
+    console.log(city);
+    // 1.6.1. Visų miestų pavadinimis išvesti į konsolę.
+    console.log(city.name);
+    // 1.6.2. Visų miestų populiaciją išvesti į konsolę.
+    console.log(city.population);
+    // 1.6.3. Visų miestų žemyną išvesti į konsolę.
+    console.log(city.location.continent);
+    // 1.6.4. Visų miestų šalį išvesti į konsolę.
+    console.log(city.location.country);
+    // 1.6.5. Į konsolę išvesti ar miestas yra sostinė, ar ne.
+    console.log(city.isCapital);
+    // 1.6.6. Į konsolę išvesti visas miesto lankytinas vietas.
+    console.log(city.touristAttractions);
+
+    let touristAttractionsListItems = '';
+
+    city.touristAttractions.forEach((singleAttraction) => {
+      touristAttractionsListItems += '<li>' + singleAttraction + '</li>';
+    });
+
+    citiesWrapper.innerHTML += `<div class="city-item">
+                                  <h2 class="city-title">${city.name}</h2>
+                                  <p>${city.name} city is located in ${city.location.continent}, ${city.location.country} and has population of ${city.population} people.</p>
+
+                                  <h3>Main Tourist attractions of ${city.name} are:</h3>
+
+                                  <ul>${touristAttractionsListItems}</ul>
+                                </div>`;
   });
-});
+}
 
-
+renderCities(citiesData);

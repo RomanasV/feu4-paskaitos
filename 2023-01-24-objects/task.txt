@@ -55,3 +55,8 @@ UŽDUOTIS:
 
 2. HTML faile sukurti tuščią div elementą, kuriame bus atvaizduoti visi miestai.
  2.1. Panaudojant ciklą, atvaizduoti visus miestus ekrane pagal nurodytą stilių.
+
+3.1. Jeigu miestas yra sostinė, tai:
+ 3.1.1. Prie miesto pavadinimo pridėti žodį capital, pvz.: Vilnius (capital)
+ 3.1.2. Prie miesto aprašymo pridėti tekstą, kuris nusako jog tai šalies sostinė, pvz.: „Vilnius is the capital of Lithuania."
+ 3.1.3. Jeigu miestas yra sostinė, tai prie apgaubiančio elemento pridėti klasę „capital".
