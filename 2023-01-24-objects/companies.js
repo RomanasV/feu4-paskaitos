@@ -137,7 +137,7 @@ let company2 = {
   employees: 20,
   ceo: 'Doe John',
   nvo: true,
-  workingLocations: ['Germany'],
+  workingLocations: ['Germany', 'France'],
   activityAreas: ['Tourism', 'B2C Sales'],
   contacts: {
     phone: 7646546464,
@@ -167,6 +167,26 @@ let company2 = {
       nvoStatusText = 'Company has NVO status';
     } 
 
+    // let activityAreasList = this.activityAreas.map(area => '<li>' + area + '</li>').reduce((str, area) => str + area);
+
+    // let activityAreasList = this.activityAreas.map(area => '<li>' + area + '</li>').join('');
+
+    // let activityAreasList = this.activityAreas.reduce((str, area) => {
+    //   let areaLiElement = '<li>' + area + '</li>'
+    //   return str + areaLiElement;
+    // }, '');
+
+    let activityAreasList = '';
+
+    this.activityAreas.forEach(area => {
+      let areaLiElement = '<li>' + area + '</li>';
+      activityAreasList += areaLiElement;
+    });
+
+    let workingLocationsList = '';
+
+    this.workingLocations.forEach(location => workingLocationsList += `<li>${location}</li>`)
+
     wrapperElement.innerHTML = `<h1 class="company-name">${this['company name']} <span class="company-code">(code: ${this.companyCode})</span></h1>
     
     <div class="company-contacts">
@@ -191,7 +211,12 @@ let company2 = {
 
     <div class="about-company">
       <h2>Company activity areas:</h2>
-      <ul></ul>
+      <ul>${activityAreasList}</ul>
+    </div>
+
+    <div class="about-company">
+      <h2>Company working locations:</h2>
+      <ul>${workingLocationsList}</ul>
     </div>
     `;
   },
