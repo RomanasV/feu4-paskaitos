@@ -44,3 +44,14 @@ UŽDUOTIS:
    1.3.2. country - šalis (string)
  1.4. touristAttractions - lankytinos vietos (array)
  1.5. isCapital - reikšmė nurodanti ar miestas yra sostinė (boolean)
+
+1.6. Visus miestų masyvų narius išvesti į konsolę.
+1.6.1. Visų miestų pavadinimis išvesti į konsolę.
+1.6.2. Visų miestų populiaciją išvesti į konsolę.
+1.6.3. Visų miestų žemyną išvesti į konsolę.
+1.6.4. Visų miestų šalį išvesti į konsolę.
+1.6.5. Į konsolę išvesti ar miestas yra sostinė, ar ne.
+1.6.6. Į konsolę išvesti visas miesto lankytinas vietas.
+
+2. HTML faile sukurti tuščią div elementą, kuriame bus atvaizduoti visi miestai.
+ 2.1. Panaudojant ciklą, atvaizduoti visus miestus ekrane pagal nurodytą stilių.
