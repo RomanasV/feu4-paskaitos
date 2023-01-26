@@ -111,20 +111,25 @@ function renderCities(cities) {
 
   cities.forEach((city) => {
     // 1.6. Visus miestų masyvų narius išvesti į konsolę.
-    console.log(city);
-    // 1.6.1. Visų miestų pavadinimis išvesti į konsolę.
-    console.log(city.name);
-    // 1.6.2. Visų miestų populiaciją išvesti į konsolę.
-    console.log(city.population);
-    // 1.6.3. Visų miestų žemyną išvesti į konsolę.
-    console.log(city.location.continent);
-    // 1.6.4. Visų miestų šalį išvesti į konsolę.
-    console.log(city.location.country);
-    // 1.6.5. Į konsolę išvesti ar miestas yra sostinė, ar ne.
-    console.log(city.isCapital);
-    // 1.6.6. Į konsolę išvesti visas miesto lankytinas vietas.
-    console.log(city.touristAttractions);
+    // console.log(city);
+    // // 1.6.1. Visų miestų pavadinimis išvesti į konsolę.
+    // console.log(city.name);
+    // // 1.6.2. Visų miestų populiaciją išvesti į konsolę.
+    // console.log(city.population);
+    // // 1.6.3. Visų miestų žemyną išvesti į konsolę.
+    // console.log(city.location.continent);
+    // // 1.6.4. Visų miestų šalį išvesti į konsolę.
+    // console.log(city.location.country);
+    // // 1.6.5. Į konsolę išvesti ar miestas yra sostinė, ar ne.
+    // console.log(city.isCapital);
+    // // 1.6.6. Į konsolę išvesti visas miesto lankytinas vietas.
+    // console.log(city.touristAttractions);
 
+
+    // 3.1. Jeigu miestas yra sostinė, tai:
+    //  3.1.1. Prie miesto pavadinimo pridėti žodį capital, pvz.: Vilnius (capital)
+    //  3.1.2. Prie miesto aprašymo pridėti tekstą, kuris nusako jog tai šalies sostinė, pvz.: „Vilnius is the capital of Lithuania."
+    //  3.1.3. Jeigu miestas yra sostinė, tai prie apgaubiančio elemento pridėti klasę „capital".
     let capitalTitle = '';
     let capitalClass = '';
     let capitalText = '';
@@ -135,6 +140,10 @@ function renderCities(cities) {
       capitalText = ` ${city.name} is the capital of ${city.location.country}.`;
     }
 
+    //  4. Priklausomai nuo miesto lankytinų objektų kiekio, tekstas turi skirtis:
+    //  4.1. Jeigu lankytina vieta tik viena, tai turėtų būti naudojama vienaskaita, pvz.: „Main Tourist attraction of Vilnius is".
+    //  4.2. Jeigu lankytinų vietų yra daugiau, nei viena, tai tekstas turėtų būti daugiskaitoje, pvz. „Main Tourist attractions of Kaunas are".
+    //  4.3. Jeigu lankytinų vietų nėra, tai tekstas neturėtų būti atvaizduojamas.
     let touristAttractionElement = '';
 
     if (city.touristAttractions.length > 0) {
@@ -165,7 +174,17 @@ function renderCities(cities) {
 renderCities(citiesData);
 
 
-// 3.1. Jeigu miestas yra sostinė, tai:
-//  3.1.1. Prie miesto pavadinimo pridėti žodį capital, pvz.: Vilnius (capital)
-//  3.1.2. Prie miesto aprašymo pridėti tekstą, kuris nusako jog tai šalies sostinė, pvz.: „Vilnius is the capital of Lithuania."
-//  3.1.3. Jeigu miestas yra sostinė, tai prie apgaubiančio elemento pridėti klasę „capital".
+// 5. Naudojant tik JavaScript:
+//  5.1. Pakeisti visų sostinių pavadinimo teksto spalvą.
+//  5.2. Pakeisti kas antro miesto fono spalvą.
+//  5.3. Pakeisti visų lankytinų vietų sąrašo pirmo nario spalvą į žalią.
+//  5.4. Pakeisti visų lankytinų vietų sąrašo paskutinių narių spalvą į raudoną, jeigu narių (lankytinų vietų) yra daugiau nei 3.
+
+function task51() {
+  let cityItems = document.querySelectorAll('.city-item');
+  cityItems.forEach((cityItem) => {
+    cityItem.style.color = 'green';
+  })
+}
+
+task51();
