@@ -125,12 +125,6 @@ function renderCities(cities) {
     // 1.6.6. Į konsolę išvesti visas miesto lankytinas vietas.
     console.log(city.touristAttractions);
 
-    let touristAttractionsListItems = '';
-
-    city.touristAttractions.forEach((singleAttraction) => {
-      touristAttractionsListItems += '<li>' + singleAttraction + '</li>';
-    });
-
     let capitalTitle = '';
     let capitalClass = '';
     let capitalText = '';
@@ -141,13 +135,29 @@ function renderCities(cities) {
       capitalText = ` ${city.name} is the capital of ${city.location.country}.`;
     }
 
+    let touristAttractionElement = '';
+
+    if (city.touristAttractions.length > 0) {
+      let touristAttractionTitle = `Main Tourist attraction of ${city.name} is:`;
+
+      if (city.touristAttractions.length > 1) {
+        touristAttractionTitle = `Main Tourist attractions of ${city.name} are:`;
+      }
+
+      let touristAttractionsListItems = '';
+
+      city.touristAttractions.forEach((singleAttraction) => {
+        touristAttractionsListItems += '<li>' + singleAttraction + '</li>';
+      });
+
+      touristAttractionElement = `<h3>${touristAttractionTitle}</h3>
+                                  <ul>${touristAttractionsListItems}</ul>`;
+    }
+
     citiesWrapper.innerHTML += `<div class="city-item${capitalClass}">
                                   <h2 class="city-title">${city.name}${capitalTitle}</h2>
                                   <p>${city.name} city is located in ${city.location.continent}, ${city.location.country} and has population of ${city.population} people.${capitalText}</p>
-
-                                  <h3>Main Tourist attractions of ${city.name} are:</h3>
-
-                                  <ul>${touristAttractionsListItems}</ul>
+                                  ${touristAttractionElement}
                                 </div>`;
   });
 }
