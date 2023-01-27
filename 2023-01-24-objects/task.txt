@@ -71,3 +71,5 @@ UŽDUOTIS:
  5.2. Pakeisti kas antro miesto fono spalvą.
  5.3. Pakeisti visų lankytinų vietų sąrašo pirmo nario spalvą į žalią.
  5.4. Pakeisti visų lankytinų vietų sąrašo paskutinių narių spalvą į raudoną, jeigu narių (lankytinų vietų) yra daugiau nei 3.
+
+6. Jeigu miestų skaičius nėra porinis, tai paskutinio miesto plotis turi būti 100%, o visų kitų - 50%.
