@@ -59,3 +59,37 @@ console.log(newParagraph.classList.contains('penkta-klase'));
 console.log(newParagraph.classList.contains('septinta-klase'));
 console.log(newParagraph.classList.contains('astunta-klase'));
 console.log(newParagraph.classList.contains('klase'));
+
+if (newParagraph.classList.contains('toggle-klase')) {
+  document.body.style.backgroundColor = '#aaa';
+}
+
+// Keičia (arba prideda) HTML elemento ID
+newParagraph.id = 'paragrafo-id';
+console.log(newParagraph.id);
+
+let link = document.createElement('a');
+link.textContent = 'nuoroda';
+newParagraph.after(link);
+
+// link.href = 'https://google.com';
+link.setAttribute('href', 'https://google.com');
+link.setAttribute('target', '_blank');
+link.setAttribute('title', 'cia yra nuoroda');
+link.setAttribute('class', 'nuorodos-klase');
+link.setAttribute('class', 'antra-nuorodos-klase');
+link.setAttribute('id', 'nuorodos-id');
+
+console.log(link.getAttribute('title'));
+link.removeAttribute('class');
+
+link.style.border = '1px solid black';
+link.style.padding = '5px 10px';
+link.style.fontSize = '20px';
+
+link.style = `background-color: green;
+              color: white;
+              font-size: 20px;
+              padding: 5px 10px;
+              border: 1px solid black;
+              font-weight: 700;`;
