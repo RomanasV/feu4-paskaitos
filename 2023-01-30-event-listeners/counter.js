@@ -17,10 +17,10 @@ plusButton.textContent = '+';
 plus2Button.textContent = '+2';
 resetButton.textContent = 'Reset';
 
-numberDisplay.style.color = 'green';
+changeColor();
 
 minusButton.addEventListener('click', () => {
-  numberDisplay.textContent = Number(numberDisplay.textContent) + 1;
+  numberDisplay.textContent = Number(numberDisplay.textContent) - 1;
   
   if (numberDisplay.textContent < 3) {
     minus2Button.setAttribute('disabled', true);
@@ -34,17 +34,15 @@ minusButton.addEventListener('click', () => {
     plus2Button.removeAttribute('disabled');
   }
   
-  plusButton.removeAttribute('disabled');
-
-  if (numberDisplay.textContent > 4) {
-    numberDisplay.style.color = 'green';
-  } else {
-    numberDisplay.style.color = 'red';
+  if (numberDisplay.textContent < 10) {
+    plusButton.removeAttribute('disabled');
   }
+
+  changeColor();
 })
 
 minus2Button.addEventListener('click', () => {
-  numberDisplay.textContent = Number(numberDisplay.textContent) - 1;
+  numberDisplay.textContent = Number(numberDisplay.textContent) - 2;
 
   if (numberDisplay.textContent < 3) {
     minus2Button.setAttribute('disabled', true);
@@ -58,13 +56,11 @@ minus2Button.addEventListener('click', () => {
     plus2Button.removeAttribute('disabled');
   }
 
-  plusButton.removeAttribute('disabled');
-
-  if (numberDisplay.textContent > 4) {
-    numberDisplay.style.color = 'green';
-  } else {
-    numberDisplay.style.color = 'red';
+  if (numberDisplay.textContent < 10) {
+    plusButton.removeAttribute('disabled');
   }
+
+  changeColor();
 });
 
 plusButton.addEventListener('click', () => {
@@ -82,13 +78,11 @@ plusButton.addEventListener('click', () => {
     minus2Button.removeAttribute('disabled');
   }
 
-  minusButton.removeAttribute('disabled');
-
-  if (numberDisplay.textContent > 4) {
-    numberDisplay.style.color = 'green';
-  } else {
-    numberDisplay.style.color = 'red';
+  if (numberDisplay.textContent > 0) {
+    minusButton.removeAttribute('disabled');
   }
+
+  changeColor();
 })
 
 
@@ -107,13 +101,11 @@ plus2Button.addEventListener('click', () => {
     minus2Button.removeAttribute('disabled');
   }
 
-  minusButton.removeAttribute('disabled');
-
-  if (numberDisplay.textContent > 4) {
-    numberDisplay.style.color = 'green';
-  } else {
-    numberDisplay.style.color = 'red';
+  if (numberDisplay.textContent > 0) {
+    minusButton.removeAttribute('disabled');
   }
+
+  changeColor();
 })
 
 resetButton.addEventListener('click', () => {
@@ -122,7 +114,16 @@ resetButton.addEventListener('click', () => {
   plus2Button.removeAttribute('disabled');
   minusButton.removeAttribute('disabled');
   minus2Button.removeAttribute('disabled');
+  changeColor();
 })
+
+function changeColor() {
+  if (numberDisplay.textContent > 4) {
+    numberDisplay.style.color = 'green';
+  } else {
+    numberDisplay.style.color = 'red';
+  }
+}
 
 
 // 12. Sukurti du naujus mygtukus, kurie:
