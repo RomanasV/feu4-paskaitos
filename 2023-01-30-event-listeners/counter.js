@@ -10,6 +10,10 @@ let plusButton = document.createElement('button');
 let plus2Button = document.createElement('button');
 let plus5Button = document.createElement('button');
 let resetButton = document.createElement('button');
+let saveGrade = document.createElement('button');
+
+let gradesTitle = document.createElement('h4');
+let gradesList = document.createElement('ul');
 
 // numberInput.setAttribute('type', 'number');
 numberInput.type = 'number';
@@ -23,10 +27,12 @@ plusButton.textContent = '+';
 plus2Button.textContent = '+2';
 plus5Button.textContent = '+5';
 resetButton.textContent = 'Reset';
+saveGrade.textContent = 'Add Grade';
+gradesTitle.textContent = 'Balai:';
 
-numbersWrapper.append(numberInput, numberDisplay, minus5Button, minus2Button, minusButton, resetButton, plusButton, plus2Button, plus5Button);
+numbersWrapper.append(numberInput, numberDisplay, minus5Button, minus2Button, minusButton, resetButton, plusButton, plus2Button, plus5Button, saveGrade, gradesTitle, gradesList);
 
-const defaultValue = 10;
+const defaultValue = 5;
 let counter = defaultValue;
 checkData(0);
 
@@ -55,6 +61,16 @@ plus5Button.addEventListener('click', () => {
 })
 
 resetButton.addEventListener('click', () => {
+  counter = defaultValue;
+  checkData(0);
+})
+
+saveGrade.addEventListener('click', () => {
+  let gradeItem = document.createElement('li');
+  gradeItem.textContent = counter;
+
+  gradesList.prepend(gradeItem);
+
   counter = defaultValue;
   checkData(0);
 })
