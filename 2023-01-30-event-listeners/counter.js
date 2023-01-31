@@ -68,6 +68,7 @@ resetButton.addEventListener('click', () => {
 saveGrade.addEventListener('click', () => {
   let gradeItem = document.createElement('li');
   gradeItem.textContent = counter;
+  gradeItem.style.color = numberDisplay.style.color;
 
   gradesList.prepend(gradeItem);
 
