@@ -1,5 +1,6 @@
 let numbersWrapper = document.getElementById('numbers');
 
+let numberInput = document.createElement('input');
 let numberDisplay = document.createElement('h3');
 
 let minusButton = document.createElement('button');
@@ -10,6 +11,11 @@ let plus2Button = document.createElement('button');
 let plus5Button = document.createElement('button');
 let resetButton = document.createElement('button');
 
+// numberInput.setAttribute('type', 'number');
+numberInput.type = 'number';
+numberInput.max = 10;
+numberInput.min = 1;
+
 minusButton.textContent = '-';
 minus2Button.textContent = '-2';
 minus5Button.textContent = '-5';
@@ -18,7 +24,7 @@ plus2Button.textContent = '+2';
 plus5Button.textContent = '+5';
 resetButton.textContent = 'Reset';
 
-numbersWrapper.append(numberDisplay, minus5Button, minus2Button, minusButton, resetButton, plusButton, plus2Button, plus5Button);
+numbersWrapper.append(numberInput, numberDisplay, minus5Button, minus2Button, minusButton, resetButton, plusButton, plus2Button, plus5Button);
 
 const defaultValue = 10;
 let counter = defaultValue;
@@ -53,6 +59,21 @@ resetButton.addEventListener('click', () => {
   checkData(0);
 })
 
+numberInput.addEventListener('input', () => {
+  if (!numberInput.valueAsNumber) {
+    return;
+  }
+  
+  if (numberInput.valueAsNumber > 10) {
+    numberInput.value = 10;
+  } else if (numberInput.valueAsNumber < 1) {
+    numberInput.value = 1;
+  }
+
+  counter = numberInput.valueAsNumber;
+  checkData(0);
+})
+
 function changeColor() {
   let color;
   
@@ -70,6 +91,7 @@ function changeColor() {
 function checkData(num) {
   counter += num;
   numberDisplay.textContent = counter;
+  numberInput.value = counter;
 
   if (counter > 9) {
     plusButton.setAttribute('disabled', true);
