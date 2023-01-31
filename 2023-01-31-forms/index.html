@@ -7,7 +7,7 @@
   <title>Forms</title>
 </head>
 <body>
-  <form action="/form-success.html">
+  <!-- <form action="/form-success.html">
     <input type="text" name="first-name" minlength="2" id="user-first-name" placeholder="Name">
     <input type="text" name="last-name" maxlength="10" id="user-last-name" placeholder="Enter your last name">
     <input type="number" name="age" id="user-age" placeholder="Age" min="0" max="100" step="0.5">
@@ -19,8 +19,86 @@
     <input type="radio" name="radio" id="user-radio">
     <input type="range" name="range" id="user-range" min="10" max="50" step="5">
 
-    <!-- <input type="submit" value="Priduoti formą"> -->
+    <input type="submit" value="Priduoti formą">
     <button type="submit">Submit</button>
+  </form> -->
+
+
+  <!-- PIRMA DALIS:
+  Sukurti kontaktų formą.
+  1. Kontaktų formoje turi būti šie laukeliai:
+      1. Tekstinis laukelis vardui (privalomas).
+      2. Tekstinis laukelis pavardei (privalomas).
+      3. Skaičiaus laukelis amžiui (privalomas).
+      4. Laukelis įvesti telefono numerį (neprivalomas).
+      5. Laukelis įvesti el. paštą (privalomas).
+      6. Range tipo laukelis, kuris skirtas įvertinti savo IT žinias nuo 1 iki 10. Galimas vertinimas tik sveikiems skaičiams.
+      7. Radio tipo laukeliai, kuriuose pasirenkamas grupės numeris. Turi būti galimybė pasirinkti grupes nuo FEU 1gr. iki FEU 5gr.
+      8. Šalia kiekvieno įvesties (input) elemento, pridėti label elementą, kuris žymi laukelio pavadinimą. -->
+
+
+  <form>
+    <div class="form-control">
+      <label for="student-name">Name:</label>
+      <input type="text" name="name" id="student-name" required>
+    </div>
+
+    <div class="form-control">
+      <label for="student-surname">Surname:</label>
+      <input type="text" name="surname" id="student-surname" required>
+    </div>
+
+    <div class="form-control">
+      <label for="student-age">Age:</label>
+      <input type="number" name="age" id="student-age" required>
+    </div>
+    
+    <div class="form-control">
+      <label for="student-phone">Phone:</label>
+      <input type="tel" name="phone" id="student-phone">
+    </div>
+    
+    <div class="form-control">
+      <label for="student-email">Email:</label>
+      <input type="email" name="email" id="student-email" required>
+    </div>
+    
+    <div class="form-control">
+      <label for="student-it-knowledge">IT knowledge:</label>
+      <input type="range" name="it-knowledge" id="student-it-knowledge">
+    </div>
+
+    <fieldset>
+      <legend>Group:</legend>
+      
+      <div class="form-control">
+        <input type="radio" name="group" id="group-1">
+        <label for="group-1">FEU 1gr.</label>
+      </div>
+
+      <div class="form-control">
+        <input type="radio" name="group" id="group-2">
+        <label for="group-2">FEU 2gr.</label>
+      </div>
+
+      <div class="form-control">
+        <input type="radio" name="group" id="group-3">
+        <label for="group-3">FEU 3gr.</label>
+      </div>
+
+      <div class="form-control">
+        <input type="radio" name="group" id="group-4">
+        <label for="group-4">FEU 4gr.</label>
+      </div>
+
+      <div class="form-control">
+        <input type="radio" name="group" id="group-5">
+        <label for="group-5">FEU 5gr.</label>
+      </div>
+    </fieldset>
+
+
+    <input type="submit" value="Create Student">
   </form>
 
   <script src="script.js"></script>
