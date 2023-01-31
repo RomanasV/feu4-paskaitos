@@ -11,6 +11,7 @@ let plus2Button = document.createElement('button');
 let plus5Button = document.createElement('button');
 let resetButton = document.createElement('button');
 let saveGrade = document.createElement('button');
+let removeGrades = document.createElement('button');
 
 let gradesTitle = document.createElement('h4');
 let gradesList = document.createElement('ul');
@@ -28,9 +29,10 @@ plus2Button.textContent = '+2';
 plus5Button.textContent = '+5';
 resetButton.textContent = 'Reset';
 saveGrade.textContent = 'Add Grade';
+removeGrades.textContent = 'Remove All Grades';
 gradesTitle.textContent = 'Balai:';
 
-numbersWrapper.append(numberInput, numberDisplay, minus5Button, minus2Button, minusButton, resetButton, plusButton, plus2Button, plus5Button, saveGrade, gradesTitle, gradesList);
+numbersWrapper.append(numberInput, numberDisplay, minus5Button, minus2Button, minusButton, resetButton, plusButton, plus2Button, plus5Button, saveGrade, gradesTitle, removeGrades, gradesList);
 
 const defaultValue = 5;
 let counter = defaultValue;
@@ -69,11 +71,26 @@ saveGrade.addEventListener('click', () => {
   let gradeItem = document.createElement('li');
   gradeItem.textContent = counter;
   gradeItem.style.color = numberDisplay.style.color;
-
+  gradeItem.classList.add('grade');
   gradesList.prepend(gradeItem);
+
+  let deleteButton = document.createElement('button');
+  deleteButton.textContent = 'x';
+  gradeItem.append(deleteButton);
+
+  deleteButton.addEventListener('click', () => {
+    gradeItem.remove();
+  });
 
   counter = defaultValue;
   checkData(0);
+})
+
+removeGrades.addEventListener('click', () => {
+  let gradesList = document.querySelectorAll('li.grade');
+  gradesList.forEach(grade => {
+    grade.remove();
+  });
 })
 
 numberInput.addEventListener('input', () => {
