@@ -4,127 +4,111 @@ let numberDisplay = document.createElement('h3');
 
 let minusButton = document.createElement('button');
 let minus2Button = document.createElement('button');
+let minus5Button = document.createElement('button');
 let plusButton = document.createElement('button');
 let plus2Button = document.createElement('button');
+let plus5Button = document.createElement('button');
 let resetButton = document.createElement('button');
 
-numbersWrapper.append(numberDisplay, minus2Button, minusButton, resetButton, plusButton, plus2Button);
-
-numberDisplay.textContent = 5;
 minusButton.textContent = '-';
 minus2Button.textContent = '-2';
+minus5Button.textContent = '-5';
 plusButton.textContent = '+';
 plus2Button.textContent = '+2';
+plus5Button.textContent = '+5';
 resetButton.textContent = 'Reset';
 
-changeColor();
+numbersWrapper.append(numberDisplay, minus5Button, minus2Button, minusButton, resetButton, plusButton, plus2Button, plus5Button);
 
-minusButton.addEventListener('click', () => {
-  numberDisplay.textContent = Number(numberDisplay.textContent) - 1;
-  
-  if (numberDisplay.textContent < 3) {
-    minus2Button.setAttribute('disabled', true);
-  }
+const defaultValue = 10;
+let counter = defaultValue;
+checkData(0);
 
-  if (numberDisplay.textContent < 2) {
-    minusButton.setAttribute('disabled', true);
-  }
-
-  if (numberDisplay.textContent < 9) {
-    plus2Button.removeAttribute('disabled');
-  }
-  
-  if (numberDisplay.textContent < 10) {
-    plusButton.removeAttribute('disabled');
-  }
-
-  changeColor();
+minusButton.addEventListener('click', () => { 
+  checkData(-1);
 })
 
 minus2Button.addEventListener('click', () => {
-  numberDisplay.textContent = Number(numberDisplay.textContent) - 2;
+  checkData(-2);
+});
 
-  if (numberDisplay.textContent < 3) {
-    minus2Button.setAttribute('disabled', true);
-  }
-
-  if (numberDisplay.textContent < 2) {
-    minusButton.setAttribute('disabled', true);
-  }
-
-  if (numberDisplay.textContent < 9) {
-    plus2Button.removeAttribute('disabled');
-  }
-
-  if (numberDisplay.textContent < 10) {
-    plusButton.removeAttribute('disabled');
-  }
-
-  changeColor();
+minus5Button.addEventListener('click', () => {
+  checkData(-5);
 });
 
 plusButton.addEventListener('click', () => {
-  numberDisplay.textContent = Number(numberDisplay.textContent) + 1;
-
-  if (numberDisplay.textContent > 9) {
-    plusButton.setAttribute('disabled', true);
-  }
-
-  if (numberDisplay.textContent > 8) {
-    plus2Button.setAttribute('disabled', true);
-  }
-
-  if (numberDisplay.textContent > 2) {
-    minus2Button.removeAttribute('disabled');
-  }
-
-  if (numberDisplay.textContent > 0) {
-    minusButton.removeAttribute('disabled');
-  }
-
-  changeColor();
+  checkData(1);
 })
 
-
 plus2Button.addEventListener('click', () => {
-  numberDisplay.textContent = Number(numberDisplay.textContent) + 2;
+  checkData(2);
+})
 
-  if (numberDisplay.textContent > 9) {
-    plusButton.setAttribute('disabled', true);
-  }
-
-  if (numberDisplay.textContent > 8) {
-    plus2Button.setAttribute('disabled', true);
-  }
-
-  if (numberDisplay.textContent > 2) {
-    minus2Button.removeAttribute('disabled');
-  }
-
-  if (numberDisplay.textContent > 0) {
-    minusButton.removeAttribute('disabled');
-  }
-
-  changeColor();
+plus5Button.addEventListener('click', () => {
+  checkData(5);
 })
 
 resetButton.addEventListener('click', () => {
-  numberDisplay.textContent = 5;
-  plusButton.removeAttribute('disabled');
-  plus2Button.removeAttribute('disabled');
-  minusButton.removeAttribute('disabled');
-  minus2Button.removeAttribute('disabled');
-  changeColor();
+  counter = defaultValue;
+  checkData(0);
 })
 
 function changeColor() {
-  if (numberDisplay.textContent > 4) {
-    numberDisplay.style.color = 'green';
+  let color;
+  
+  if (counter < 5) {
+    color = 'red';
+  } else if (counter < 7 ) {
+    color = 'orange';
   } else {
-    numberDisplay.style.color = 'red';
+    color = 'green';
   }
+
+  numberDisplay.style.color = color;
 }
 
+function checkData(num) {
+  counter += num;
+  numberDisplay.textContent = counter;
+
+  if (counter > 9) {
+    plusButton.setAttribute('disabled', true);
+  } else {
+    plusButton.removeAttribute('disabled');
+  }
+
+  if (counter > 8) {
+    plus2Button.setAttribute('disabled', true);
+  } else {
+    plus2Button.removeAttribute('disabled');
+  }
+
+  if (counter > 5) {
+    plus5Button.setAttribute('disabled', true);
+  } else {
+    plus5Button.removeAttribute('disabled');
+  }
+
+  if (counter > 5) {
+    minus5Button.removeAttribute('disabled');
+  } else {
+    minus5Button.setAttribute('disabled', true);
+  }
+
+  if (counter > 2) {
+    minus2Button.removeAttribute('disabled');
+  } else {
+    minus2Button.setAttribute('disabled', true);
+  }
+
+  if (counter > 1) {
+    minusButton.removeAttribute('disabled');
+  } else {
+    minusButton.setAttribute('disabled', true);
+  }
+
+  changeColor();
+}
 
 // 12. Sukurti du naujus mygtukus, kurie:
 // 12.1. Prideda dvejetą prie esamos h3 elemento reikšmės.

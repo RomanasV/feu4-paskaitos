@@ -18,3 +18,8 @@ Užduotis:
 12.1. Prideda dvejetą prie esamos h3 elemento reikšmės.
 12.2. Atima dvejetą iš esamos h3 elemento reikšmės.
 
+13. Sukurti naują elementą (h4) ir jį pridėti į „numbers" elemento pabaigą.
+13.1. Šio elemento tekstas turėtų būti „Balai:"
+14. Sukurti naują elementą (ul) ir jį pridėti į „numbers" elemento pabaigą.
+14.1. Sukurti naują mygtuką, kurio teksta būtų „Įrašyti balą".
+14.2. Paspaudus šį mygtuką, reikia paimti reikšmę iš h3 elemento ir sukurti naują li elementą bei jį prepend'inti prie ul elemento.
