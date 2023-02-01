@@ -66,19 +66,29 @@ studentForm.addEventListener('submit', (event) => {
   const groupElement = document.createElement('p');
   groupElement.innerHTML = `<strong>Group:</strong> ${studentGroup.toUpperCase()} group`;
 
+  const interestsWrapper = document.createElement('div');
+  interestsWrapper.classList.add('interests-wrapper');
 
+  const interestsTitle = document.createElement('h4');
+  interestsTitle.classList.add('interests-title');
+  interestsTitle.textContent = 'No interests :(';
+  
+  interestsWrapper.append(interestsTitle);
+  
+  if (studentInterests.length > 0) {
+    interestsTitle.textContent = 'Student interests:';
+    const interestListElement = document.createElement('ul');
 
-  console.log(studentInterests);
-  studentInterests.forEach(interest => {
-    console.log(interest);
-    console.log(interest.value);
-  })
+    studentInterests.forEach(interest => {
+      const interestElement = document.createElement('li');
+      interestElement.textContent = interest.value;
+  
+      interestListElement.append(interestElement);
+    })
+    
+    interestsWrapper.append(interestListElement);
+  }
 
-
-
-
-
-
-  studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement);
+  studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper);
   studentList.prepend(studentItem);
 })
