@@ -7,7 +7,7 @@
   <title>Forms</title>
 </head>
 <body>
-  <form>
+  <!-- <form>
     <input type="text" name="first-name" minlength="2" id="user-first-name" placeholder="Name">
     <input type="text" name="last-name" maxlength="10" id="user-last-name" placeholder="Enter your last name">
     <input type="number" name="age" id="user-age" placeholder="Age" min="0" max="100" step="0.5">
@@ -21,7 +21,7 @@
 
     <input type="submit" value="Priduoti formą">
     <button type="submit">Submit</button>
-  </form>
+  </form> -->
 
 
   <!-- PIRMA DALIS:
@@ -37,20 +37,20 @@
       8. Šalia kiekvieno įvesties (input) elemento, pridėti label elementą, kuris žymi laukelio pavadinimą. -->
 
 
-  <!-- <form>
+  <form id="student-form">
     <div class="form-control">
       <label for="student-name">Name:</label>
-      <input type="text" name="name" id="student-name" required>
+      <input type="text" name="name" id="student-name">
     </div>
 
     <div class="form-control">
       <label for="student-surname">Surname:</label>
-      <input type="text" name="surname" id="student-surname" required>
+      <input type="text" name="surname" id="student-surname">
     </div>
 
     <div class="form-control">
       <label for="student-age">Age:</label>
-      <input type="number" name="age" id="student-age" required>
+      <input type="number" name="age" id="student-age">
     </div>
     
     <div class="form-control">
@@ -60,39 +60,39 @@
     
     <div class="form-control">
       <label for="student-email">Email:</label>
-      <input type="email" name="email" id="student-email" required>
+      <input type="email" name="email" id="student-email">
     </div>
     
     <div class="form-control">
       <label for="student-it-knowledge">IT knowledge:</label>
-      <input type="range" name="it-knowledge" id="student-it-knowledge">
+      <input type="range" name="it-knowledge" id="student-it-knowledge" min="1" max="10">
     </div>
 
     <fieldset>
       <legend>Group:</legend>
       
       <div class="form-control">
-        <input type="radio" name="group" id="group-1">
+        <input type="radio" name="group" id="group-1" value="feu-1">
         <label for="group-1">FEU 1gr.</label>
       </div>
 
       <div class="form-control">
-        <input type="radio" name="group" id="group-2">
+        <input type="radio" name="group" id="group-2" value="feu-2">
         <label for="group-2">FEU 2gr.</label>
       </div>
 
       <div class="form-control">
-        <input type="radio" name="group" id="group-3">
+        <input type="radio" name="group" id="group-3" value="feu-3">
         <label for="group-3">FEU 3gr.</label>
       </div>
 
       <div class="form-control">
-        <input type="radio" name="group" id="group-4">
+        <input type="radio" name="group" id="group-4" value="feu-4">
         <label for="group-4">FEU 4gr.</label>
       </div>
 
       <div class="form-control">
-        <input type="radio" name="group" id="group-5">
+        <input type="radio" name="group" id="group-5" value="feu-5">
         <label for="group-5">FEU 5gr.</label>
       </div>
     </fieldset>
@@ -127,7 +127,10 @@
     </fieldset>
 
     <input type="submit" value="Create Student">
-  </form> -->
+  </form>
+
+
+  <div id="students-list"></div>
 
   <script src="script.js"></script>
 </body>
