@@ -30,6 +30,13 @@ const studentForm = document.querySelector('#student-form');
 // const studentList = document.getElementById('students-list');
 const studentList = document.querySelector('#students-list');
 
+const itKnowledgeInput = studentForm.querySelector('#student-it-knowledge');
+const itKnowledgeOutput = studentForm.querySelector('#it-knowledge-output');
+
+itKnowledgeInput.addEventListener('input', (event) => {
+  itKnowledgeOutput.textContent = event.target.value;
+});
+
 studentForm.addEventListener('submit', (event) => {
   event.preventDefault();
   let studentName = event.target.name.value;
@@ -91,4 +98,16 @@ studentForm.addEventListener('submit', (event) => {
 
   studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper);
   studentList.prepend(studentItem);
+
+  event.target.reset();
+
+  const messageElement = document.createElement('span');
+  messageElement.textContent = `Sukurtas studentas (${studentName} ${studentSurname})`;
+
+  event.target.after(messageElement)
+
+  setTimeout(() => {
+    messageElement.remove();
+  }, 5000)
 })
+
