@@ -40,11 +40,45 @@ studentForm.addEventListener('submit', (event) => {
   let studentItKnowledge = event.target['it-knowledge'].value;
   // let studentGroup = event.target.querySelector('[name="group"]:checked');
   let studentGroup = event.target.group.value;
+  let studentInterests = event.target.querySelectorAll('[name="interest"]:checked');
 
   const studentItem = document.createElement('div');
   studentItem.classList.add('student-item');
 
-  studentItem.textContent = studentName;
+  const nameElement = document.createElement('p');
+  nameElement.innerHTML = `<strong>Name:</strong> ${studentName}`;
 
+  const surnameElement = document.createElement('p');
+  surnameElement.innerHTML = `<strong>Surname:</strong> ${studentSurname}`;
+
+  const ageElement = document.createElement('p');
+  ageElement.innerHTML = `<strong>Age:</strong> ${studentAge}`;
+
+  const phoneElement = document.createElement('p');
+  phoneElement.innerHTML = `<strong>Phone:</strong> ${studentPhone}`;
+
+  const emailElement = document.createElement('p');
+  emailElement.innerHTML = `<strong>Email:</strong> ${studentEmail}`;
+
+  const itKnowledgeElement = document.createElement('p');
+  itKnowledgeElement.innerHTML = `<strong>IT Knowledge:</strong> ${studentItKnowledge}`;
+
+  const groupElement = document.createElement('p');
+  groupElement.innerHTML = `<strong>Group:</strong> ${studentGroup.toUpperCase()} group`;
+
+
+
+  console.log(studentInterests);
+  studentInterests.forEach(interest => {
+    console.log(interest);
+    console.log(interest.value);
+  })
+
+
+
+
+
+
+  studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement);
   studentList.prepend(studentItem);
 })

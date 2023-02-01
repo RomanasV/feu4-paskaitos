@@ -19,3 +19,4 @@ ANTRA DALIS:
 5. Dominančias programavimo kalbas atvaizduoti „student-item" elemente.
 
 6. Sukūrus studentą, turi iššokti <span> elementas, kuris informuoja apie studento sukūrimą: „Sukurtas studentas (Vardas Pavardė)". Šis span elementas dingsta po 5 sekundžių.
+7. Range reikšmės atvaizdavimas naujame elemente.
