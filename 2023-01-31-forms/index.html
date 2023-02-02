@@ -38,15 +38,15 @@
       8. Šalia kiekvieno įvesties (input) elemento, pridėti label elementą, kuris žymi laukelio pavadinimą. -->
 
 
-  <form id="student-form">
+  <form id="student-form" novalidate>
     <div class="form-control">
       <label for="student-name">Name:</label>
-      <input type="text" name="name" id="student-name" value="John">
+      <input type="text" name="name" id="student-name" value="John" required>
     </div>
 
     <div class="form-control">
       <label for="student-surname">Surname:</label>
-      <input type="text" name="surname" id="student-surname" value="Doe">
+      <input type="text" name="surname" id="student-surname" value="Doe" required>
     </div>
 
     <div class="form-control">
@@ -56,12 +56,12 @@
     
     <div class="form-control">
       <label for="student-phone">Phone:</label>
-      <input type="tel" name="phone" id="student-phone" value="+37045466465">
+      <input type="tel" name="phone" id="student-phone" value="+37045466465" required>
     </div>
     
     <div class="form-control">
       <label for="student-email">Email:</label>
-      <input type="email" name="email" id="student-email" value="info@student.lt">
+      <input type="email" name="email" id="student-email" value="info@student.lt" required>
     </div>
     
     <div class="form-control">

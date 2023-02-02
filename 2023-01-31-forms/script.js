@@ -55,6 +55,8 @@ studentForm.addEventListener('submit', (event) => {
 
 
 
+
+
   const previousInputErrorMessage = event.target.querySelector('.input-error-message');
   
   if (previousInputErrorMessage) {
@@ -62,6 +64,22 @@ studentForm.addEventListener('submit', (event) => {
   }
 
   nameInput.classList.remove('input-error');
+
+
+
+
+
+  const requiredInputs = event.target.querySelectorAll('input:required');
+  console.log(requiredInputs);
+
+  requiredInputs.forEach(requiredInput => {
+    console.log(requiredInput);
+
+    if (!requiredInput.value) {
+      console.log(requiredInput.value);
+    }
+  });
+
 
   if (!studentName) {
     const inputErrorMessage = document.createElement('span');
