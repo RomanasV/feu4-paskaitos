@@ -39,20 +39,46 @@ itKnowledgeInput.addEventListener('input', (event) => {
 
 studentForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  let studentName = event.target.name.value;
-  let studentSurname = event.target.surname.value;
-  let studentAge = event.target.age.value;
-  let studentPhone = event.target.phone.value;
-  let studentEmail = event.target.email.value;
-  let studentItKnowledge = event.target['it-knowledge'].value;
-  // let studentGroup = event.target.querySelector('[name="group"]:checked');
-  let studentGroup = event.target.group.value;
-  let studentInterests = event.target.querySelectorAll('[name="interest"]:checked');
+  const nameInput = event.target.name;
+  
+  const studentName = nameInput.value;
+  const studentSurname = event.target.surname.value;
+  const studentAge = event.target.age.value;
+  const studentPhone = event.target.phone.value;
+  const studentEmail = event.target.email.value;
+  const studentItKnowledge = event.target['it-knowledge'].value;
+  // const studentGroup = event.target.querySelector('[name="group"]:checked');
+  const studentGroup = event.target.group.value;
+  const studentInterests = event.target.querySelectorAll('[name="interest"]:checked');
+
+
+
+
+
+  const previousInputErrorMessage = event.target.querySelector('.input-error-message');
+  
+  if (previousInputErrorMessage) {
+    previousInputErrorMessage.remove();
+  }
+
+  nameInput.classList.remove('input-error');
 
   if (!studentName) {
-    alertMessage(event.target, 'Ne visi laukeliai yra užpildyti.');
+    const inputErrorMessage = document.createElement('span');
+    inputErrorMessage.classList.add('input-error-message');
+    inputErrorMessage.textContent = 'Field required';
+
+    nameInput.after(inputErrorMessage);
+
+    nameInput.classList.add('input-error');
+    alertMessage(event.target, 'Ne visi laukeliai yra užpildyti.', 'red');
     return;
   }
+
+
+
+
+
 
   const studentItem = document.createElement('div');
   studentItem.classList.add('student-item');
@@ -139,12 +165,19 @@ studentForm.addEventListener('submit', (event) => {
   // alertMessage(event.target, `Sukurtas studentas (${studentName} ${studentSurname})`);
 
   let createdStudentMessage = `Sukurtas studentas (${studentName} ${studentSurname})`;
-  alertMessage(event.target, createdStudentMessage);
+  alertMessage(event.target, createdStudentMessage, 'green');
 })
 
-function alertMessage(element, message) {
+function alertMessage(element, message, color = 'black') {
+  const previousMessageElement = document.querySelector('.popup-info-message');
+  if (previousMessageElement) {
+    previousMessageElement.remove();
+  }
+  
   const messageElement = document.createElement('span');
   messageElement.textContent = message;
+  messageElement.style.color = color;
+  messageElement.classList.add('popup-info-message');
 
   element.after(messageElement);
 
