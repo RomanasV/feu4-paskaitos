@@ -20,3 +20,26 @@ ANTRA DALIS:
 
 6. Sukūrus studentą, turi iššokti <span> elementas, kuris informuoja apie studento sukūrimą: „Sukurtas studentas (Vardas Pavardė)". Šis span elementas dingsta po 5 sekundžių.
 7. Range reikšmės atvaizdavimas naujame elemente.
+
+TREČIA DALIS:
+1. Vietoje el. pašto rodyti tik žvaigždutes „****".
+2. Kiekviename „student-item" elemente sukurti mygtuką „Rodyti asmens duomenis".
+3. Paspaudus šį mygtuką:
+    3.1. Parodyti to studento el. paštą.
+    3.2. Pakeist mygtuko tekstą į „Slėpti asmens duomenis".
+4. Jeigu asmens duomenys yra rodomi, tai paspaudus mygtuką:
+    4.1. Paslėpti asmens el. paštą.
+    4.2. Mygtuko tekstą pakeisti į „Rodyti asmens duomenis".
+
+KETVIRTA DALIS (studento ištrynimas):
+1. Prie kiekvieno sukurti studento elemento pridėti mygtuką „Ištrinti studentą".
+2. Paspaudus šį mygtuką, studento elementas yra ištrinamas.
+3. Ištrynus studentą, turi iššokti <span> elementas, kuris informuoja apie studento ištrynimą: „Studentas (Vardas Pavardė) sėkmingai ištrintas.". Šis span elementas dingsta po 5 sekundžių.
+
+PENKTA UŽDUOTIS (formos validacija naudojant JavaScript):
+1. Priduodant formą (submit) patikrinti ar privalomi laukeliai nėra tušti.
+2. Jeigu bent vienas privalomas formos laukelis yra tuščias:
+    2.1. Formos alert žinutėje reikia parašyti, jog ne visi laukeliai yra užpildyti. Šis tekstas turi būti raudonos spalvos.
+    2.2. Kiekvienas privalomas input laukelis, kuris nėra užpildytas:
+        2.2.1. Turi būti apvestas raudonu rėmeliu.
+        2.2.2. Šalia laukelio turi būti parašytas raudonas tekstas: „Šis laukelis yra privalomas".
