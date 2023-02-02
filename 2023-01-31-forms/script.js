@@ -51,52 +51,34 @@ studentForm.addEventListener('submit', (event) => {
   const studentGroup = event.target.group.value;
   const studentInterests = event.target.querySelectorAll('[name="interest"]:checked');
 
+  const previousInputErrorMessage = event.target.querySelectorAll('.input-error-message');
 
+  previousInputErrorMessage.forEach(errorMessage => {
+    errorMessage.remove();
+  })
 
-
-
-
-
-  const previousInputErrorMessage = event.target.querySelector('.input-error-message');
-  
-  if (previousInputErrorMessage) {
-    previousInputErrorMessage.remove();
-  }
-
-  nameInput.classList.remove('input-error');
-
-
-
-
-
+  let formIsValid = true;
   const requiredInputs = event.target.querySelectorAll('input:required');
-  console.log(requiredInputs);
 
   requiredInputs.forEach(requiredInput => {
-    console.log(requiredInput);
+    requiredInput.classList.remove('input-error');
 
     if (!requiredInput.value) {
-      console.log(requiredInput.value);
+      const inputErrorMessage = document.createElement('span');
+      inputErrorMessage.classList.add('input-error-message');
+      inputErrorMessage.textContent = 'Field required';
+
+      requiredInput.after(inputErrorMessage);
+
+      requiredInput.classList.add('input-error');
+      alertMessage(event.target, 'Ne visi laukeliai yra užpildyti.', 'red');
+      formIsValid = false;
     }
   });
 
-
-  if (!studentName) {
-    const inputErrorMessage = document.createElement('span');
-    inputErrorMessage.classList.add('input-error-message');
-    inputErrorMessage.textContent = 'Field required';
-
-    nameInput.after(inputErrorMessage);
-
-    nameInput.classList.add('input-error');
-    alertMessage(event.target, 'Ne visi laukeliai yra užpildyti.', 'red');
+  if (!formIsValid) {
     return;
   }
-
-
-
-
-
 
   const studentItem = document.createElement('div');
   studentItem.classList.add('student-item');
