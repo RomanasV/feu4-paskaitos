@@ -49,6 +49,11 @@ studentForm.addEventListener('submit', (event) => {
   let studentGroup = event.target.group.value;
   let studentInterests = event.target.querySelectorAll('[name="interest"]:checked');
 
+  if (!studentName) {
+    alertMessage(event.target, 'Ne visi laukeliai yra užpildyti.');
+    return;
+  }
+
   const studentItem = document.createElement('div');
   studentItem.classList.add('student-item');
 
