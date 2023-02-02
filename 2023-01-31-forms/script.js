@@ -116,18 +116,34 @@ studentForm.addEventListener('submit', (event) => {
     privateInfoHidden = !privateInfoHidden;
   })
 
-  studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper, privateInfoButton);
+  const removeStudentButton = document.createElement('button');
+  removeStudentButton.textContent = 'Remove Student';
+
+  removeStudentButton.addEventListener('click', () => {
+    studentItem.remove();
+
+    let removedStudentMessage = `Studentas (${studentName} ${studentSurname}) sėkmingai ištrintas.`;
+    alertMessage(event.target, removedStudentMessage);
+  })
+
+  studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper, privateInfoButton, removeStudentButton);
   studentList.prepend(studentItem);
 
   event.target.reset();
 
-  const messageElement = document.createElement('span');
-  messageElement.textContent = `Sukurtas studentas (${studentName} ${studentSurname})`;
+  // alertMessage(event.target, `Sukurtas studentas (${studentName} ${studentSurname})`);
 
-  event.target.after(messageElement)
+  let createdStudentMessage = `Sukurtas studentas (${studentName} ${studentSurname})`;
+  alertMessage(event.target, createdStudentMessage);
+})
+
+function alertMessage(element, message) {
+  const messageElement = document.createElement('span');
+  messageElement.textContent = message;
+
+  element.after(messageElement);
 
   setTimeout(() => {
     messageElement.remove();
   }, 5000)
-})
-
+}
