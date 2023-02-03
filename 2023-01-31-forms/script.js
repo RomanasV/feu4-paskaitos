@@ -92,6 +92,7 @@ itKnowledgeInput.addEventListener('input', (event) => {
 
 studentForm.addEventListener('submit', (event) => {
   event.preventDefault();
+
   const nameInput = event.target.name;
   
   const studentName = nameInput.value;
@@ -117,80 +118,30 @@ studentForm.addEventListener('submit', (event) => {
     requiredInput.classList.remove('input-error');
 
     if (!requiredInput.value) {
-      const inputErrorMessage = document.createElement('span');
-      inputErrorMessage.classList.add('input-error-message');
-      inputErrorMessage.textContent = 'Field required';
-
-      requiredInput.after(inputErrorMessage);
-
-      requiredInput.classList.add('input-error');
-      alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
-      formIsValid = false;
+      formIsValid = inputErrorMessage(requiredInput, event.target, 'Field required');
     } else if (requiredInput.name === 'name') {
       if (requiredInput.value.length < 3) {
-        const inputErrorMessage = document.createElement('span');
-        inputErrorMessage.classList.add('input-error-message');
-        inputErrorMessage.textContent = 'Vardas privalo būti bent 3 simbolių ilgumo';
-
-        requiredInput.after(inputErrorMessage);
-        requiredInput.classList.add('input-error');
-        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
-        formIsValid = false;
+        formIsValid = inputErrorMessage(requiredInput, event.target, 'Vardas privalo būti bent 3 simbolių ilgumo');
       }
     } else if (requiredInput.name === 'surname') {
       if (requiredInput.value.length < 3) {
-        const inputErrorMessage = document.createElement('span');
-        inputErrorMessage.classList.add('input-error-message');
-        inputErrorMessage.textContent = 'Pavardė privalo būti bent 3 simbolių ilgumo';
-
-        requiredInput.after(inputErrorMessage);
-        requiredInput.classList.add('input-error');
-        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
-        formIsValid = false;
+        formIsValid = inputErrorMessage(requiredInput, event.target, 'Pavardė privalo būti bent 3 simbolių ilgumo');
       }
     } else if (requiredInput.name === 'age') {
       if (requiredInput.valueAsNumber < 0) {
-        const inputErrorMessage = document.createElement('span');
-        inputErrorMessage.classList.add('input-error-message');
-        inputErrorMessage.textContent = 'Amžius privalo būti teigiamas skaičius';
-
-        requiredInput.after(inputErrorMessage);
-        requiredInput.classList.add('input-error');
-        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
-        formIsValid = false;
+        formIsValid = inputErrorMessage(requiredInput, event.target, 'Amžius privalo būti teigiamas skaičius');
       } else if (requiredInput.valueAsNumber > 120) {
-        const inputErrorMessage = document.createElement('span');
-        inputErrorMessage.classList.add('input-error-message');
-        inputErrorMessage.textContent = 'Įvestas amžius yra per didelis';
-
-        requiredInput.after(inputErrorMessage);
-        requiredInput.classList.add('input-error');
-        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
-        formIsValid = false;
+        formIsValid = inputErrorMessage(requiredInput, event.target, 'Įvestas amžius yra per didelis');
       }
     } else if (requiredInput.name === 'phone') {
       let phoneLength = requiredInput.value.replaceAll(' ', '').replaceAll('-', '').length;
       if (phoneLength < 8 || phoneLength > 12) {
-        const inputErrorMessage = document.createElement('span');
-        inputErrorMessage.classList.add('input-error-message');
-        inputErrorMessage.textContent = 'Įvestas telefono numeris yra neteisingas';
-
-        requiredInput.after(inputErrorMessage);
-        requiredInput.classList.add('input-error');
-        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
-        formIsValid = false;
+        formIsValid = inputErrorMessage(requiredInput, event.target, 'Įvestas telefono numeris yra neteisingas');
       }
     } else if (requiredInput.name === 'email') {
       console.log(requiredInput.value)
       if (requiredInput.value.length < 8 || !requiredInput.value.includes('@') || !requiredInput.value.includes('.')) {
-        const inputErrorMessage = document.createElement('span');
-        inputErrorMessage.classList.add('input-error-message');
-        inputErrorMessage.textContent = 'Įvestas elektroninis paštas yra neteisingas';
-
-        requiredInput.after(inputErrorMessage);
-        requiredInput.classList.add('input-error');
-        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
-        formIsValid = false;
+        formIsValid = inputErrorMessage(requiredInput, event.target, 'Įvestas elektroninis paštas yra neteisingas');
       } 
     }
   });
@@ -400,6 +351,19 @@ function renderSingleStudent(student, form) {
 
   studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper, privateInfoButton, removeStudentButton);
   studentList.prepend(studentItem);
+}
+
+function inputErrorMessage(input, form, errorMessage) {
+  const inputErrorMessage = document.createElement('span');
+  inputErrorMessage.classList.add('input-error-message');
+  inputErrorMessage.textContent = errorMessage;
+  
+  input.after(inputErrorMessage);
+
+  input.classList.add('input-error');
+  alertMessage(form, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
+
+  return false;
 }
 
 renderInitialData(initialData, studentForm);
