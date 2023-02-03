@@ -43,3 +43,12 @@ PENKTA UŽDUOTIS (formos validacija naudojant JavaScript):
     2.2. Kiekvienas privalomas input laukelis, kuris nėra užpildytas:
         2.2.1. Turi būti apvestas raudonu rėmeliu.
         2.2.2. Šalia laukelio turi būti parašytas raudonas tekstas: „Šis laukelis yra privalomas".
+
+PAPILDOMA UŽDUOTIS (formos validacija naudojant JavaScript):
+Papildyti formos validaciją. Jeigu:
+1. Vardas yra trumpesnis nei 3 simboliai, parašyti: „Vardas privalo būti bent 3 simbolių ilgumo".
+2. Pavardė yra trumpesnė nei 3 simboliai, parašyti: „Pavardė privalo būti bent 3 simbolių ilgumo".
+3. Amžius yra neigamas, parašyti: „Amžius privalo būti teigiamas skaičius".
+4. Amžius yra daugiau nei 120 metų, parašyti: „Įvestas amžius yra per didelis".
+5. Telefono numeris yra mažiau nei 9 arba daugiau nei 12 simbolių, parašyti: „Įvestas telefono numeris yra neteisingas".
+6. Elektroninis paštas yra trumpesnis nei 8 simboliai ir jame nėra panaudotas @ ir . simboliai, parašyti: „Įvestas elektroninis paštas yra neteisingas".

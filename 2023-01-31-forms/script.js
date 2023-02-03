@@ -63,6 +63,12 @@ studentForm.addEventListener('submit', (event) => {
   requiredInputs.forEach(requiredInput => {
     requiredInput.classList.remove('input-error');
 
+    console.log(requiredInput);
+    if (requiredInput.name === 'name') {
+      console.log('Patikrinti ar turi 3 simbolius');
+      console.log(requiredInput.value);
+    }
+
     if (!requiredInput.value) {
       const inputErrorMessage = document.createElement('span');
       inputErrorMessage.classList.add('input-error-message');
