@@ -92,9 +92,12 @@ itKnowledgeInput.addEventListener('input', (event) => {
 
 studentForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  let formIsValid = formValidation(event.target);
+  if (!formIsValid) {
+    return;
+  }
 
   const nameInput = event.target.name;
-  
   const studentName = nameInput.value;
   const studentSurname = event.target.surname.value;
   const studentAge = event.target.age.value;
@@ -104,51 +107,6 @@ studentForm.addEventListener('submit', (event) => {
   // const studentGroup = event.target.querySelector('[name="group"]:checked');
   const studentGroup = event.target.group.value;
   const studentInterests = event.target.querySelectorAll('[name="interest"]:checked');
-
-  const previousInputErrorMessage = event.target.querySelectorAll('.input-error-message');
-
-  previousInputErrorMessage.forEach(errorMessage => {
-    errorMessage.remove();
-  })
-
-  let formIsValid = true;
-  const requiredInputs = event.target.querySelectorAll('input:required');
-
-  requiredInputs.forEach(requiredInput => {
-    requiredInput.classList.remove('input-error');
-
-    if (!requiredInput.value) {
-      formIsValid = inputErrorMessage(requiredInput, event.target, 'Field required');
-    } else if (requiredInput.name === 'name') {
-      if (requiredInput.value.length < 3) {
-        formIsValid = inputErrorMessage(requiredInput, event.target, 'Vardas privalo būti bent 3 simbolių ilgumo');
-      }
-    } else if (requiredInput.name === 'surname') {
-      if (requiredInput.value.length < 3) {
-        formIsValid = inputErrorMessage(requiredInput, event.target, 'Pavardė privalo būti bent 3 simbolių ilgumo');
-      }
-    } else if (requiredInput.name === 'age') {
-      if (requiredInput.valueAsNumber < 0) {
-        formIsValid = inputErrorMessage(requiredInput, event.target, 'Amžius privalo būti teigiamas skaičius');
-      } else if (requiredInput.valueAsNumber > 120) {
-        formIsValid = inputErrorMessage(requiredInput, event.target, 'Įvestas amžius yra per didelis');
-      }
-    } else if (requiredInput.name === 'phone') {
-      let phoneLength = requiredInput.value.replaceAll(' ', '').replaceAll('-', '').length;
-      if (phoneLength < 8 || phoneLength > 12) {
-        formIsValid = inputErrorMessage(requiredInput, event.target, 'Įvestas telefono numeris yra neteisingas');
-      }
-    } else if (requiredInput.name === 'email') {
-      console.log(requiredInput.value)
-      if (requiredInput.value.length < 8 || !requiredInput.value.includes('@') || !requiredInput.value.includes('.')) {
-        formIsValid = inputErrorMessage(requiredInput, event.target, 'Įvestas elektroninis paštas yra neteisingas');
-      } 
-    }
-  });
-
-  if (!formIsValid) {
-    return;
-  }
 
   const studentItem = document.createElement('div');
   studentItem.classList.add('student-item');
@@ -351,6 +309,50 @@ function renderSingleStudent(student, form) {
 
   studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper, privateInfoButton, removeStudentButton);
   studentList.prepend(studentItem);
+}
+
+function formValidation(form) {
+  const previousInputErrorMessage = form.querySelectorAll('.input-error-message');
+  previousInputErrorMessage.forEach(errorMessage => errorMessage.remove());
+
+  const requiredInputs = form.querySelectorAll('input:required');
+
+  let validForm = true;
+
+  requiredInputs.forEach(requiredInput => {
+    requiredInput.classList.remove('input-error');
+
+    if (!requiredInput.value) {
+      validForm = inputErrorMessage(requiredInput, form, 'Field required');
+    } else if (requiredInput.name === 'name') {
+      if (requiredInput.value.length < 3) {
+        validForm = inputErrorMessage(requiredInput, form, 'Vardas privalo būti bent 3 simbolių ilgumo');
+      }
+    } else if (requiredInput.name === 'surname') {
+      if (requiredInput.value.length < 3) {
+        validForm = inputErrorMessage(requiredInput, form, 'Pavardė privalo būti bent 3 simbolių ilgumo');
+      }
+    } else if (requiredInput.name === 'age') {
+      if (requiredInput.valueAsNumber < 0) {
+        validForm = inputErrorMessage(requiredInput, form, 'Amžius privalo būti teigiamas skaičius');
+      } else if (requiredInput.valueAsNumber > 120) {
+        validForm = inputErrorMessage(requiredInput, form, 'Įvestas amžius yra per didelis');
+      }
+    } else if (requiredInput.name === 'phone') {
+      let phoneLength = requiredInput.value.replaceAll(' ', '').replaceAll('-', '').length;
+      if (phoneLength < 8 || phoneLength > 12) {
+        validForm = inputErrorMessage(requiredInput, form, 'Įvestas telefono numeris yra neteisingas');
+      }
+    } else if (requiredInput.name === 'email') {
+      console.log(requiredInput.value)
+      if (requiredInput.value.length < 8 || !requiredInput.value.includes('@') || !requiredInput.value.includes('.')) {
+        validForm = inputErrorMessage(requiredInput, form, 'Įvestas elektroninis paštas yra neteisingas');
+      } 
+    }
+
+  });
+
+  return validForm;
 }
 
 function inputErrorMessage(input, form, errorMessage) {
