@@ -63,12 +63,6 @@ studentForm.addEventListener('submit', (event) => {
   requiredInputs.forEach(requiredInput => {
     requiredInput.classList.remove('input-error');
 
-    console.log(requiredInput);
-    if (requiredInput.name === 'name') {
-      console.log('Patikrinti ar turi 3 simbolius');
-      console.log(requiredInput.value);
-    }
-
     if (!requiredInput.value) {
       const inputErrorMessage = document.createElement('span');
       inputErrorMessage.classList.add('input-error-message');
@@ -77,8 +71,74 @@ studentForm.addEventListener('submit', (event) => {
       requiredInput.after(inputErrorMessage);
 
       requiredInput.classList.add('input-error');
-      alertMessage(event.target, 'Ne visi laukeliai yra užpildyti.', 'red');
+      alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
       formIsValid = false;
+    } else if (requiredInput.name === 'name') {
+      if (requiredInput.value.length < 3) {
+        const inputErrorMessage = document.createElement('span');
+        inputErrorMessage.classList.add('input-error-message');
+        inputErrorMessage.textContent = 'Vardas privalo būti bent 3 simbolių ilgumo';
+
+        requiredInput.after(inputErrorMessage);
+        requiredInput.classList.add('input-error');
+        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
+        formIsValid = false;
+      }
+    } else if (requiredInput.name === 'surname') {
+      if (requiredInput.value.length < 3) {
+        const inputErrorMessage = document.createElement('span');
+        inputErrorMessage.classList.add('input-error-message');
+        inputErrorMessage.textContent = 'Pavardė privalo būti bent 3 simbolių ilgumo';
+
+        requiredInput.after(inputErrorMessage);
+        requiredInput.classList.add('input-error');
+        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
+        formIsValid = false;
+      }
+    } else if (requiredInput.name === 'age') {
+      if (requiredInput.valueAsNumber < 0) {
+        const inputErrorMessage = document.createElement('span');
+        inputErrorMessage.classList.add('input-error-message');
+        inputErrorMessage.textContent = 'Amžius privalo būti teigiamas skaičius';
+
+        requiredInput.after(inputErrorMessage);
+        requiredInput.classList.add('input-error');
+        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
+        formIsValid = false;
+      } else if (requiredInput.valueAsNumber > 120) {
+        const inputErrorMessage = document.createElement('span');
+        inputErrorMessage.classList.add('input-error-message');
+        inputErrorMessage.textContent = 'Įvestas amžius yra per didelis';
+
+        requiredInput.after(inputErrorMessage);
+        requiredInput.classList.add('input-error');
+        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
+        formIsValid = false;
+      }
+    } else if (requiredInput.name === 'phone') {
+      let phoneLength = requiredInput.value.replaceAll(' ', '').replaceAll('-', '').length;
+      if (phoneLength < 8 || phoneLength > 12) {
+        const inputErrorMessage = document.createElement('span');
+        inputErrorMessage.classList.add('input-error-message');
+        inputErrorMessage.textContent = 'Įvestas telefono numeris yra neteisingas';
+
+        requiredInput.after(inputErrorMessage);
+        requiredInput.classList.add('input-error');
+        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
+        formIsValid = false;
+      }
+    } else if (requiredInput.name === 'email') {
+      console.log(requiredInput.value)
+      if (requiredInput.value.length < 8 || !requiredInput.value.includes('@') || !requiredInput.value.includes('.')) {
+        const inputErrorMessage = document.createElement('span');
+        inputErrorMessage.classList.add('input-error-message');
+        inputErrorMessage.textContent = 'Įvestas elektroninis paštas yra neteisingas';
+
+        requiredInput.after(inputErrorMessage);
+        requiredInput.classList.add('input-error');
+        alertMessage(event.target, 'Ne visi laukeliai yra užpildyti teisingai.', 'red');
+        formIsValid = false;
+      } 
     }
   });
 
