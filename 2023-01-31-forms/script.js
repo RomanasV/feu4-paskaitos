@@ -112,6 +112,7 @@ studentForm.addEventListener('submit', (event) => {
 
   renderSingleStudent(studentDataObj, event.target);
   event.target.reset();
+  localStorage.clear();
 })
 
 function alertMessage(element, message, color = 'black') {
@@ -309,3 +310,35 @@ function inputErrorMessage(input, form, errorMessage) {
 }
 
 renderInitialData(initialData, studentForm);
+
+studentForm.addEventListener('input', (event) => {
+  localStorage.setItem(event.target.name, event.target.value);
+});
+
+if (localStorage.getItem('name')) {
+  studentForm.name.value = localStorage.getItem('name');
+}
+
+if (localStorage.getItem('surname')) {
+  studentForm.surname.value = localStorage.getItem('surname');
+}
+
+if (localStorage.getItem('age')) {
+  studentForm.age.value = localStorage.getItem('age');
+}
+
+if (localStorage.getItem('phone')) {
+  studentForm.phone.value = localStorage.getItem('phone');
+}
+
+if (localStorage.getItem('email')) {
+  studentForm.email.value = localStorage.getItem('email');
+}
+
+if (localStorage.getItem('it-knowledge')) {
+  studentForm['it-knowledge'].value = localStorage.getItem('it-knowledge');
+}
+
+if (localStorage.getItem('group')) {
+  studentForm.group.value = localStorage.getItem('group');
+}
