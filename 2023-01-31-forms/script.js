@@ -54,6 +54,8 @@ const initialData = [
 const studentForm = document.querySelector('#student-form');
 const studentList = document.querySelector('#students-list');
 
+let editStudent = null;
+
 const itKnowledgeInput = studentForm.querySelector('#student-it-knowledge');
 const itKnowledgeOutput = studentForm.querySelector('#it-knowledge-output');
 
@@ -98,12 +100,18 @@ studentForm.addEventListener('submit', (event) => {
     interests: studentInterests,
   }
 
-  renderSingleStudent(studentDataObj, event.target);
+  let createdStudentMessage = '';
 
-  event.target.reset();
+  if (editStudent) {
+    createdStudentMessage = `Studento (${studentName} ${studentSurname}) duomenys sėkmingai pakeisti`;
+  } else {
+    createdStudentMessage = `Sukurtas studentas (${studentName} ${studentSurname})`;
+  }
 
-  let createdStudentMessage = `Sukurtas studentas (${studentName} ${studentSurname})`;
   alertMessage(event.target, createdStudentMessage, 'green');
+
+  renderSingleStudent(studentDataObj, event.target);
+  event.target.reset();
 })
 
 function alertMessage(element, message, color = 'black') {
@@ -221,21 +229,28 @@ function renderSingleStudent(student, form) {
   editStudentButton.textContent = 'Edit Student';
 
   editStudentButton.addEventListener('click', () => {
-    console.log(student);
-    console.log(studentName);
-    console.log(studentSurname);
-    console.log(studentAge);
-    console.log(studentPhone);
-
-    console.dir(form);
-    console.log(form.name);
-    console.log(form.group);
-    form.group.value = 'feu 3';
     form.name.value = studentName;
+    form.surname.value = studentSurname;
+    form.age.value = studentAge;
+    form.phone.value = studentPhone;
+    form.email.value = studentEmail;
+    form['it-knowledge'].value = studentItKnowledge;
+    form.group.value = studentGroup;
+
+    form['form-submit'].value = 'Save Changes';
+    editStudent = studentItem;
   })
 
   studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper, privateInfoButton, removeStudentButton, editStudentButton);
-  studentList.prepend(studentItem);
+
+  if (editStudent) {
+    form['form-submit'].value = 'Create Student';
+    editStudent.replaceWith(studentItem);
+    editStudent = null;
+  } else {
+    console.log('kuriame nauja studenta');
+    studentList.prepend(studentItem);
+  }
 }
 
 function formValidation(form) {
