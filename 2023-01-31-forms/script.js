@@ -248,7 +248,6 @@ function renderSingleStudent(student, form) {
     editStudent.replaceWith(studentItem);
     editStudent = null;
   } else {
-    console.log('kuriame nauja studenta');
     studentList.prepend(studentItem);
   }
 }
