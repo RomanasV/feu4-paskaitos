@@ -52,3 +52,22 @@ Papildyti formos validaciją. Jeigu:
 4. Amžius yra daugiau nei 120 metų, parašyti: „Įvestas amžius yra per didelis".
 5. Telefono numeris yra mažiau nei 9 arba daugiau nei 12 simbolių, parašyti: „Įvestas telefono numeris yra neteisingas".
 6. Elektroninis paštas yra trumpesnis nei 8 simboliai ir jame nėra panaudotas @ ir . simboliai, parašyti: „Įvestas elektroninis paštas yra neteisingas".
+
+ŠEŠTA UŽDUOTIS:
+1. Sukurti pradinius duomenų masyvą, kuriame būtų bent 5 studentų duomenys (objektų formatu).
+2. Sukurti funkciją, kuri priima šiuos duomenis ir užkrovus puslapį į ekraną iškart išveda duomenis iš šio masyvo.
+
+SEPTINTA UŽDUOTIS:
+1. Prie kiekvieno studento pridėti mygtuką, kurį paspaudus leistų redaguoti studento duomenis.
+2. Redaguojant studentą, submit mygtuko tekstas turėtų pasikeisti į „Save Changes".
+3. Pakeitus studento duomenis, turi iššokti <span> elementas, kuris informuoja apie studento duomenų redagavimą: „Studento (Vardas Pavardė) duomenys sėkmingai pakeisti". Šis span elementas dingsta po 5 sekundžių.
+
+1. Sukurti Edit mygtuką.
+2. Prie mygtuko pridėti event listener'į.
+3. Surinkti studento duomenis ir jais užpildyti formos laukelius.
+4. Pakeisti formos submit mygtuko tekstą.
+5. Išsaugoti studento HTML elementą kintamąjame.
+6. Submit event'o metu patikrinti ar kuriame naują studentą, ar redaguojame jau sukurtą.
+7. Jeigu studentas redaguojamas, šį naują (redaguotą) HTML elementą panaudoti perrašant seną studento HTML elementą (kuris išsaugotas 5 žingsnyje).
+
+8. Pakeisti formos submit mygtuko tekstą į pradinį ir pakeisti iššokančio pranešimo tekstą.
