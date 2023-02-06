@@ -63,6 +63,7 @@ itKnowledgeInput.addEventListener('input', (event) => {
 
 studentForm.addEventListener('submit', (event) => {
   event.preventDefault();
+
   let formIsValid = formValidation(event.target);
   if (!formIsValid) {
     return;
@@ -71,97 +72,35 @@ studentForm.addEventListener('submit', (event) => {
   const nameInput = event.target.name;
   const studentName = nameInput.value;
   const studentSurname = event.target.surname.value;
-  const studentAge = event.target.age.value;
-  const studentPhone = event.target.phone.value;
-  const studentEmail = event.target.email.value;
-  const studentItKnowledge = event.target['it-knowledge'].value;
-  // const studentGroup = event.target.querySelector('[name="group"]:checked');
-  const studentGroup = event.target.group.value;
-  const studentInterests = event.target.querySelectorAll('[name="interest"]:checked');
 
-  const studentItem = document.createElement('div');
-  studentItem.classList.add('student-item');
-
-  const nameElement = document.createElement('p');
-  nameElement.innerHTML = `<strong>Name:</strong> ${studentName}`;
-
-  const surnameElement = document.createElement('p');
-  surnameElement.innerHTML = `<strong>Surname:</strong> ${studentSurname}`;
-
-  const ageElement = document.createElement('p');
-  ageElement.innerHTML = `<strong>Age:</strong> ${studentAge}`;
-
-  const phoneElement = document.createElement('p');
-  phoneElement.innerHTML = `<strong>Phone:</strong> ****`;
-
-  const emailElement = document.createElement('p');
-  emailElement.innerHTML = `<strong>Email:</strong> ****`;
-
-  const itKnowledgeElement = document.createElement('p');
-  itKnowledgeElement.innerHTML = `<strong>IT Knowledge:</strong> ${studentItKnowledge}`;
-
-  const groupElement = document.createElement('p');
-  groupElement.innerHTML = `<strong>Group:</strong> ${studentGroup.toUpperCase()} group`;
-
-  const interestsWrapper = document.createElement('div');
-  interestsWrapper.classList.add('interests-wrapper');
-
-  const interestsTitle = document.createElement('h4');
-  interestsTitle.classList.add('interests-title');
-  interestsTitle.textContent = 'No interests :(';
+  let studentInterestElements = event.target.querySelectorAll('[name="interest"]:checked');
   
-  interestsWrapper.append(interestsTitle);
-  
-  if (studentInterests.length > 0) {
-    interestsTitle.textContent = 'Student interests:';
-    const interestListElement = document.createElement('ul');
+  // let studentInterests = [];
 
-    studentInterests.forEach(interest => {
-      const interestElement = document.createElement('li');
-      interestElement.textContent = interest.value;
-  
-      interestListElement.append(interestElement);
-    })
-    
-    interestsWrapper.append(interestListElement);
+  // studentInterestElements.forEach(interest => {
+  //   studentInterests.push(interest.value)
+  // })
+
+  // const studentInterests = [...studentInterestElements].map(interest => {
+  //   return interest.value;
+  // })
+
+  const studentInterests = [...studentInterestElements].map(interest => interest.value);
+
+  let studentDataObj = {
+    name: nameInput.value,
+    surname: event.target.surname.value,
+    age: event.target.age.value,
+    phone: event.target.phone.value,
+    email: event.target.email.value,
+    itKnowledge: event.target['it-knowledge'].value,
+    group: event.target.group.value,
+    interests: studentInterests,
   }
 
-  const privateInfoButton = document.createElement('button');
-  privateInfoButton.textContent = 'Show Private Info';
-
-  let privateInfoHidden = true;
-
-  privateInfoButton.addEventListener('click', () => {
-    
-    if (privateInfoHidden) {
-      privateInfoButton.textContent = 'Hide Private Info';
-      phoneElement.innerHTML = `<strong>Phone:</strong> ${studentPhone}`;
-      emailElement.innerHTML = `<strong>Email:</strong> ${studentEmail}`;
-    } else {
-      privateInfoButton.textContent = 'Show Private Info';
-      phoneElement.innerHTML = `<strong>Phone:</strong> ****`;
-      emailElement.innerHTML = `<strong>Email:</strong> ****`;
-    }
-
-    privateInfoHidden = !privateInfoHidden;
-  })
-
-  const removeStudentButton = document.createElement('button');
-  removeStudentButton.textContent = 'Remove Student';
-
-  removeStudentButton.addEventListener('click', () => {
-    studentItem.remove();
-
-    let removedStudentMessage = `Studentas (${studentName} ${studentSurname}) sėkmingai ištrintas.`;
-    alertMessage(event.target, removedStudentMessage);
-  })
-
-  studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper, privateInfoButton, removeStudentButton);
-  studentList.prepend(studentItem);
+  renderSingleStudent(studentDataObj, event.target);
 
   event.target.reset();
-
-  // alertMessage(event.target, `Sukurtas studentas (${studentName} ${studentSurname})`);
 
   let createdStudentMessage = `Sukurtas studentas (${studentName} ${studentSurname})`;
   alertMessage(event.target, createdStudentMessage, 'green');
@@ -237,7 +176,7 @@ function renderSingleStudent(student, form) {
   if (studentInterests.length > 0) {
     interestsTitle.textContent = 'Student interests:';
     const interestListElement = document.createElement('ul');
-
+    
     studentInterests.forEach(interest => {
       const interestElement = document.createElement('li');
       interestElement.textContent = interest;
@@ -278,7 +217,24 @@ function renderSingleStudent(student, form) {
     alertMessage(form, removedStudentMessage);
   })
 
-  studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper, privateInfoButton, removeStudentButton);
+  const editStudentButton = document.createElement('button');
+  editStudentButton.textContent = 'Edit Student';
+
+  editStudentButton.addEventListener('click', () => {
+    console.log(student);
+    console.log(studentName);
+    console.log(studentSurname);
+    console.log(studentAge);
+    console.log(studentPhone);
+
+    console.dir(form);
+    console.log(form.name);
+    console.log(form.group);
+    form.group.value = 'feu 3';
+    form.name.value = studentName;
+  })
+
+  studentItem.append(nameElement, surnameElement, ageElement, phoneElement, emailElement, itKnowledgeElement, groupElement, interestsWrapper, privateInfoButton, removeStudentButton, editStudentButton);
   studentList.prepend(studentItem);
 }
 
@@ -315,7 +271,6 @@ function formValidation(form) {
         validForm = inputErrorMessage(requiredInput, form, 'Įvestas telefono numeris yra neteisingas');
       }
     } else if (requiredInput.name === 'email') {
-      console.log(requiredInput.value)
       if (requiredInput.value.length < 8 || !requiredInput.value.includes('@') || !requiredInput.value.includes('.')) {
         validForm = inputErrorMessage(requiredInput, form, 'Įvestas elektroninis paštas yra neteisingas');
       } 
