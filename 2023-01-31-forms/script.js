@@ -1,57 +1,61 @@
-// const initialData = [
-//   {
-//     name: 'Vardas 1',
-//     surname: 'Pavardė 1',
-//     age: 25,
-//     phone: '+3704564879',
-//     email: 'vardas1@gmail.com',
-//     itKnowledge: 7,
-//     group: 'feu 3',
-//     interests: ['JavaScript', 'PHP'],
-//   },
-//   {
-//     name: 'Vardas 2',
-//     surname: 'Pavardė 2',
-//     age: 32,
-//     phone: '+37045645455',
-//     email: 'vardas3@gmail.com',
-//     itKnowledge: 10,
-//     group: 'feu 1',
-//     interests: ['JavaScript'],
-//   },
-//   {
-//     name: 'Vardas 3',
-//     surname: 'Pavardė 3',
-//     age: 20,
-//     phone: '+3704564879',
-//     email: 'vardas3@gmail.com',
-//     itKnowledge: 2,
-//     group: 'feu 4',
-//     interests: ['PHP'],
-//   },
-//   {
-//     name: 'Vardas 5',
-//     surname: 'Pavardė 5',
-//     age: 40,
-//     phone: '+3704564879',
-//     email: 'vardas5@gmail.com',
-//     itKnowledge: 4,
-//     group: 'feu 3',
-//     interests: [],
-//   },
-//   {
-//     name: 'Vardas 5',
-//     surname: 'Pavardė 5',
-//     age: 25,
-//     phone: '+3704564879',
-//     email: 'vardas5@gmail.com',
-//     itKnowledge: 7,
-//     group: 'feu 3',
-//     interests: ['JavaScript', 'PHP'],
-//   },
-// ];
+/*
+const initialData = [
+  {
+    name: 'Vardas 1',
+    surname: 'Pavardė 1',
+    age: 25,
+    phone: '+3704564879',
+    email: 'vardas1@gmail.com',
+    itKnowledge: 7,
+    group: 'feu 3',
+    interests: ['JavaScript', 'PHP'],
+  },
+  {
+    name: 'Vardas 2',
+    surname: 'Pavardė 2',
+    age: 32,
+    phone: '+37045645455',
+    email: 'vardas3@gmail.com',
+    itKnowledge: 10,
+    group: 'feu 1',
+    interests: ['JavaScript'],
+  },
+  {
+    name: 'Vardas 3',
+    surname: 'Pavardė 3',
+    age: 20,
+    phone: '+3704564879',
+    email: 'vardas3@gmail.com',
+    itKnowledge: 2,
+    group: 'feu 4',
+    interests: ['PHP'],
+  },
+  {
+    name: 'Vardas 5',
+    surname: 'Pavardė 5',
+    age: 40,
+    phone: '+3704564879',
+    email: 'vardas5@gmail.com',
+    itKnowledge: 4,
+    group: 'feu 3',
+    interests: [],
+  },
+  {
+    name: 'Vardas 5',
+    surname: 'Pavardė 5',
+    age: 25,
+    phone: '+3704564879',
+    email: 'vardas5@gmail.com',
+    itKnowledge: 7,
+    group: 'feu 3',
+    interests: ['JavaScript', 'PHP'],
+  },
+];
+*/
 
-const initialData = [];
+// localStorage.setItem('student-data', JSON.stringify(initialData));
+
+let studentsData = JSON.parse(localStorage.getItem('student-data'));
 
 const studentForm = document.querySelector('#student-form');
 const studentList = document.querySelector('#students-list');
@@ -60,6 +64,8 @@ let editStudent = null;
 
 const itKnowledgeInput = studentForm.querySelector('#student-it-knowledge');
 const itKnowledgeOutput = studentForm.querySelector('#it-knowledge-output');
+
+renderInitialData(studentsData, studentForm);
 
 itKnowledgeInput.addEventListener('input', (event) => {
   itKnowledgeOutput.textContent = event.target.value;
@@ -102,19 +108,20 @@ studentForm.addEventListener('submit', (event) => {
     interests: studentInterests,
   }
 
-  console.log(studentDataObj);
-
   let createdStudentMessage = '';
 
   if (editStudent) {
     createdStudentMessage = `Studento (${studentName} ${studentSurname}) duomenys sėkmingai pakeisti`;
   } else {
     createdStudentMessage = `Sukurtas studentas (${studentName} ${studentSurname})`;
+
+    localStorage.setItem('student-data', JSON.stringify(studentsData));
   }
 
   alertMessage(event.target, createdStudentMessage, 'green');
 
   renderSingleStudent(studentDataObj, event.target);
+
   event.target.reset();
   
   localStorage.setItem('name', '');
@@ -123,7 +130,7 @@ studentForm.addEventListener('submit', (event) => {
   localStorage.setItem('phone', '');
   localStorage.setItem('email', '');
   localStorage.setItem('it-knowledge', '');
-  localStorage.setItem('it-group', '');
+  localStorage.setItem('group', '');
   localStorage.setItem('interest', JSON.stringify([]));
 })
 
@@ -324,8 +331,6 @@ function inputErrorMessage(input, form, errorMessage) {
 
   return false;
 }
-
-renderInitialData(initialData, studentForm);
 
 studentForm.addEventListener('input', (event) => {
   if (event.target.name === 'interest') {
