@@ -1,55 +1,57 @@
-const initialData = [
-  {
-    name: 'Vardas 1',
-    surname: 'Pavardė 1',
-    age: 25,
-    phone: '+3704564879',
-    email: 'vardas1@gmail.com',
-    itKnowledge: 7,
-    group: 'feu 3',
-    interests: ['JavaScript', 'PHP'],
-  },
-  {
-    name: 'Vardas 2',
-    surname: 'Pavardė 2',
-    age: 32,
-    phone: '+37045645455',
-    email: 'vardas3@gmail.com',
-    itKnowledge: 10,
-    group: 'feu 1',
-    interests: ['JavaScript'],
-  },
-  {
-    name: 'Vardas 3',
-    surname: 'Pavardė 3',
-    age: 20,
-    phone: '+3704564879',
-    email: 'vardas3@gmail.com',
-    itKnowledge: 2,
-    group: 'feu 4',
-    interests: ['PHP'],
-  },
-  {
-    name: 'Vardas 5',
-    surname: 'Pavardė 5',
-    age: 40,
-    phone: '+3704564879',
-    email: 'vardas5@gmail.com',
-    itKnowledge: 4,
-    group: 'feu 3',
-    interests: [],
-  },
-  {
-    name: 'Vardas 5',
-    surname: 'Pavardė 5',
-    age: 25,
-    phone: '+3704564879',
-    email: 'vardas5@gmail.com',
-    itKnowledge: 7,
-    group: 'feu 3',
-    interests: ['JavaScript', 'PHP'],
-  },
-];
+// const initialData = [
+//   {
+//     name: 'Vardas 1',
+//     surname: 'Pavardė 1',
+//     age: 25,
+//     phone: '+3704564879',
+//     email: 'vardas1@gmail.com',
+//     itKnowledge: 7,
+//     group: 'feu 3',
+//     interests: ['JavaScript', 'PHP'],
+//   },
+//   {
+//     name: 'Vardas 2',
+//     surname: 'Pavardė 2',
+//     age: 32,
+//     phone: '+37045645455',
+//     email: 'vardas3@gmail.com',
+//     itKnowledge: 10,
+//     group: 'feu 1',
+//     interests: ['JavaScript'],
+//   },
+//   {
+//     name: 'Vardas 3',
+//     surname: 'Pavardė 3',
+//     age: 20,
+//     phone: '+3704564879',
+//     email: 'vardas3@gmail.com',
+//     itKnowledge: 2,
+//     group: 'feu 4',
+//     interests: ['PHP'],
+//   },
+//   {
+//     name: 'Vardas 5',
+//     surname: 'Pavardė 5',
+//     age: 40,
+//     phone: '+3704564879',
+//     email: 'vardas5@gmail.com',
+//     itKnowledge: 4,
+//     group: 'feu 3',
+//     interests: [],
+//   },
+//   {
+//     name: 'Vardas 5',
+//     surname: 'Pavardė 5',
+//     age: 25,
+//     phone: '+3704564879',
+//     email: 'vardas5@gmail.com',
+//     itKnowledge: 7,
+//     group: 'feu 3',
+//     interests: ['JavaScript', 'PHP'],
+//   },
+// ];
+
+const initialData = [];
 
 const studentForm = document.querySelector('#student-form');
 const studentList = document.querySelector('#students-list');
@@ -100,6 +102,8 @@ studentForm.addEventListener('submit', (event) => {
     interests: studentInterests,
   }
 
+  console.log(studentDataObj);
+
   let createdStudentMessage = '';
 
   if (editStudent) {
@@ -112,7 +116,15 @@ studentForm.addEventListener('submit', (event) => {
 
   renderSingleStudent(studentDataObj, event.target);
   event.target.reset();
-  localStorage.clear();
+  
+  localStorage.setItem('name', '');
+  localStorage.setItem('surname', '');
+  localStorage.setItem('age', '');
+  localStorage.setItem('phone', '');
+  localStorage.setItem('email', '');
+  localStorage.setItem('it-knowledge', '');
+  localStorage.setItem('it-group', '');
+  localStorage.setItem('interest', JSON.stringify([]));
 })
 
 function alertMessage(element, message, color = 'black') {
@@ -238,6 +250,10 @@ function renderSingleStudent(student, form) {
     form['it-knowledge'].value = studentItKnowledge;
     form.group.value = studentGroup;
 
+    studentInterests.forEach(interest => {
+      form.querySelector(`[name="interest"][value="${interest}"]`).checked = true;
+    })
+
     form['form-submit'].value = 'Save Changes';
     editStudent = studentItem;
   })
@@ -312,7 +328,17 @@ function inputErrorMessage(input, form, errorMessage) {
 renderInitialData(initialData, studentForm);
 
 studentForm.addEventListener('input', (event) => {
-  localStorage.setItem(event.target.name, event.target.value);
+  if (event.target.name === 'interest') {
+    let checkedInterests = studentForm.querySelectorAll('[name="interest"]:checked');
+
+    let checkedInterestValues = [...checkedInterests].map(interest => {
+      return interest.value;
+    })
+
+    localStorage.setItem('interest', JSON.stringify(checkedInterestValues));
+  } else {
+    localStorage.setItem(event.target.name, event.target.value);
+  }
 });
 
 if (localStorage.getItem('name')) {
@@ -341,4 +367,12 @@ if (localStorage.getItem('it-knowledge')) {
 
 if (localStorage.getItem('group')) {
   studentForm.group.value = localStorage.getItem('group');
+}
+
+let localStorageInterests = JSON.parse(localStorage.getItem('interest'));
+
+if (localStorageInterests) {
+  localStorageInterests.map(localStorageInterest => {
+    studentForm.querySelector('[name="interest"][value="' + localStorageInterest + '"]').checked = true;
+  })
 }

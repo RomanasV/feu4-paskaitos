@@ -76,3 +76,9 @@ AŠTUNTA UŽDUOTIS (local storage):
 1. Vedamą tekstą į input elementus išsaugoti į localStorage.
 2. Perkrovus puslapį localStorage esančiomis reikšmėmis užpildyti input elementus.
 3. Jeigu sukuriamas studentas, tai localStorage esančias reikšmes reikia išvalyti.
+
+
+DEŠIMTA UŽDUOTIS:
+1. Studento kūrimo ir redagavimo metu reikia sukurti visų studentų masyvą (tokiu pačiu formatu kaip ir initialData).
+2. Šį masyvą pridėti į localStorage.
+3. Puslapio perkrovimo metu iš localStorage esančio masyvo sukurti studentų sąrašą (pradinių studentų sukūrimo funkcionalumas).
