@@ -1,0 +1,9 @@
+1. Sukurti JSON failą, kuriame bus patalpintas filmų sąrašas (mažiausiai 10 filmų).
+2. Kiekvienas filmas turės šias savybes (naudotis IMDb):
+  2.1. Pavadinimą.
+  2.2. Įvertinimą ir įvertinimų kiekį.
+  2.3. Išleidimo metus.
+  2.4. Trumpą aprašymą.
+  2.5. Žanrų sąrašą.
+  2.6. Režisierius.
+  2.7. Pagrindiniai aktoriai.
