@@ -1,8 +1,113 @@
 [
   {
-    "title": "FIlmo pavadinimas"
-  },
+    "title": "The Shawshank Redemption",
+    "review": {
+      "count": 2700000,
+      "ranking": 9.3
+    },
+    "releaseYear": 1994,
+    "genres": ["Drama"],
+    "description": "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
+    "directors": ["Frank Darabont"],
+    "stars": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"]
+  }, 
   {
-    "title": "Antro filmo pavadinimas"
-  }
-]
+    "title": "The Godfather",
+    "review": {
+      "count": 1900000,
+      "ranking": 9.2
+    },
+    "releaseYear": 1972,
+    "genres": ["Drama", "Crime"],
+    "description": "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+    "directors": ["Francis Ford Coppola"],
+    "stars": ["Marlon Brando", "Al Pacino", "James Caan"]
+  }, {
+  "title": "The Dark Knight",
+  "review": {
+    "count": 2700000,
+    "ranking": 9.0
+  },
+  "releaseYear": 2008,
+  "genres": ["Drama", "Crime", "Action"],
+  "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+  "directors": ["Christopher Nolan"],
+  "stars": ["Christian Bale", "Health Ledger", "Aaron Eckhart"]
+}, {
+  "title": "12 Angry Men",
+  "review": {
+    "count": 797000,
+    "ranking": 9.0
+  },
+  "releaseYear": 1957,
+  "genres": ["Drama", "Crime"],
+  "description": "The jury in a New York City murder trial is frustrated by a single member whose skeptical caution forces them to more carefully consider the evidence before jumping to a hasty verdict.",
+  "directors": ["Sidney Lumet"],
+  "stars": ["Henry Fonda", "Lee J. Coob", "Martin Balsam"]
+}, {
+  "title": "Pulp Fiction",
+  "review": {
+    "count": 2100000,
+    "ranking": 8.9
+  },
+  "releaseYear": 1994,
+  "genres": ["Drama", "Crime"],
+  "description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+  "directors": ["Quentin Tarantino"],
+  "stars": ["John Travolta", "Uma Thurman", "Samuel L. Jackson"]
+}, {
+  "title": "GoodFellas",
+  "review": {
+    "count": 1200000,
+    "ranking": 8.7
+  },
+  "releaseYear": 1990,
+  "genres": ["Drama", "Crime", "Biography"],
+  "description": "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.",
+  "directors": ["Martin Scorsese"],
+  "stars": ["Robert De Niro", "Ray Liotta", "Joe Pesci"]
+}, {
+  "title": "Cidade de Deus",
+  "review": {
+    "count": 761000,
+    "ranking": 8.6
+  },
+  "releaseYear": 2002,
+  "genres": ["Drama", "Crime"],
+  "description": "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin.",
+  "directors": ["Fernando Meirelles", "Kátia Lund"],
+  "stars": ["Alexandre Rodrigues", "Leandro Firmino", "Matheus Nachtergaele"]
+}, {
+  "title": "Back to the Future",
+  "review": {
+    "count": 1200000,
+    "ranking": 8.5
+  },
+  "releaseYear": 1985,
+  "genres": ["Adventure", "Comedy", "Sci-Fi"],
+  "description": "Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.",
+  "directors": ["Robert Zemeckis"],
+  "stars": ["Michael J. Fox", "Christopher Lloyd", "Lea Thompson"]
+}, {
+  "title": "The Lion King",
+  "review": {
+    "count": 1100000,
+    "ranking": 8.5
+  },
+  "releaseYear": 1994,
+  "genres": ["Animation", "Adventure", "Drama"],
+  "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+  "directors": ["Roger Allers", "Rob Minkoff"],
+  "stars": ["Matthew Broderick", "Jeremy Irons", "James Earl  Jones"]
+}, {
+  "title": "Intouchables",
+  "review": {
+    "count": 866000,
+    "ranking": 8.5
+  },
+  "releaseYear": 2011,
+  "genres": ["Biography", "Comedy", "Drama"],
+  "description": "After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.",
+  "directors": ["Olivier Nakache", "Éric Toledano"],
+  "stars": ["François Cluzet", "Omar Sy", "Anne Le Ny"]
+}]
