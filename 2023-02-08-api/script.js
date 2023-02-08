@@ -8,3 +8,16 @@ randomJokeButton.addEventListener('click', () => {
       jokeParagraph.textContent = joke.value;
     })
 })
+
+const categorySelect = document.querySelector('#category-select');
+
+fetch('https://api.chucknorris.io/jokes/categories')
+  .then(res => res.json())
+  .then(categories => {
+    console.log(categories);
+    categories.map(category => {
+      const categoryOption = document.createElement('option');
+      categoryOption.textContent = category;
+      categorySelect.append(categoryOption);
+    })
+  })
