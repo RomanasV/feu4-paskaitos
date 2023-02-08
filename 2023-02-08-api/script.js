@@ -37,3 +37,33 @@ categoryForm.addEventListener('submit', (event) => {
       jokeParagraph.textContent = joke.value;
     })
 })
+
+const searchForm = document.querySelector('#search-form');
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  
+  const searchQuery = event.target['search-input'].value;
+
+  console.log(searchQuery)
+
+  fetch('https://api.chucknorris.io/jokes/search?query=' + searchQuery)
+    .then(res => res.json())
+    .then(data => {
+      const jokesCount = data.total;
+
+      if (data.error) {
+        jokeParagraph.textContent = `${data.error} (${data.message})`;
+        return;
+      }
+
+      if (jokesCount > 0) {       
+        const jokesList = data.result;
+        const index = Math.floor(Math.random() * jokesCount);
+        const randomJoke = jokesList[index];
+        jokeParagraph.textContent = randomJoke.value;
+        return;
+      }
+
+      jokeParagraph.textContent = 'No jokes :(';
+    })
+});
