@@ -7,3 +7,17 @@
   2.3. Sukurti mygtuką, kurį paspaudus, sugeneruotų atsitiktinį juokelį pagal pasirinktą kategoriją.
 
 3. Sukurti galimybę ieškoti juokelių pagal užklausos frazę.
+
+
+UŽDUOTIS (https://dog.ceo/dog-api/):
+1. Sukurti formą, kuri leidžia pasirinkti šuns veislę ir grąžina atsitiktinę tos veislės nuotrauką.
+
+
+2. Jeigu šuns veislė yra išvestinė (sub-breed), tai šalia ji turėtų būti atvaizduojama parašant pagrindinės veislės pavadinimą (breed) ir šalia išvestinės veislės pavainimą (sub-breed).
+
+viena kategorija
+antra kategorija
+Bulldog (French)
+Bulldog (English)
+Bulldog (Boston)
+ketvirta kategorija
