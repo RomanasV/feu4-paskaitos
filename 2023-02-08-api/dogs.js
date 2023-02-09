@@ -61,17 +61,20 @@ function getPictureByBreed() {
       for (let key in breeds) {
         const mainBreed = key;
         const subBreed = breeds[key];
-        
-        const optionElement = document.createElement('option');
-        optionElement.textContent = mainBreed;
 
-        breedSelect.append(optionElement);
-
-        // if (subBreed.length > 0) {
-        //   console.log('yra sub veisle')
-        // } else {
-        //   console.log('nera sub veisles');
-        // }
+        if (subBreed.length > 0) {
+          subBreed.map(subBreed => {
+            const optionElement = document.createElement('option');
+            optionElement.textContent = `${mainBreed} (${subBreed})`;
+            optionElement.value = `${mainBreed}/${subBreed}`;
+            breedSelect.append(optionElement);
+          })
+        } else {
+          const optionElement = document.createElement('option');
+          optionElement.textContent = '- ' + mainBreed[0].toUpperCase() + mainBreed.slice(1);
+          optionElement.value = mainBreed;
+          breedSelect.append(optionElement);
+        }
       }
 
       submitButton.removeAttribute('disabled');
@@ -81,9 +84,9 @@ function getPictureByBreed() {
     event.preventDefault();
 
     const selectedBreed = breedSelect.value;
-    console.log(selectedBreed);
+    const apiUrl = `https://dog.ceo/api/breed/${selectedBreed}/images/random`
 
-    fetch(`https://dog.ceo/api/breed/${selectedBreed}/images/random`)
+    fetch(apiUrl)
       .then(res => res.json())
       .then(data => {
         const imageUrl = data.message;
