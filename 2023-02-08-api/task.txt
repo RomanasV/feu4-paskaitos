@@ -21,3 +21,11 @@ Bulldog (French)
 Bulldog (English)
 Bulldog (Boston)
 ketvirta kategorija
+
+
+DIRBTINIO INTELEKTO API UŽDUOTIS:
+1. Sukurti formą, kurioje galima įrašyti asmens vardą.
+2. Formos submit metu, pagal įrašytą vardą, ekrane atvaizduoti tikėtiną asmens lyti, amžių ir tautybę. Naudoti šiuos API:
+Amžiui - https://agify.io/
+Tautybei - https://nationalize.io/
+Lyčiai - https://genderize.io/
